@@ -1,3 +1,4 @@
+import SiteImage from "./SiteImage";
 import EnquiryBand from "./EnquiryBand";
 // Only trusted, sanitized package content belongs in these editorial fragments.
 function RichText({ html }) {
@@ -9,7 +10,7 @@ export default function TripDetail({ trip: p }) {
   return (
     <>
       <section className="detail-hero">
-        <img src={p.image} alt={p.title} />
+        <SiteImage src={p.image} sizes="100vw" loading="eager" fetchPriority="high" alt={p.title} />
         <div>
           <a href="/packages/" className="eyebrow">
             ← BACK TO JOURNEYS

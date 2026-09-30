@@ -1,3 +1,4 @@
+import SiteImage from "./SiteImage";
 export default function Gallery() {
   return (
     <>
@@ -16,7 +17,7 @@ export default function Gallery() {
       </section>
       <section className="section gallery-grid">
         <a href="/packages/sri-lanka-beach-wildlife-tour/">
-          <img
+          <SiteImage
             src="/images/packages/sri-lanka-beach-wildlife-tour.webp"
             alt="9 Days Sri Lanka Beach & Wildlife Adventure"
             loading="lazy"
@@ -28,7 +29,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/7-day-kenya-safari-adventure-2/">
-          <img
+          <SiteImage
             src="/images/packages/7-day-kenya-safari-adventure-2.webp"
             alt="7-Day Kenya Safari Adventure"
             loading="lazy"
@@ -40,7 +41,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/7-day-sopa-lodges-circuit-safari/">
-          <img
+          <SiteImage
             src="/images/packages/7-day-sopa-lodges-circuit-safari.jpg"
             alt="7-Day Sopa Lodges Circuit Safari"
             loading="lazy"
@@ -52,7 +53,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/6-day-amboseli-and-masai-mara-luxury-safari/">
-          <img
+          <SiteImage
             src="/images/packages/6-day-amboseli-and-masai-mara-luxury-safari.jpg"
             alt="6-Day Amboseli and Masai Mara Luxury Safari"
             loading="lazy"
@@ -64,7 +65,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/6-day-sopa-all-inclusive-safari-in-kenya/">
-          <img
+          <SiteImage
             src="/images/packages/6-day-sopa-all-inclusive-safari-in-kenya.jpg"
             alt="6-Day Sopa All-inclusive Safari in Kenya"
             loading="lazy"
@@ -76,7 +77,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/sri-lanka-lsland-loop-our/">
-          <img
+          <SiteImage
             src="/images/packages/sri-lanka-lsland-loop-our.png"
             alt="Sri Lanka Island Loop Tour"
             loading="lazy"
@@ -88,7 +89,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/sri-lanka-wildlife-safari-experience/">
-          <img
+          <SiteImage
             src="/images/packages/sri-lanka-wildlife-safari-experience.jpg"
             alt="Sri Lanka Wildlife Safari Experience"
             loading="lazy"
@@ -100,7 +101,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari/">
-          <img
+          <SiteImage
             src="/images/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.jpg"
             alt="8-Day Masai Mara, Amboseli, All-Inclusive Kenya Safari"
             loading="lazy"
@@ -114,7 +115,7 @@ export default function Gallery() {
           </span>
         </a>
         <a href="/packages/sri-lanka-pilgrimage-tour/">
-          <img
+          <SiteImage
             src="/images/packages/sri-lanka-pilgrimage-tour.jpg"
             alt="Sri Lanka Pilgrimage Tour"
             loading="lazy"

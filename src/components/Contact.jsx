@@ -1,13 +1,22 @@
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 export default function Contact() {
-  const params = new URLSearchParams(window.location.search);
+  const [params, setParams] = useState(() => new URLSearchParams());
+  useEffect(() => {
+    setParams(new URLSearchParams(window.location.search));
+  }, []);
   const [draft, setDraft] = useState("");
-  const today = new Date();
-  const minDate = [
-    today.getFullYear(),
-    String(today.getMonth() + 1).padStart(2, "0"),
-    String(today.getDate()).padStart(2, "0"),
-  ].join("-");
+  const [minDate, setMinDate] = useState("");
+  useEffect(() => {
+    const today = new Date();
+    setMinDate(
+      [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0"),
+      ].join("-"),
+    );
+  }, []);
   function submit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -62,7 +71,12 @@ export default function Contact() {
             </p>
           </div>
         </div>
-        <form id="enquiry-form" onSubmit={submit} onChange={() => setDraft("")}>
+        <form
+          key={params.toString()}
+          id="enquiry-form"
+          onSubmit={submit}
+          onChange={() => setDraft("")}
+        >
           <div className="form-row">
             <label>
               Your name

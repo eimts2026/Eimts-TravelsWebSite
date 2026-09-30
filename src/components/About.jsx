@@ -1,3 +1,4 @@
+import SiteImage from "./SiteImage";
 export default function About() {
   return (
     <>
@@ -15,7 +16,7 @@ export default function About() {
         </p>
       </section>
       <section className="about-layout section">
-        <img
+        <SiteImage
           src="/images/sri-lanka-hero.jpeg"
           alt="Sigiriya surrounded by Sri Lankan forest"
         />
@@ -67,7 +68,7 @@ export default function About() {
         </div>
         <div className="destination-grid">
           <a href="/destinations/sri-lanka/" className="destination-card">
-            <img
+            <SiteImage
               src="/images/sri-lanka-hero.jpeg"
               alt="Sigiriya rising above the forests of Sri Lanka"
               loading="lazy"
@@ -82,7 +83,7 @@ export default function About() {
             <span className="destination-arrow">{"↗"}</span>
           </a>
           <a href="/destinations/kenya/" className="destination-card">
-            <img
+            <SiteImage
               src="/images/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.jpg"
               alt="Giraffes on the open Kenyan savannah"
               loading="lazy"

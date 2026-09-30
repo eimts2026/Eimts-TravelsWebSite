@@ -1,3 +1,5 @@
+"use client";
+import SiteImage from "./SiteImage";
 import { useState } from "react";
 import packages from "../data/packages.json";
 const kenya = packages.find((p) =>
@@ -29,10 +31,12 @@ export default function Hero() {
   return (
     <section className="hero" aria-label="Discover our destinations">
       {scenes.map((s, i) => (
-        <img
+        <SiteImage
           key={s.id}
           className={"hero-scene" + (active === i ? " active" : "")}
           src={s.image}
+          sizes="100vw"
+          loading={i === 0 ? "eager" : "lazy"}
           alt={s.alt}
           aria-hidden={active !== i}
           fetchPriority={i === 0 ? "high" : "auto"}

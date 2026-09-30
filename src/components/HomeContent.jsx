@@ -1,3 +1,4 @@
+import SiteImage from "./SiteImage";
 export default function HomeContent() {
   return (
     <>
@@ -47,7 +48,7 @@ export default function HomeContent() {
         </div>
         <div className="destination-grid">
           <a href="/destinations/sri-lanka/" className="destination-card">
-            <img
+            <SiteImage
               src="/images/sri-lanka-hero.jpeg"
               alt="Sigiriya rising above the forests of Sri Lanka"
               loading="lazy"
@@ -62,7 +63,7 @@ export default function HomeContent() {
             <span className="destination-arrow">{"↗"}</span>
           </a>
           <a href="/destinations/kenya/" className="destination-card">
-            <img
+            <SiteImage
               src="/images/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.jpg"
               alt="Giraffes on the open Kenyan savannah"
               loading="lazy"
@@ -102,7 +103,7 @@ export default function HomeContent() {
               className="card-image"
               href="/packages/sri-lanka-beach-wildlife-tour/"
             >
-              <img
+              <SiteImage
                 src="/images/packages/sri-lanka-beach-wildlife-tour.webp"
                 alt="9 Days Sri Lanka Beach & Wildlife Adventure"
                 loading="lazy"
@@ -139,7 +140,7 @@ export default function HomeContent() {
               className="card-image"
               href="/packages/6-day-amboseli-and-masai-mara-luxury-safari/"
             >
-              <img
+              <SiteImage
                 src="/images/packages/6-day-amboseli-and-masai-mara-luxury-safari.jpg"
                 alt="6-Day Amboseli and Masai Mara Luxury Safari"
                 loading="lazy"
@@ -176,7 +177,7 @@ export default function HomeContent() {
               className="card-image"
               href="/packages/sri-lanka-honeymoon-escape/"
             >
-              <img
+              <SiteImage
                 src="/images/packages/sri-lanka-honeymoon-escape.jpg"
                 alt="Sri Lanka Honeymoon Escape"
                 loading="lazy"
@@ -207,7 +208,7 @@ export default function HomeContent() {
       </section>
       <section className="philosophy">
         <div className="philosophy-photo">
-          <img
+          <SiteImage
             src="/images/packages/7-day-sopa-lodges-circuit-safari.jpg"
             alt="A quiet moment overlooking the African wilderness"
             loading="lazy"
@@ -268,7 +269,7 @@ export default function HomeContent() {
         </div>
         <div className="moments-grid">
           <a href="/packages/sri-lanka-beach-wildlife-tour/">
-            <img
+            <SiteImage
               src="/images/packages/sri-lanka-beach-wildlife-tour.webp"
               alt="9 Days Sri Lanka Beach & Wildlife Adventure"
               loading="lazy"
@@ -276,7 +277,7 @@ export default function HomeContent() {
             <span>{"Into the wild ↗"}</span>
           </a>
           <a href="/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2/">
-            <img
+            <SiteImage
               src="/images/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.jpg"
               alt="7-Day Magical Kenya Budget Safari (Amboseli, Naivasha, Nakuru & Masai Mara)"
               loading="lazy"
@@ -284,7 +285,7 @@ export default function HomeContent() {
             <span>{"Under African skies ↗"}</span>
           </a>
           <a href="/packages/sri-lanka-honeymoon-escape/">
-            <img
+            <SiteImage
               src="/images/packages/sri-lanka-honeymoon-escape.jpg"
               alt="Sri Lanka Honeymoon Escape"
               loading="lazy"

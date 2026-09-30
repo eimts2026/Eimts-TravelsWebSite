@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("/fonts/fonts.css");
 :root {
   --forest: #163d32;
   --deep: #102e27;
@@ -1570,4 +1569,52 @@ details[open] summary > span {
   .destination-card:hover img {
     transform: none;
   }
+}
+
+/* Viewport hero: header, content and destination controls share the available height. */
+.hero {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  padding: calc(102px + env(safe-area-inset-top)) 7.2% env(safe-area-inset-bottom);
+}
+.hero-content { position: relative; inset: auto; margin: auto 0; padding: 48px 0 32px; }
+.hero-location { position: relative; inset: auto; margin: 0 0 24px; }
+.hero-bottom { position: relative; inset: auto; flex-shrink: 0; }
+@media (max-width: 900px) {
+  .hero { padding-top: calc(80px + env(safe-area-inset-top)); }
+  .hero h1 { font-size: clamp(48px, 9vw, 88px); }
+}
+@media (max-width: 480px) {
+  .hero { padding-inline: 6%; }
+  .hero-content { padding-top: 32px; padding-bottom: 24px; }
+  .hero h1 { font-size: clamp(40px, 12vw, 65px); margin: 18px 0; }
+  .hero-content p { margin-bottom: 20px; }
+  .hero-selector { gap: 20px; width: 100%; }
+  .hero-selector button { min-width: 0; flex: 1; }
+  .hero-location { margin-bottom: 16px; }
+  .hero-bottom { height: 92px; }
+}
+@media (max-height: 600px) and (min-width: 481px) {
+  .hero-content { padding-block: 20px; }
+  .hero h1 { font-size: clamp(40px, 7vw, 68px); margin-block: 14px; }
+  .hero-content p { margin-bottom: 16px; }
+  .hero-location { margin-bottom: 12px; }
+  .hero-bottom { height: 88px; }
+}
+
+@media (min-width: 901px) {
+  .hero-location { position: absolute; right: 6%; bottom: 150px; margin: 0; }
+}
+@media (max-width: 360px) {
+  .site-header { padding-inline: 5%; gap: 4px; }
+  .brand { gap: 6px; }
+  .brand > span { font-size: 14px; }
+  .brand svg { width: 22px; }
+  .header-cta { font-size: 8px; padding: 7px 6px; }
+  .menu-toggle { padding: 7px; }
 }

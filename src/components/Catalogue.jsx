@@ -1,3 +1,5 @@
+"use client";
+import SiteImage from "./SiteImage";
 import { useState } from "react";
 import packages from "../data/packages.json";
 import { filterPackages } from "../data/filter";
@@ -6,7 +8,7 @@ export function JourneyCard({ trip: p }) {
   return (
     <article className="journey-card">
       <a className="card-image" href={p.url}>
-        <img src={p.image} alt={p.title} loading="lazy" />
+        <SiteImage src={p.image} alt={p.title} loading="lazy" />
         <span className="card-country">{p.country}</span>
         <span className="card-arrow">↗</span>
       </a>
