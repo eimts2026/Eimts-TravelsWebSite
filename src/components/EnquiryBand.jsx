@@ -4,7 +4,7 @@ export default function EnquiryBand() {
     <>
       <section className="enquiry-band">
         <div>
-          <span className="eyebrow">{"YOUR JOURNEY, YOUR WAY"}</span>
+          <span className="eyebrow">{"YOUR STORY STARTS HERE"}</span>
           <h2>
             {"Let’s make it "}
             <em>{"yours."}</em>

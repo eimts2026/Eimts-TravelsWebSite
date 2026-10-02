@@ -5,15 +5,7 @@ export default function Footer() {
       <footer>
         <div className="footer-top">
           <SiteLink className="brand" href="/" aria-label="Emerald Isle Travels home">
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 2 43 24 24 46 5 24Z" stroke="currentColor"></path>
-              <path d="m24 10 8 14-8 14-8-14Z" fill="currentColor"></path>
-              <path d="M2 24h44M24 2v44" stroke="currentColor"></path>
-            </svg>
-            <span>
-              {"EMERALD ISLE"}
-              <small>{"TRAVELS"}</small>
-            </span>
+            <span className="brand-artwork"><img src="/images/emerald-isle-logo.webp" alt="Emerald Isle Travels" width="320" height="355" decoding="async" /></span>
           </SiteLink>
           <p>
             {"Thoughtfully planned."}

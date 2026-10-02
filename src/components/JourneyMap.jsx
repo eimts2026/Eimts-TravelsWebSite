@@ -1,4 +1,5 @@
 "use client";
+import ActionButton from "./ActionButton";
 import { useEffect, useId, useRef, useState } from "react";
 
 const tileUrl = process.env.NEXT_PUBLIC_MAP_TILE_URL || "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -191,7 +192,7 @@ export default function JourneyMap({ route, country }) {
       {status !== "ready" && <div className="journey-map-loading" role="status">
         <span aria-hidden="true">⌁</span>
         <p>{status === "error" ? "The interactive map could not load. You can still explore the stops below." : status === "loading" ? "Loading your journey map…" : "Your journey map will load as you reach this section."}</p>
-        {status === "error" && <button type="button" className="text-link" onClick={() => setAttempt(value => value + 1)}>Retry map ↺</button>}
+        {status === "error" && <ActionButton type="button" className="text-link" onClick={() => setAttempt(value => value + 1)}>Retry map ↺</ActionButton>}
       </div>}
     </div>
     <div className="journey-map-note" id={id + "-hint"}>
@@ -209,7 +210,7 @@ export default function JourneyMap({ route, country }) {
     <ol className="journey-stop-list" aria-label="Destinations in itinerary order">
       {route.stops.map(stop => <li key={stop.number}>
         <span className="journey-stop-number" aria-hidden="true">{stop.number}</span>
-        <div>{status === "ready" ? <button type="button" aria-controls={id + "-canvas"} aria-pressed={selected === stop.number} onClick={() => selectStop(stop)}>{stop.name}</button> : <strong>{stop.name}</strong>}
+        <div>{status === "ready" ? <ActionButton type="button" aria-controls={id + "-canvas"} aria-pressed={selected === stop.number} onClick={() => selectStop(stop)}>{stop.name}</ActionButton> : <strong>{stop.name}</strong>}
           <span>{stop.days}{stop.mode !== "route" && " · " + modeNames[stop.mode]}</span>
           {stop.note && <p>{stop.note}</p>}
         </div>
@@ -217,7 +218,7 @@ export default function JourneyMap({ route, country }) {
     </ol>
     {route.optionalStops.length > 0 && <div className="journey-optional-stops"><h3>Optional or alternative stops</h3>
       <ul>{route.optionalStops.map(stop => <li key={stop.id}>
-        {status === "ready" ? <button type="button" aria-controls={id + "-canvas"} aria-pressed={selected === stop.id} onClick={() => selectStop(stop)}>{stop.name}</button> : <strong>{stop.name}</strong>}
+        {status === "ready" ? <ActionButton type="button" aria-controls={id + "-canvas"} aria-pressed={selected === stop.id} onClick={() => selectStop(stop)}>{stop.name}</ActionButton> : <strong>{stop.name}</strong>}
         <span>{stop.days}</span><p>{stop.note}</p>
       </li>)}</ul>
     </div>}

@@ -2,6 +2,7 @@ import "lenis/dist/lenis.css";
 import "leaflet/dist/leaflet.css";
 import "../styles.css";
 import SmoothScroll from "../components/SmoothScroll";
+import ScrollStory from "../components/ScrollStory";
 import { siteUrl, JsonLd } from "../lib/seo";
 export const metadata = {
   metadataBase: siteUrl,
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       </head>
       <body id="top">
         <SmoothScroll />
+        <ScrollStory />
         <JsonLd
           data={{
             "@context": "https://schema.org",

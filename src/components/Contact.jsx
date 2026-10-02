@@ -1,4 +1,5 @@
 "use client";
+import ActionButton from "./ActionButton";
 import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 import { useEffect, useState } from "react";
@@ -156,9 +157,9 @@ export default function Contact() {
             This form prepares an email for you to review and send through your
             email app.
           </p>
-          <button type="submit" className="button" hidden={!!draft}>
+          <ActionButton type="submit" className="button" hidden={!!draft}>
             Prepare my enquiry ↗
-          </button>
+          </ActionButton>
           <div id="enquiry-result" role="status" hidden={!draft}>
             {draft && (
               <>

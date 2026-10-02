@@ -47,7 +47,7 @@ export default function Hero() {
     </div>
     <div className="hero-bottom">
       <span className="hero-endnote">A LITTLE FURTHER FROM ORDINARY</span>
-      <SiteLink className="scroll-cue" href="#introduction">LET YOUR CURIOSITY LEAD <span aria-hidden="true">↓</span></SiteLink>
+      <SiteLink className="scroll-cue" href="#about-emerald">LET YOUR CURIOSITY LEAD <span aria-hidden="true">↓</span></SiteLink>
     </div>
   </section>;
 }
