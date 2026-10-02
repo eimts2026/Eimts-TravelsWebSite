@@ -5,3 +5,4 @@ dist/
 
 .next/
 out/
+__pycache__/

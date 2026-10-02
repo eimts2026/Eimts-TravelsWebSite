@@ -1,4 +1,7 @@
+import "lenis/dist/lenis.css";
+import "leaflet/dist/leaflet.css";
 import "../styles.css";
+import SmoothScroll from "../components/SmoothScroll";
 import { siteUrl, JsonLd } from "../lib/seo";
 export const metadata = {
   metadataBase: siteUrl,
@@ -16,6 +19,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/fonts/fonts.css" />
       </head>
       <body id="top">
+        <SmoothScroll />
         <JsonLd
           data={{
             "@context": "https://schema.org",

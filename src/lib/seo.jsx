@@ -5,7 +5,7 @@ export function metadata(
   title,
   description,
   path,
-  image = "/images/sri-lanka-hero-original.png",
+  image = "/images/travel/sigiriya.webp",
 ) {
   return {
     title: { absolute: title + " | Emerald Isle Travels" },

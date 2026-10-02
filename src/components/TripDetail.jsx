@@ -1,5 +1,8 @@
+import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
-import EnquiryBand from "./EnquiryBand";
+import JourneyMap from "./JourneyMap";
+import { getJourneyRoute } from "../data/journey-routes";
+
 // Only trusted, sanitized package content belongs in these editorial fragments.
 function RichText({ html }) {
   return (
@@ -10,11 +13,11 @@ export default function TripDetail({ trip: p }) {
   return (
     <>
       <section className="detail-hero">
-        <SiteImage src={p.image} sizes="100vw" loading="eager" fetchPriority="high" alt={p.title} />
+        <SiteImage src={p.image} sizes="100vw" loading="eager" fetchPriority="high" alt={p.imageAlt || p.title} />
         <div>
-          <a href="/packages/" className="eyebrow">
+          <SiteLink href="/packages/" className="eyebrow">
             ← BACK TO JOURNEYS
-          </a>
+          </SiteLink>
           <p className="eyebrow">
             {p.country} · {p.category}
           </p>
@@ -30,6 +33,7 @@ export default function TripDetail({ trip: p }) {
             </h2>
             <RichText html={p.overview} />
           </section>
+          <JourneyMap route={getJourneyRoute(p)} country={p.country} />
           <section className="detail-section" id="itinerary">
             <span className="eyebrow">ONE DAY AT A TIME</span>
             <h2>The itinerary</h2>
@@ -67,7 +71,7 @@ export default function TripDetail({ trip: p }) {
               exact schedule when planning your trip.
             </p>
           )}
-          <a
+          <SiteLink
             className="button"
             href={
               "/contact/?" +
@@ -75,17 +79,15 @@ export default function TripDetail({ trip: p }) {
             }
           >
             Plan this journey ↗
-          </a>
+          </SiteLink>
           <p className="small-note">
             Tell us your preferred dates and travel style. We’ll help with the
             details.
           </p>
-          <a className="text-link" href="mailto:travels@emeraldisle.lk">
-            Ask us a question ↗
-          </a>
+
         </aside>
       </div>
-      <EnquiryBand />
+
     </>
   );
 }

@@ -1,3 +1,4 @@
+import SiteLink from "./SiteLink";
 export default function EnquiryBand() {
   return (
     <>
@@ -14,10 +15,10 @@ export default function EnquiryBand() {
             }
           </p>
         </div>
-        <a className="button light" href="/contact/">
+        <SiteLink className="button light" href="/contact/">
           {"Plan my journey "}
           <span aria-hidden="true">{"↗"}</span>
-        </a>
+        </SiteLink>
       </section>
     </>
   );

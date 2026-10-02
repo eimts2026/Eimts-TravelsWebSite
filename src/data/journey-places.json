@@ -1,0 +1,369 @@
+{
+  "colombo": {
+    "name": "Colombo",
+    "country": "Sri Lanka",
+    "lat": 6.93548,
+    "lng": 79.84868,
+    "source": "https://www.geonames.org/1248991/"
+  },
+  "colombo-airport": {
+    "name": "Colombo Airport",
+    "country": "Sri Lanka",
+    "lat": 7.18076,
+    "lng": 79.88412,
+    "source": "https://www.geonames.org/6301060/"
+  },
+  "negombo": {
+    "name": "Negombo",
+    "country": "Sri Lanka",
+    "lat": 7.2083,
+    "lng": 79.8358,
+    "source": "https://www.geonames.org/1233369/"
+  },
+  "bentota": {
+    "name": "Bentota",
+    "country": "Sri Lanka",
+    "lat": 6.42598,
+    "lng": 79.99575,
+    "source": "https://www.geonames.org/1249978/"
+  },
+  "hikkaduwa": {
+    "name": "Hikkaduwa",
+    "country": "Sri Lanka",
+    "lat": 6.1407,
+    "lng": 80.1012,
+    "source": "https://www.geonames.org/1244178/"
+  },
+  "galle": {
+    "name": "Galle",
+    "country": "Sri Lanka",
+    "lat": 6.0461,
+    "lng": 80.2103,
+    "source": "https://www.geonames.org/1246294/"
+  },
+  "mirissa": {
+    "name": "Mirissa",
+    "country": "Sri Lanka",
+    "lat": 5.94655,
+    "lng": 80.45831,
+    "source": "https://www.geonames.org/11979654/"
+  },
+  "yala": {
+    "name": "Yala National Park",
+    "country": "Sri Lanka",
+    "lat": 6.2763507,
+    "lng": 81.4029885,
+    "source": "https://www.openstreetmap.org/node/3158801353",
+    "accessNote": "Road approach shown via Palatupana; the final park entrance depends on your arrangements."
+  },
+  "ella": {
+    "name": "Ella",
+    "country": "Sri Lanka",
+    "lat": 6.87427,
+    "lng": 81.05342,
+    "source": "https://www.geonames.org/11991660/"
+  },
+  "nuwara-eliya": {
+    "name": "Nuwara Eliya",
+    "country": "Sri Lanka",
+    "lat": 6.97078,
+    "lng": 80.78286,
+    "source": "https://www.geonames.org/1232783/"
+  },
+  "kitulgala": {
+    "name": "Kitulgala",
+    "country": "Sri Lanka",
+    "lat": 6.9966,
+    "lng": 80.4068,
+    "source": "https://www.geonames.org/1239978/"
+  },
+  "wilpattu": {
+    "name": "Wilpattu National Park",
+    "country": "Sri Lanka",
+    "lat": 8.4106,
+    "lng": 80.051,
+    "source": "https://www.geonames.org/1223149/"
+  },
+  "jaffna": {
+    "name": "Jaffna",
+    "country": "Sri Lanka",
+    "lat": 9.66845,
+    "lng": 80.00742,
+    "source": "https://www.geonames.org/1242833/"
+  },
+  "trincomalee": {
+    "name": "Trincomalee",
+    "country": "Sri Lanka",
+    "lat": 8.5778,
+    "lng": 81.2289,
+    "source": "https://www.geonames.org/1226260/"
+  },
+  "nilaveli": {
+    "name": "Nilaveli",
+    "country": "Sri Lanka",
+    "lat": 8.6728,
+    "lng": 81.2009,
+    "source": "https://www.geonames.org/1233028/"
+  },
+  "gal-oya": {
+    "name": "Gal Oya National Park",
+    "country": "Sri Lanka",
+    "lat": 7.2194056,
+    "lng": 81.5448535,
+    "source": "https://www.openstreetmap.org/node/1877384841",
+    "accessNote": "Road approach shown via Inginiyagala; the final lodge and boat departure point are arranged individually."
+  },
+  "anuradhapura": {
+    "name": "Anuradhapura",
+    "country": "Sri Lanka",
+    "lat": 8.31223,
+    "lng": 80.41306,
+    "source": "https://www.geonames.org/1251081/"
+  },
+  "sigiriya": {
+    "name": "Sigiriya",
+    "country": "Sri Lanka",
+    "lat": 7.95695,
+    "lng": 80.76015,
+    "source": "https://www.geonames.org/1228053/"
+  },
+  "dambulla": {
+    "name": "Dambulla",
+    "country": "Sri Lanka",
+    "lat": 7.86,
+    "lng": 80.65167,
+    "source": "https://www.geonames.org/1248749/"
+  },
+  "polonnaruwa": {
+    "name": "Polonnaruwa",
+    "country": "Sri Lanka",
+    "lat": 7.93965,
+    "lng": 81.00274,
+    "source": "https://www.geonames.org/1229901/"
+  },
+  "kandy": {
+    "name": "Kandy",
+    "country": "Sri Lanka",
+    "lat": 7.2906,
+    "lng": 80.6336,
+    "source": "https://www.geonames.org/1241622/"
+  },
+  "udawalawe": {
+    "name": "Udawalawe National Park",
+    "country": "Sri Lanka",
+    "lat": 6.51591,
+    "lng": 80.85388,
+    "source": "https://www.geonames.org/7289325/"
+  },
+  "sinharaja": {
+    "name": "Sinharaja Forest Reserve",
+    "country": "Sri Lanka",
+    "lat": 6.3897,
+    "lng": 80.5015,
+    "source": "https://www.geonames.org/1227997/"
+  },
+  "bundala": {
+    "name": "Bundala National Park",
+    "country": "Sri Lanka",
+    "lat": 6.1874,
+    "lng": 81.1974,
+    "source": "https://www.geonames.org/7625643/"
+  },
+  "ahangama": {
+    "name": "Ahangama",
+    "country": "Sri Lanka",
+    "lat": 5.9715,
+    "lng": 80.3601,
+    "source": "https://www.geonames.org/1252211/"
+  },
+  "weligama": {
+    "name": "Weligama",
+    "country": "Sri Lanka",
+    "lat": 5.97501,
+    "lng": 80.42968,
+    "source": "https://www.geonames.org/1223738/"
+  },
+  "talalla": {
+    "name": "Talalla",
+    "country": "Sri Lanka",
+    "lat": 5.95,
+    "lng": 80.61667,
+    "source": "https://www.geonames.org/1227362/"
+  },
+  "hiriketiya": {
+    "name": "Hiriketiya area",
+    "country": "Sri Lanka",
+    "lat": 5.96667,
+    "lng": 80.7,
+    "source": "https://www.geonames.org/1244024/"
+  },
+  "hatton": {
+    "name": "Hatton",
+    "country": "Sri Lanka",
+    "lat": 6.8916,
+    "lng": 80.5955,
+    "source": "https://www.geonames.org/1244596/"
+  },
+  "haputale": {
+    "name": "Haputale",
+    "country": "Sri Lanka",
+    "lat": 6.76566,
+    "lng": 80.95104,
+    "source": "https://www.geonames.org/1244713/"
+  },
+  "mihintale": {
+    "name": "Mihintale",
+    "country": "Sri Lanka",
+    "lat": 8.3593,
+    "lng": 80.5103,
+    "source": "https://www.geonames.org/1235107/"
+  },
+  "pinnawala": {
+    "name": "Pinnawala",
+    "country": "Sri Lanka",
+    "lat": 7.3098,
+    "lng": 80.4014,
+    "source": "https://www.geonames.org/1230151/"
+  },
+  "nanu-oya": {
+    "name": "Nanu Oya",
+    "country": "Sri Lanka",
+    "lat": 6.9417,
+    "lng": 80.7453,
+    "source": "https://www.geonames.org/1233747/"
+  },
+  "tangalle": {
+    "name": "Tangalle",
+    "country": "Sri Lanka",
+    "lat": 6.02338,
+    "lng": 80.79738,
+    "source": "https://www.geonames.org/1227037/"
+  },
+  "pigeon-island": {
+    "name": "Pigeon Island",
+    "country": "Sri Lanka",
+    "lat": 8.72193,
+    "lng": 81.20439,
+    "source": "https://www.geonames.org/1229360/"
+  },
+  "kanniya": {
+    "name": "Kanniya",
+    "country": "Sri Lanka",
+    "lat": 8.59587,
+    "lng": 81.1642,
+    "source": "https://www.geonames.org/11990276/"
+  },
+  "nairobi": {
+    "name": "Nairobi",
+    "country": "Kenya",
+    "lat": -1.28333,
+    "lng": 36.81667,
+    "source": "https://www.geonames.org/184745/"
+  },
+  "amboseli": {
+    "name": "Amboseli National Park",
+    "country": "Kenya",
+    "lat": -2.65306,
+    "lng": 37.26036,
+    "source": "https://www.geonames.org/10227171/"
+  },
+  "ol-pejeta": {
+    "name": "Ol Pejeta Conservancy",
+    "country": "Kenya",
+    "lat": 0.04399,
+    "lng": 36.86087,
+    "source": "https://www.geonames.org/11947676/"
+  },
+  "masai-mara": {
+    "name": "Masai Mara National Reserve",
+    "country": "Kenya",
+    "lat": -1.5209786,
+    "lng": 35.3374333,
+    "source": "https://www.openstreetmap.org/way/329371476",
+    "accessNote": "Road approach shown via Sekenani Gate; your lodge may use a different entrance."
+  },
+  "naivasha": {
+    "name": "Lake Naivasha",
+    "country": "Kenya",
+    "lat": -0.76582,
+    "lng": 36.35561,
+    "source": "https://www.geonames.org/184706/"
+  },
+  "nakuru": {
+    "name": "Lake Nakuru National Park",
+    "country": "Kenya",
+    "lat": -0.36025,
+    "lng": 36.09345,
+    "source": "https://www.geonames.org/184621/"
+  },
+  "meru": {
+    "name": "Meru National Park",
+    "country": "Kenya",
+    "lat": 0.08171,
+    "lng": 38.20633,
+    "source": "https://www.geonames.org/186816/"
+  },
+  "samburu": {
+    "name": "Samburu National Reserve",
+    "country": "Kenya",
+    "lat": 0.61244,
+    "lng": 37.53214,
+    "source": "https://www.geonames.org/9538150/"
+  },
+  "diani": {
+    "name": "Diani Beach",
+    "country": "Kenya",
+    "lat": -4.27976,
+    "lng": 39.5947,
+    "source": "https://www.geonames.org/199005/"
+  },
+  "hells-gate": {
+    "name": "Hell’s Gate National Park",
+    "country": "Kenya",
+    "lat": -0.91583,
+    "lng": 36.31333,
+    "source": "https://www.geonames.org/8051313/"
+  },
+  "nairobi-park": {
+    "name": "Nairobi National Park",
+    "country": "Kenya",
+    "lat": -1.37233,
+    "lng": 36.85595,
+    "source": "https://www.geonames.org/184737/"
+  },
+  "carnivore": {
+    "name": "Carnivore Restaurant area",
+    "country": "Kenya",
+    "lat": -1.32932,
+    "lng": 36.80209,
+    "source": "https://www.geonames.org/8477724/"
+  },
+  "mombasa": {
+    "name": "Mombasa",
+    "country": "Kenya",
+    "lat": -4.05466,
+    "lng": 39.66359,
+    "source": "https://www.geonames.org/186301/"
+  },
+  "emali": {
+    "name": "Emali",
+    "country": "Kenya",
+    "lat": -2.08033,
+    "lng": 37.47202,
+    "source": "https://www.geonames.org/198537/"
+  },
+  "giraffe-centre": {
+    "name": "Giraffe Centre",
+    "country": "Kenya",
+    "lat": -1.3765618,
+    "lng": 36.7445949,
+    "source": "https://nominatim.openstreetmap.org/search?q=Giraffe+Centre&countrycodes=ke&format=jsonv2"
+  },
+  "sheldrick": {
+    "name": "Sheldrick Wildlife Trust Nursery",
+    "country": "Kenya",
+    "lat": -1.3777819,
+    "lng": 36.7730492,
+    "source": "https://www.openstreetmap.org/node/3325510601"
+  }
+}

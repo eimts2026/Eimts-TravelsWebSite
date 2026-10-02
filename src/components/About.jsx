@@ -1,3 +1,4 @@
+import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
       </section>
       <section className="about-layout section">
         <SiteImage
-          src="/images/sri-lanka-hero.jpeg"
+          src="/images/travel/sigiriya.webp"
           alt="Sigiriya surrounded by Sri Lankan forest"
         />
         <div>
@@ -43,9 +44,9 @@ export default function About() {
               "Our approach combines handpicked destinations, carefully planned itineraries and support from your first enquiry to your return home."
             }
           </p>
-          <a className="button" href="/contact/">
+          <SiteLink className="button" href="/contact/">
             {"Let’s plan something special ↗"}
-          </a>
+          </SiteLink>
         </div>
       </section>
       <section className="section destinations" id="destinations">
@@ -67,9 +68,9 @@ export default function About() {
           </p>
         </div>
         <div className="destination-grid">
-          <a href="/destinations/sri-lanka/" className="destination-card">
+          <SiteLink href="/destinations/sri-lanka/" className="destination-card">
             <SiteImage
-              src="/images/sri-lanka-hero.jpeg"
+              src="/images/travel/sigiriya.webp"
               alt="Sigiriya rising above the forests of Sri Lanka"
               loading="lazy"
             />
@@ -81,10 +82,10 @@ export default function About() {
               <p>{"Ancient wonders. Tea country. Ocean days."}</p>
             </div>
             <span className="destination-arrow">{"↗"}</span>
-          </a>
-          <a href="/destinations/kenya/" className="destination-card">
+          </SiteLink>
+          <SiteLink href="/destinations/kenya/" className="destination-card">
             <SiteImage
-              src="/images/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.jpg"
+              src="/images/travel/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.webp"
               alt="Giraffes on the open Kenyan savannah"
               loading="lazy"
             />
@@ -94,27 +95,10 @@ export default function About() {
               <p>{"Open horizons. Remarkable wildlife. Pure wonder."}</p>
             </div>
             <span className="destination-arrow">{"↗"}</span>
-          </a>
+          </SiteLink>
         </div>
       </section>
-      <section className="enquiry-band">
-        <div>
-          <span className="eyebrow">{"YOUR JOURNEY, YOUR WAY"}</span>
-          <h2>
-            {"Let’s make it "}
-            <em>{"yours."}</em>
-          </h2>
-          <p>
-            {
-              "A place you’ve dreamed of. A pace that feels right. Tell us what you have in mind."
-            }
-          </p>
-        </div>
-        <a className="button light" href="/contact/">
-          {"Plan my journey "}
-          <span aria-hidden="true">{"↗"}</span>
-        </a>
-      </section>
+
     </>
   );
 }

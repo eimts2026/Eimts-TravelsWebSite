@@ -1,3 +1,4 @@
+import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 export default function Gallery() {
   return (
@@ -16,9 +17,9 @@ export default function Gallery() {
         </p>
       </section>
       <section className="section gallery-grid">
-        <a href="/packages/sri-lanka-beach-wildlife-tour/">
+        <SiteLink href="/packages/sri-lanka-beach-wildlife-tour/">
           <SiteImage
-            src="/images/packages/sri-lanka-beach-wildlife-tour.webp"
+            src="/images/travel/sri-lanka-beach-wildlife-tour.webp"
             alt="9 Days Sri Lanka Beach & Wildlife Adventure"
             loading="lazy"
           />
@@ -27,10 +28,10 @@ export default function Gallery() {
             <strong>{"9 Days Sri Lanka Beach & Wildlife Adventure"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/7-day-kenya-safari-adventure-2/">
+        </SiteLink>
+        <SiteLink href="/packages/7-day-kenya-safari-adventure-2/">
           <SiteImage
-            src="/images/packages/7-day-kenya-safari-adventure-2.webp"
+            src="/images/travel/kenya-giraffes.webp"
             alt="7-Day Kenya Safari Adventure"
             loading="lazy"
           />
@@ -39,10 +40,10 @@ export default function Gallery() {
             <strong>{"7-Day Kenya Safari Adventure"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/7-day-sopa-lodges-circuit-safari/">
+        </SiteLink>
+        <SiteLink href="/packages/7-day-sopa-lodges-circuit-safari/">
           <SiteImage
-            src="/images/packages/7-day-sopa-lodges-circuit-safari.jpg"
+            src="/images/travel/7-day-sopa-lodges-circuit-safari.webp"
             alt="7-Day Sopa Lodges Circuit Safari"
             loading="lazy"
           />
@@ -51,10 +52,10 @@ export default function Gallery() {
             <strong>{"7-Day Sopa Lodges Circuit Safari"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/6-day-amboseli-and-masai-mara-luxury-safari/">
+        </SiteLink>
+        <SiteLink href="/packages/6-day-amboseli-and-masai-mara-luxury-safari/">
           <SiteImage
-            src="/images/packages/6-day-amboseli-and-masai-mara-luxury-safari.jpg"
+            src="/images/travel/kenya-elephants.webp"
             alt="6-Day Amboseli and Masai Mara Luxury Safari"
             loading="lazy"
           />
@@ -63,10 +64,10 @@ export default function Gallery() {
             <strong>{"6-Day Amboseli and Masai Mara Luxury Safari"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/6-day-sopa-all-inclusive-safari-in-kenya/">
+        </SiteLink>
+        <SiteLink href="/packages/6-day-sopa-all-inclusive-safari-in-kenya/">
           <SiteImage
-            src="/images/packages/6-day-sopa-all-inclusive-safari-in-kenya.jpg"
+            src="/images/travel/kenya-elephants.webp"
             alt="6-Day Sopa All-inclusive Safari in Kenya"
             loading="lazy"
           />
@@ -75,10 +76,10 @@ export default function Gallery() {
             <strong>{"6-Day Sopa All-inclusive Safari in Kenya"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/sri-lanka-lsland-loop-our/">
+        </SiteLink>
+        <SiteLink href="/packages/sri-lanka-lsland-loop-our/">
           <SiteImage
-            src="/images/packages/sri-lanka-lsland-loop-our.png"
+            src="/images/travel/sigiriya.webp"
             alt="Sri Lanka Island Loop Tour"
             loading="lazy"
           />
@@ -87,10 +88,10 @@ export default function Gallery() {
             <strong>{"Sri Lanka Island Loop Tour"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/sri-lanka-wildlife-safari-experience/">
+        </SiteLink>
+        <SiteLink href="/packages/sri-lanka-wildlife-safari-experience/">
           <SiteImage
-            src="/images/packages/sri-lanka-wildlife-safari-experience.jpg"
+            src="/images/travel/sri-lanka-wildlife-safari-experience.webp"
             alt="Sri Lanka Wildlife Safari Experience"
             loading="lazy"
           />
@@ -99,10 +100,10 @@ export default function Gallery() {
             <strong>{"Sri Lanka Wildlife Safari Experience"}</strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari/">
+        </SiteLink>
+        <SiteLink href="/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari/">
           <SiteImage
-            src="/images/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.jpg"
+            src="/images/travel/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.webp"
             alt="8-Day Masai Mara, Amboseli, All-Inclusive Kenya Safari"
             loading="lazy"
           />
@@ -113,10 +114,10 @@ export default function Gallery() {
             </strong>
             {"↗"}
           </span>
-        </a>
-        <a href="/packages/sri-lanka-pilgrimage-tour/">
+        </SiteLink>
+        <SiteLink href="/packages/sri-lanka-pilgrimage-tour/">
           <SiteImage
-            src="/images/packages/sri-lanka-pilgrimage-tour.jpg"
+            src="/images/travel/sri-lanka-pilgrimage-tour.webp"
             alt="Sri Lanka Pilgrimage Tour"
             loading="lazy"
           />
@@ -125,7 +126,7 @@ export default function Gallery() {
             <strong>{"Sri Lanka Pilgrimage Tour"}</strong>
             {"↗"}
           </span>
-        </a>
+        </SiteLink>
       </section>
       <section className="enquiry-band">
         <div>
@@ -140,10 +141,10 @@ export default function Gallery() {
             }
           </p>
         </div>
-        <a className="button light" href="/contact/">
+        <SiteLink className="button light" href="/contact/">
           {"Plan my journey "}
           <span aria-hidden="true">{"↗"}</span>
-        </a>
+        </SiteLink>
       </section>
     </>
   );

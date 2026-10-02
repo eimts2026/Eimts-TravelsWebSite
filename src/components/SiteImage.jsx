@@ -4,6 +4,7 @@ export default function SiteImage({
   src,
   alt,
   sizes = "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw",
+  loading = "lazy",
   ...props
 }) {
   const size = dimensions[src];
@@ -14,6 +15,7 @@ export default function SiteImage({
       width={size.width}
       height={size.height}
       sizes={sizes}
+      loading={loading}
       {...props}
     />
   );

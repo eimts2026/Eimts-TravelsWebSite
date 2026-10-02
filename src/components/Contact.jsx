@@ -1,4 +1,6 @@
 "use client";
+import SiteLink from "./SiteLink";
+import SiteImage from "./SiteImage";
 import { useEffect, useState } from "react";
 export default function Contact() {
   const [params, setParams] = useState(() => new URLSearchParams());
@@ -42,9 +44,7 @@ export default function Contact() {
       <section className="page-intro">
         <span className="eyebrow">IT STARTS WITH A CONVERSATION</span>
         <h1>
-          Where do you
-          <br />
-          <em>dream of going?</em>
+          Contact us.<br /><em>Let’s make it personal.</em>
         </h1>
         <p>
           Tell us a little about your plans. We’ll help you bring the journey
@@ -52,7 +52,8 @@ export default function Contact() {
         </p>
       </section>
       <section className="section contact-layout">
-        <div>
+        <div className="contact-information">
+          <div className="contact-photo"><SiteImage src="/images/travel/sri-lanka-beach.webp" alt="A peaceful beach in Batticaloa, Sri Lanka" sizes="(max-width: 800px) 100vw, 40vw" /></div>
           <h2>
             Let’s talk <em>travel.</em>
           </h2>
@@ -60,8 +61,8 @@ export default function Contact() {
             Whether you have an itinerary in mind or just a spark of an idea,
             we’d love to hear it.
           </p>
-          <a href="mailto:travels@emeraldisle.lk">travels@emeraldisle.lk ↗</a>
-          <a href="tel:+94114627909">+94 11 462 7909</a>
+          <SiteLink href="mailto:travels@emeraldisle.lk">travels@emeraldisle.lk ↗</SiteLink>
+          <SiteLink href="tel:+94114627909">+94 11 462 7909</SiteLink>
           <div className="contact-note">
             <span className="eyebrow">TWO EXTRAORDINARY DESTINATIONS</span>
             <p>
@@ -77,6 +78,8 @@ export default function Contact() {
           onSubmit={submit}
           onChange={() => setDraft("")}
         >
+          <span className="eyebrow">YOUR FIRST STEP</span>
+          <h2 className="form-heading">Tell us about your trip</h2>
           <div className="form-row">
             <label>
               Your name
@@ -153,7 +156,7 @@ export default function Contact() {
             This form prepares an email for you to review and send through your
             email app.
           </p>
-          <button type="submit" className="button">
+          <button type="submit" className="button" hidden={!!draft}>
             Prepare my enquiry ↗
           </button>
           <div id="enquiry-result" role="status" hidden={!draft}>
@@ -163,9 +166,9 @@ export default function Contact() {
                   Your enquiry is ready to review. Open it in your email app,
                   then send it when you’re happy with the details.
                 </p>
-                <a className="button" href={draft}>
+                <SiteLink className="button" href={draft}>
                   Open email draft ↗
-                </a>
+                </SiteLink>
               </>
             )}
           </div>
