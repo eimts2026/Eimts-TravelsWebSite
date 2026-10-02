@@ -14,7 +14,7 @@ export const metadata = {
 export const viewport = { themeColor: "#163d32" };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="stylesheet" href="/fonts/fonts.css" />
       </head>
