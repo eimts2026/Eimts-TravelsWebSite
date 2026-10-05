@@ -10,12 +10,13 @@ export default function ScrollStory() {
     const setup = () => {
       dispose();
       if (preference.matches) return;
-      let images = [], texts = [], frame = 0, stopped = false;
+      let images = [], cards = [], texts = [], frame = 0, stopped = false;
       const values = new Map();
-      const imageSelector = ".hero-scene, .home-about-image img, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";
+      const imageSelector = ".hero-scene, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";
       const collect = () => {
         images = [...document.querySelectorAll(imageSelector)];
-        texts = [...document.querySelectorAll("main h2, main h3, main p, main .eyebrow")].filter(node => !node.closest(".hero, .category-stack-card, .morph-gallery, .journey-map"));
+        cards = [...document.querySelectorAll(".home-about-image")];
+        texts = [...document.querySelectorAll("main h2, main h3, main p, main .eyebrow")].filter(node => !node.closest(".hero, .package-hero, .category-stack-card, .morph-gallery, .journey-map, .information-intro, .information-layout"));
         texts.forEach(node => node.setAttribute("data-story-text", ""));
         schedule();
       };
@@ -34,11 +35,19 @@ export default function ScrollStory() {
         // Read all geometry before changing styles; text offsets are removed
         // from their bounds so the effect does not feed back into itself.
         const imagePositions = images.filter(node => node.isConnected && node.parentElement).map(node => [node, node.parentElement.getBoundingClientRect()]);
+        const cardPositions = cards.filter(node => node.isConnected).map(node => [node, node.getBoundingClientRect(), values.get(node) || 0]);
         const textPositions = texts.filter(node => node.isConnected).map(node => [node, node.getBoundingClientRect(), values.get(node) || 0]);
         imagePositions.forEach(([node, box]) => {
           const travel = Math.min(node.matches(".hero-scene") ? 16 : 28, box.height * .07);
           const shift = Math.max(-travel, Math.min(travel, (height / 2 - box.top - box.height / 2) * .075));
           settling = apply(node, shift, "--story-shift") || settling;
+        });
+        cardPositions.forEach(([node, box, previous]) => {
+          // Measure the unshifted card to avoid feeding its animation back into itself.
+          const center = box.top - previous + box.height / 2;
+          const travel = innerWidth <= 640 ? 8 : 24;
+          const shift = Math.max(-travel, Math.min(travel, (height / 2 - center) * .08));
+          settling = apply(node, shift, "--about-card-shift") || settling;
         });
         textPositions.forEach(([node, box, previous]) => {
           const center = box.top - previous + box.height / 2;
@@ -58,7 +67,7 @@ export default function ScrollStory() {
       dispose = () => {
         stopped = true; mutations.disconnect(); cancelAnimationFrame(frame);
         removeEventListener("scroll", schedule); removeEventListener("resize", schedule);
-        values.forEach((_, node) => { node.style.removeProperty("--story-shift"); node.style.removeProperty("--story-text-shift"); node.removeAttribute("data-story-text"); });
+        values.forEach((_, node) => { node.style.removeProperty("--story-shift"); node.style.removeProperty("--story-text-shift"); node.style.removeProperty("--about-card-shift"); node.removeAttribute("data-story-text"); });
       };
     };
     setup(); preference.addEventListener("change", setup);

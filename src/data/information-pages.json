@@ -1,0 +1,714 @@
+{
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "eyebrow": "Legal Information",
+    "source": "https://emeraldisletravels.com/privacy-policy/",
+    "sourceModified": "2026-03-23T09:54:58",
+    "blocks": [
+      {
+        "tag": "p",
+        "text": "Your privacy is important to us. This Privacy Policy explains how we collect, use, store, and protect personal information submitted through this website, including inquiry forms, booking request forms, contact forms, and other travel-related communications."
+      },
+      {
+        "tag": "strong",
+        "text": "Information Collected"
+      },
+      {
+        "tag": "p",
+        "text": "Name, email, phone number, travel dates, destination preferences, inquiry details, and related travel request information."
+      },
+      {
+        "tag": "strong",
+        "text": "Used For"
+      },
+      {
+        "tag": "p",
+        "text": "Responding to inquiries, preparing quotations, planning itineraries, improving services, and handling customer communication."
+      },
+      {
+        "tag": "h3",
+        "text": "Quick Overview"
+      },
+      {
+        "tag": "li",
+        "text": "We collect only relevant inquiry details"
+      },
+      {
+        "tag": "li",
+        "text": "Your data is used for travel service communication"
+      },
+      {
+        "tag": "li",
+        "text": "We do not sell your personal information"
+      },
+      {
+        "tag": "li",
+        "text": "Third-party providers may access required booking data"
+      },
+      {
+        "tag": "li",
+        "text": "You may contact us regarding your information"
+      },
+      {
+        "tag": "li",
+        "text": "Website analytics may be used for improvement"
+      },
+      {
+        "tag": "h2",
+        "text": "Information We Collect"
+      },
+      {
+        "tag": "p",
+        "text": "We may collect personal information that you voluntarily provide when filling out inquiry forms, requesting quotations, booking travel services, subscribing to updates, or contacting us through the website. This may include your name, email address, phone number, travel preferences, group size, travel dates, and any information you choose to share."
+      },
+      {
+        "tag": "h2",
+        "text": "How We Use Your Information"
+      },
+      {
+        "tag": "p",
+        "text": "We use your information to respond to inquiries, prepare custom travel proposals, communicate package details, provide quotations, manage booking-related communication, improve our website experience, and deliver customer support before and after travel arrangements."
+      },
+      {
+        "tag": "h2",
+        "text": "Booking & Supplier Coordination"
+      },
+      {
+        "tag": "p",
+        "text": "If you proceed with a booking or request supplier-dependent services, some information may be shared with third-party providers such as hotels, transport operators, guides, park authorities, insurance providers, and payment processors, only to the extent reasonably necessary to provide travel services."
+      },
+      {
+        "tag": "h2",
+        "text": "Website Forms & Communication"
+      },
+      {
+        "tag": "p",
+        "text": "Information submitted through website forms may be used to contact you by email, phone, or messaging platforms regarding your inquiry, itinerary planning, quotation requests, booking follow-ups, or service updates related to your interest in our travel products."
+      },
+      {
+        "tag": "h2",
+        "text": "Analytics & Technical Data"
+      },
+      {
+        "tag": "p",
+        "text": "We may automatically collect limited technical information such as browser type, device type, pages visited, time spent on the website, and general usage behavior through cookies, analytics tools, or server logs, for the purpose of improving website performance and user experience."
+      },
+      {
+        "tag": "h2",
+        "text": "Cookies"
+      },
+      {
+        "tag": "p",
+        "text": "This website may use cookies or similar technologies to enhance functionality, remember user preferences, understand visitor behavior, and improve website usability. By continuing to use the website, you consent to the use of such technologies unless disabled in your browser settings."
+      },
+      {
+        "tag": "h2",
+        "text": "Data Protection"
+      },
+      {
+        "tag": "p",
+        "text": "We take reasonable administrative, technical, and organizational measures to help protect personal information against unauthorized access, disclosure, alteration, or misuse. However, no website or online transmission system can be guaranteed to be completely secure."
+      },
+      {
+        "tag": "h2",
+        "text": "Data Retention"
+      },
+      {
+        "tag": "p",
+        "text": "We may retain your information for as long as necessary to respond to your inquiry, provide requested services, maintain internal business records, comply with legal obligations, or resolve disputes related to travel services and customer communication."
+      },
+      {
+        "tag": "h2",
+        "text": "Third-Party Links"
+      },
+      {
+        "tag": "p",
+        "text": "This website may contain links to third-party websites, booking tools, payment gateways, maps, or partner services. We are not responsible for the privacy practices, security, or content of those external websites, and their policies may differ from ours."
+      },
+      {
+        "tag": "h2",
+        "text": "Your Choices"
+      },
+      {
+        "tag": "p",
+        "text": "You may choose not to provide certain personal information, but this may affect our ability to respond fully to your inquiry or provide specific travel planning or booking-related services. You may also contact us regarding the information you have submitted through this website."
+      },
+      {
+        "tag": "h2",
+        "text": "Children’s Privacy"
+      },
+      {
+        "tag": "p",
+        "text": "This website is not intentionally directed toward children for independent data submission. If personal information relating to minors is provided as part of a family travel inquiry, it should be submitted only by a parent, guardian, or authorized adult traveler."
+      },
+      {
+        "tag": "h2",
+        "text": "Policy Updates"
+      },
+      {
+        "tag": "p",
+        "text": "We may revise this Privacy Policy from time to time. Any updates will become effective when published on this website. Continued use of the website after changes are posted constitutes acceptance of the updated policy."
+      },
+      {
+        "tag": "h3",
+        "text": "Privacy Notice"
+      },
+      {
+        "tag": "p",
+        "text": "If you have submitted an inquiry and would like clarification regarding the information provided, please contact us through our official website contact channels."
+      },
+      {
+        "tag": "h2",
+        "text": "Our Privacy Policy"
+      },
+      {
+        "tag": "p",
+        "text": "This privacy policy explains how we collect, use, and protect your information. We gather personal details, travel preferences, and data on how you interact with our website. Our goal is to ensure your data is handled responsibly and securely."
+      },
+      {
+        "tag": "h3",
+        "text": "Data Collection"
+      },
+      {
+        "tag": "p",
+        "text": "We collect information you provide directly, such as when you book a trip or create an account."
+      },
+      {
+        "tag": "h3",
+        "text": "Data Usage"
+      },
+      {
+        "tag": "p",
+        "text": "Your data helps us personalize your experience and improve our services."
+      },
+      {
+        "tag": "h3",
+        "text": "Data Security"
+      },
+      {
+        "tag": "p",
+        "text": "We use advanced security measures to protect your information from unauthorized access."
+      },
+      {
+        "tag": "h3",
+        "text": "Your Rights"
+      },
+      {
+        "tag": "p",
+        "text": "You have the right to access, update, and request deletion of your personal information."
+      }
+    ]
+  },
+  "terms-of-use": {
+    "title": "Terms of Use",
+    "eyebrow": "Legal Information",
+    "source": "https://emeraldisletravels.com/terms-of-use/",
+    "sourceModified": "2026-03-23T09:47:26",
+    "blocks": [
+      {
+        "tag": "p",
+        "text": "Welcome to our website. These Terms of Use govern your access to and use of our travel-related content, inquiry forms, itineraries, destination pages, booking requests, and other services available through this website. By using this website, you agree to these terms and conditions."
+      },
+      {
+        "tag": "strong",
+        "text": "Applies To"
+      },
+      {
+        "tag": "p",
+        "text": "All website visitors, inquiries, and booking request users"
+      },
+      {
+        "tag": "strong",
+        "text": "Website Scope"
+      },
+      {
+        "tag": "p",
+        "text": "Tours, safaris, custom itineraries, destination content, and travel inquiries"
+      },
+      {
+        "tag": "h3",
+        "text": "Quick Overview"
+      },
+      {
+        "tag": "li",
+        "text": "Use the website lawfully"
+      },
+      {
+        "tag": "li",
+        "text": "Package details may change"
+      },
+      {
+        "tag": "li",
+        "text": "Inquiries are not confirmed bookings"
+      },
+      {
+        "tag": "li",
+        "text": "Travel documents are your responsibility"
+      },
+      {
+        "tag": "li",
+        "text": "Third-party services may apply"
+      },
+      {
+        "tag": "li",
+        "text": "Liability is limited by law"
+      },
+      {
+        "tag": "h2",
+        "text": "Acceptance of Terms"
+      },
+      {
+        "tag": "p",
+        "text": "By accessing, browsing, or using this website, you confirm that you have read, understood, and agreed to be bound by these Terms of Use. If you do not agree with these terms, you should not continue using the website."
+      },
+      {
+        "tag": "h2",
+        "text": "Use of the Website"
+      },
+      {
+        "tag": "p",
+        "text": "This website is intended to provide travel information, inspiration, package details, destination guidance, and inquiry options for users interested in tours, safaris, and custom travel arrangements. You agree to use this website only for lawful purposes and in a way that does not damage, disable, overburden, or interfere with the website or other users."
+      },
+      {
+        "tag": "h2",
+        "text": "No Guaranteed Booking Confirmation"
+      },
+      {
+        "tag": "p",
+        "text": "Submitting an inquiry, request form, or booking interest through this website does not constitute a confirmed reservation. All bookings remain subject to availability, operational feasibility, supplier confirmation, pricing validation, and written approval from our team."
+      },
+      {
+        "tag": "h2",
+        "text": "Package Information & Pricing"
+      },
+      {
+        "tag": "p",
+        "text": "We aim to ensure that package descriptions, travel times, prices, inclusions, exclusions, photos, and itineraries are presented as accurately as possible. However, travel products are dynamic, and information may change due to seasonality, supplier changes, park entry fees, transport conditions, hotel availability, exchange rate fluctuations, or government regulations."
+      },
+      {
+        "tag": "h2",
+        "text": "Custom Itineraries"
+      },
+      {
+        "tag": "p",
+        "text": "Some tours and safari packages shown on the website are sample itineraries intended for general guidance. Final travel plans may be customized based on travel dates, budget, group size, accommodation preferences, vehicle type, seasonal conditions, and activity availability."
+      },
+      {
+        "tag": "h2",
+        "text": "User Responsibilities"
+      },
+      {
+        "tag": "p",
+        "text": "You agree to provide accurate, current, and complete information when submitting any inquiry or booking request. You are responsible for reviewing all travel details shared with you before making payments or confirming services."
+      },
+      {
+        "tag": "h2",
+        "text": "Passports, Visas & Travel Documents"
+      },
+      {
+        "tag": "p",
+        "text": "It is the traveler’s sole responsibility to ensure that they possess valid passports, visas, permits, health documentation, vaccination certificates, travel insurance, and any other required documents for entry, transit, or participation in booked activities. We are not responsible for losses arising from missing, invalid, or expired documents."
+      },
+      {
+        "tag": "h2",
+        "text": "Health, Safety & Fitness to Travel"
+      },
+      {
+        "tag": "p",
+        "text": "Some tours, safaris, hikes, wildlife experiences, and adventure activities may involve physical exertion, remote locations, changing weather conditions, uneven terrain, or wildlife exposure. Travelers are responsible for ensuring they are medically and physically fit to travel and participate in booked experiences."
+      },
+      {
+        "tag": "h2",
+        "text": "Wildlife & Nature Experiences"
+      },
+      {
+        "tag": "p",
+        "text": "Wildlife sightings, weather conditions, road conditions, and natural events cannot be guaranteed. Safari and nature experiences depend on environmental and seasonal factors. Images displayed on the website are illustrative and may not represent exact sightings or conditions during your trip."
+      },
+      {
+        "tag": "h2",
+        "text": "Third-Party Providers"
+      },
+      {
+        "tag": "p",
+        "text": "Your travel arrangements may involve third-party suppliers such as hotels, airlines, transport operators, guides, activity providers, park authorities, insurance providers, and payment gateways. Their own terms, rules, and cancellation conditions may also apply. We are not liable for acts, errors, delays, omissions, or failures caused by third parties."
+      },
+      {
+        "tag": "h2",
+        "text": "Payments, Amendments & Cancellations"
+      },
+      {
+        "tag": "p",
+        "text": "Payment schedules, deposit requirements, amendment charges, cancellation fees, refunds, and supplier penalties may vary depending on the itinerary, season, destination, service type, and supplier policies. Final commercial terms will be shared during the booking process and must be accepted before confirmation."
+      },
+      {
+        "tag": "h2",
+        "text": "Intellectual Property"
+      },
+      {
+        "tag": "p",
+        "text": "All website content, including branding, text, design elements, layout structures, itinerary content, icons, images, graphics, downloadable materials, and custom website code, is protected by intellectual property laws unless otherwise stated. No material may be copied, reproduced, republished, or redistributed without prior written permission."
+      },
+      {
+        "tag": "h2",
+        "text": "Prohibited Conduct"
+      },
+      {
+        "tag": "p",
+        "text": "You must not misuse the website by attempting unauthorized access, introducing malicious code, scraping data, copying protected content, submitting false inquiries, impersonating others, or using the website in any fraudulent, abusive, or unlawful manner."
+      },
+      {
+        "tag": "h2",
+        "text": "Limitation of Liability"
+      },
+      {
+        "tag": "p",
+        "text": "To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising out of or related to your use of this website, reliance on website content, booking delays, supplier failures, travel disruptions, force majeure events, or inability to access the website."
+      },
+      {
+        "tag": "h2",
+        "text": "Force Majeure"
+      },
+      {
+        "tag": "p",
+        "text": "We are not responsible for failure or delay in performing obligations due to events beyond our reasonable control, including natural disasters, severe weather, disease outbreaks, political unrest, border closures, transport disruption, strikes, government restrictions, or wildlife-related operational restrictions."
+      },
+      {
+        "tag": "h2",
+        "text": "Privacy & Data Submission"
+      },
+      {
+        "tag": "p",
+        "text": "When you submit personal information through this website, you consent to the collection and use of that information for responding to inquiries, preparing itineraries, communicating quotations, and managing travel-related requests, subject to our privacy practices."
+      },
+      {
+        "tag": "h2",
+        "text": "External Links"
+      },
+      {
+        "tag": "p",
+        "text": "This website may contain links to external websites, maps, booking tools, partner platforms, or social media pages. We provide these for convenience only and do not control or endorse all external content, services, or security practices on those websites."
+      },
+      {
+        "tag": "h2",
+        "text": "Changes to These Terms"
+      },
+      {
+        "tag": "p",
+        "text": "We reserve the right to modify or update these Terms of Use at any time without prior notice. Updated terms become effective once published on this website. Your continued use of the website after any changes constitutes acceptance of those updated terms."
+      },
+      {
+        "tag": "h3",
+        "text": "Important Note"
+      },
+      {
+        "tag": "p",
+        "text": "For specific travel bookings, quotations, and custom safari arrangements, additional booking terms may apply and will be shared separately before confirmation."
+      }
+    ]
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "eyebrow": "Important Notice",
+    "source": "https://emeraldisletravels.com/disclaimer/",
+    "sourceModified": "2026-03-23T13:48:23",
+    "blocks": [
+      {
+        "tag": "p",
+        "text": "The content on this website is provided for general information, travel inspiration, and inquiry purposes only. While we strive to keep all information accurate and current, travel-related content may change due to factors beyond our control."
+      },
+      {
+        "tag": "strong",
+        "text": "Content Scope"
+      },
+      {
+        "tag": "p",
+        "text": "Destination pages, tour details, package descriptions, blog content, wildlife content, maps, routes, and travel images."
+      },
+      {
+        "tag": "strong",
+        "text": "Please Note"
+      },
+      {
+        "tag": "p",
+        "text": "Illustrations, route visuals, and travel examples may not always reflect final confirmed travel arrangements."
+      },
+      {
+        "tag": "h3",
+        "text": "Quick Overview"
+      },
+      {
+        "tag": "li",
+        "text": "Website information is general and may change"
+      },
+      {
+        "tag": "li",
+        "text": "Images may be illustrative"
+      },
+      {
+        "tag": "li",
+        "text": "Wildlife sightings are never guaranteed"
+      },
+      {
+        "tag": "li",
+        "text": "Travel conditions may vary by season and supplier"
+      },
+      {
+        "tag": "li",
+        "text": "External links are outside our control"
+      },
+      {
+        "tag": "li",
+        "text": "Final travel terms apply at booking stage"
+      },
+      {
+        "tag": "h2",
+        "text": "General Information Only"
+      },
+      {
+        "tag": "p",
+        "text": "All content on this website is provided for general informational purposes only and should not be interpreted as a guaranteed offer, confirmed booking, legal advice, medical advice, or binding service commitment unless expressly confirmed in writing."
+      },
+      {
+        "tag": "h2",
+        "text": "Travel Content May Change"
+      },
+      {
+        "tag": "p",
+        "text": "Prices, itineraries, hotel options, transport details, attraction availability, park entry conditions, travel times, visa requirements, and destination information may change without prior notice due to supplier updates, seasonal conditions, or regulatory requirements."
+      },
+      {
+        "tag": "h2",
+        "text": "Illustrative Images & Media"
+      },
+      {
+        "tag": "p",
+        "text": "Photos, route maps, destination visuals, wildlife images, and promotional graphics on the website may be used for illustrative or inspirational purposes. They may not always represent the exact hotel, route, room type, vehicle, guide, scenery, or wildlife experience available at the time of booking or travel."
+      },
+      {
+        "tag": "h2",
+        "text": "Wildlife Sightings"
+      },
+      {
+        "tag": "p",
+        "text": "Wildlife experiences are based on natural conditions and cannot be guaranteed. Animal movements, seasonal changes, weather, park regulations, and environmental factors may affect sightings during safari and nature-based travel experiences."
+      },
+      {
+        "tag": "h2",
+        "text": "Custom Itinerary Variations"
+      },
+      {
+        "tag": "p",
+        "text": "Sample itineraries shown on the website are intended as examples only. Actual travel routes, duration, accommodations, and included activities may vary depending on client preferences, availability, logistics, road conditions, weather, and final booking arrangements."
+      },
+      {
+        "tag": "h2",
+        "text": "No Warranty"
+      },
+      {
+        "tag": "p",
+        "text": "We make reasonable efforts to keep the website up to date, but we do not warrant that the website will always be uninterrupted, error-free, secure, complete, or free from inaccuracies or temporary service issues."
+      },
+      {
+        "tag": "h2",
+        "text": "Third-Party Services"
+      },
+      {
+        "tag": "p",
+        "text": "Travel services may depend on third-party suppliers including airlines, hotels, transfer providers, guides, insurance companies, payment processors, and external technology services. We are not responsible for service failures, delays, or losses caused directly by such third parties."
+      },
+      {
+        "tag": "h2",
+        "text": "External Websites"
+      },
+      {
+        "tag": "p",
+        "text": "The website may contain links to third-party websites for convenience. We do not control, maintain, or guarantee the accuracy, privacy, availability, or security of any external site, and use of those external sites is at your own discretion."
+      },
+      {
+        "tag": "h2",
+        "text": "Traveler Responsibility"
+      },
+      {
+        "tag": "p",
+        "text": "Travelers remain responsible for ensuring they meet passport, visa, health, insurance, fitness, and entry requirements relevant to their destinations and activities. Final responsibility for travel readiness rests with the traveler."
+      },
+      {
+        "tag": "h2",
+        "text": "Limitation of Responsibility"
+      },
+      {
+        "tag": "p",
+        "text": "To the fullest extent permitted by law, we are not responsible for losses, delays, inconvenience, disappointment, route changes, missed sightings, schedule changes, supplier failures, or travel disruptions arising from circumstances beyond our reasonable control."
+      },
+      {
+        "tag": "h3",
+        "text": "Final Confirmation Matters"
+      },
+      {
+        "tag": "p",
+        "text": "Any confirmed booking, quotation, or custom itinerary will be governed by the final terms, pricing, and supplier conditions shared during the booking process."
+      }
+    ]
+  },
+  "faq-page": {
+    "title": "Frequently Asked Questions",
+    "eyebrow": "Help & Support",
+    "source": "https://emeraldisletravels.com/faq-page/",
+    "sourceModified": "2026-03-23T13:48:19",
+    "blocks": [
+      {
+        "tag": "p",
+        "text": "Here are some of the most common questions travelers ask before planning a safari, holiday, or custom itinerary through our website. These answers are intended to provide general guidance before final booking confirmation."
+      },
+      {
+        "tag": "strong",
+        "text": "Topics Covered"
+      },
+      {
+        "tag": "p",
+        "text": "Bookings, custom tours, airport transfers, wildlife, documents, payments, travel planning, and itinerary changes."
+      },
+      {
+        "tag": "strong",
+        "text": "Need More Help?"
+      },
+      {
+        "tag": "p",
+        "text": "You can still contact us directly through the website inquiry form for tailor-made travel support."
+      },
+      {
+        "tag": "h3",
+        "text": "Quick Overview"
+      },
+      {
+        "tag": "li",
+        "text": "Inquiries are easy and flexible"
+      },
+      {
+        "tag": "li",
+        "text": "Most packages can be customized"
+      },
+      {
+        "tag": "li",
+        "text": "Airport transfers are commonly available"
+      },
+      {
+        "tag": "li",
+        "text": "Wildlife is natural and not guaranteed"
+      },
+      {
+        "tag": "li",
+        "text": "Travel documents remain your responsibility"
+      },
+      {
+        "tag": "li",
+        "text": "Final prices depend on dates and availability"
+      },
+      {
+        "tag": "h2",
+        "text": "1. How do I book a travel package?"
+      },
+      {
+        "tag": "p",
+        "text": "You can submit an inquiry through the package page or contact form on the website. Our team will review your request and respond with availability, pricing, and next steps. A booking is only confirmed after written confirmation and any required payment steps are completed."
+      },
+      {
+        "tag": "h2",
+        "text": "2. Can packages be customized?"
+      },
+      {
+        "tag": "p",
+        "text": "Yes. Most travel packages can be customized based on your travel dates, number of travelers, accommodation style, interests, duration, destination preferences, and planned activities. We can also create tailor-made itineraries for couples, families, groups, or private travelers."
+      },
+      {
+        "tag": "h2",
+        "text": "3. Do you provide airport transfers?"
+      },
+      {
+        "tag": "p",
+        "text": "Yes. Many travel packages include airport pickup and drop-off services, depending on the itinerary and destination. Transfer details will be confirmed during the quotation or booking process."
+      },
+      {
+        "tag": "h2",
+        "text": "4. What is the best time to travel?"
+      },
+      {
+        "tag": "p",
+        "text": "The best time to travel depends on the destination, weather patterns, wildlife seasons, and the type of experience you want. Our team can recommend the most suitable travel period based on your preferred itinerary and activities."
+      },
+      {
+        "tag": "h2",
+        "text": "5. Are wildlife sightings guaranteed?"
+      },
+      {
+        "tag": "p",
+        "text": "No. Wildlife sightings depend on natural conditions, animal movement, weather, and seasonal factors. While many parks and safari destinations offer strong viewing opportunities, sightings can never be guaranteed."
+      },
+      {
+        "tag": "h2",
+        "text": "6. Do I need travel insurance?"
+      },
+      {
+        "tag": "p",
+        "text": "Travel insurance is strongly recommended for most trips. Coverage can help protect against unexpected cancellations, delays, medical emergencies, baggage issues, and other travel-related risks."
+      },
+      {
+        "tag": "h2",
+        "text": "7. Are flights included in the packages?"
+      },
+      {
+        "tag": "p",
+        "text": "Some packages may include internal transfers or selected transport services, but international or domestic flights are not always included unless clearly stated in the package details or final quotation."
+      },
+      {
+        "tag": "h2",
+        "text": "8. What documents do I need for travel?"
+      },
+      {
+        "tag": "p",
+        "text": "This depends on your nationality, destination, transit points, and travel activity type. Travelers are responsible for ensuring they have valid passports, visas, permits, vaccination records, and any other required travel documentation before departure."
+      },
+      {
+        "tag": "h2",
+        "text": "9. Can I change my itinerary after booking?"
+      },
+      {
+        "tag": "p",
+        "text": "Changes may be possible depending on availability, supplier conditions, notice period, and the stage of the booking. Additional costs or amendment fees may apply if changes are requested after confirmation."
+      },
+      {
+        "tag": "h2",
+        "text": "10. How are prices confirmed?"
+      },
+      {
+        "tag": "p",
+        "text": "Prices are generally confirmed after your requested dates, availability, accommodation options, and service inclusions are checked. Final pricing may vary based on season, group size, room category, transport type, and supplier updates."
+      },
+      {
+        "tag": "h2",
+        "text": "11. Do you arrange private tours?"
+      },
+      {
+        "tag": "p",
+        "text": "Yes. Private tours, family trips, honeymoon itineraries, safari journeys, and custom multi-day travel plans can be arranged based on your requirements and preferred travel style."
+      },
+      {
+        "tag": "h2",
+        "text": "12. How long does it take to get a response?"
+      },
+      {
+        "tag": "p",
+        "text": "Response times may vary depending on the complexity of the inquiry and supplier checks, but we aim to reply as soon as possible with relevant travel guidance and next steps."
+      },
+      {
+        "tag": "h3",
+        "text": "Need a Tailor-Made Itinerary?"
+      },
+      {
+        "tag": "p",
+        "text": "If your travel plans are unique, use the website inquiry form and share your preferred dates, destinations, number of travelers, and interests so we can prepare a personalized proposal."
+      }
+    ]
+  }
+}

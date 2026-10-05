@@ -1,6 +1,7 @@
 "use client";
 import ActionButton from "./ActionButton";
 import SiteImage from "./SiteImage";
+import PackageHero from "./PackageHero";
 import JourneyCard from "./JourneyCard";
 import { useEffect, useState } from "react";
 import { tourCategories } from "../data/tour-categories";
@@ -21,7 +22,7 @@ export default function Catalogue({ destination = "" }) {
   const reset = () => { setCountry(destination); setDuration(""); setSearch(""); setCategory(""); const url = new URL(location.href); url.searchParams.delete("category"); history.replaceState(null, "", url); };
   const kenya = destination === "Kenya";
   return <>
-    <section className="collection-intro">
+    {!destination ? <PackageHero /> : <section className="collection-intro">
       <div className="collection-copy">
         <span className="eyebrow">{destination ? "THE " + destination.toUpperCase() + " COLLECTION" : "OUR JOURNEYS"}</span>
         <h1>{destination ? <>Discover <em>{destination}.</em></> : <>A little wonder.<br /><em>A world of possibility.</em></>}</h1>
@@ -32,7 +33,7 @@ export default function Catalogue({ destination = "" }) {
         <SiteImage src={kenya ? "/images/travel/kenya-giraffes.webp" : "/images/travel/sigiriya.webp"} alt={kenya ? "Giraffes in Kenya’s wilderness" : "Sigiriya rock fortress above the Sri Lankan forest"} sizes="(max-width: 800px) 100vw, 50vw" loading="eager" fetchPriority="high" />
         <figcaption>{kenya ? "KENYA / WILD AT HEART" : "SRI LANKA / AN ISLAND OF STORIES"}</figcaption>
       </figure>
-    </section>
+    </section>}
     <section className="section catalogue" id="journey-collection">
       <div className="collection-toolbar">
         <div><span className="eyebrow">CHOOSE YOUR NEXT CHAPTER</span><h2>The package collection</h2></div>

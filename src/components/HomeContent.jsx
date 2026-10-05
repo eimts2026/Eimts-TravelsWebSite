@@ -2,7 +2,6 @@ import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 import JourneyCard from "./JourneyCard";
 import packages from "../data/packages.json";
-import EnquiryBand from "./EnquiryBand";
 import MorphGallery from "./MorphGallery";
 import TourCategories from "./TourCategories";
 import HomeAbout from "./HomeAbout";
@@ -32,6 +31,5 @@ export default function HomeContent() {
         <SiteLink className="button light" href="/contact/">Contact Us <span aria-hidden="true">↗</span></SiteLink>
       </div>
     </section>
-    <EnquiryBand />
   </>;
 }
