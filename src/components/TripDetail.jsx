@@ -47,12 +47,59 @@ export default function TripDetail({ trip: p }) {
               </details>
             ))}
           </section>
-          {p.sections.map((s, i) => (
-            <section className="detail-section" key={i}>
-              <h2>{s.title}</h2>
-              <RichText html={s.body} />
-            </section>
-          ))}
+          {p.sections.map((s, i) => {
+            if (s.title === "Highlights") {
+              const activitiesSection = p.sections.find(
+                (sec) => sec.title === "Activities"
+              );
+              return (
+                <section
+                  className="detail-section highlights-activities-grid"
+                  key={i}
+                >
+                  <div>
+                    <h2>{s.title}</h2>
+                    <RichText html={s.body} />
+                  </div>
+                  {activitiesSection && (
+                    <div>
+                      <h2>{activitiesSection.title}</h2>
+                      <RichText html={activitiesSection.body} />
+                    </div>
+                  )}
+                </section>
+              );
+            }
+
+            if (s.title === "Activities") {
+              return null;
+            }
+
+            if (
+              s.title === "Inclusions & Exclusions" ||
+              s.title === "Inclusions and Exclusions"
+            ) {
+              const parts = s.body.split(/(?=<h3>What[’']s Not Included<\/h3>)/i);
+              if (parts.length === 2) {
+                return (
+                  <section className="detail-section" key={i}>
+                    <h2>{s.title}</h2>
+                    <div className="inclusions-grid">
+                      <RichText html={parts[0]} />
+                      <RichText html={parts[1]} />
+                    </div>
+                  </section>
+                );
+              }
+            }
+
+            return (
+              <section className="detail-section" key={i}>
+                <h2>{s.title}</h2>
+                <RichText html={s.body} />
+              </section>
+            );
+          })}
         </article>
         <aside className="trip-summary">
           <span className="eyebrow">MAKE THIS JOURNEY YOURS</span>
