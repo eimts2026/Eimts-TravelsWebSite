@@ -9,8 +9,8 @@
 .menu-open .immersive-toggle-bars i:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .menu-open .immersive-toggle-bars i:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .menu-open .immersive-toggle-bars i:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-.page-shell .menu-open .site-header.reference-header.immersive-header { color: white; background: #102e27; -webkit-backdrop-filter: none; backdrop-filter: none; border-color: transparent; box-shadow: none; transform: none; }
-.immersive-menu-panel { position: fixed; inset: 0; z-index: 999; background: #102e27; color: var(--paper); overflow-y: auto; overscroll-behavior: contain; clip-path: inset(0 0 0 100%); visibility: hidden; pointer-events: none; transition: clip-path .7s cubic-bezier(.76,0,.24,1), visibility 0s .7s; }
+.page-shell .menu-open .site-header.reference-header.immersive-header { color: white; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border-color: transparent; box-shadow: none; transform: none; }
+.immersive-menu-panel { position: fixed; inset: 0; z-index: 999; background-color: #102e27; background-image: linear-gradient(90deg,rgba(7,28,23,.85),rgba(7,28,23,.66)),url('/images/navigation/menu-coast.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; color: var(--paper); overflow-y: auto; overscroll-behavior: contain; clip-path: inset(0 0 0 100%); visibility: hidden; pointer-events: none; transition: clip-path .7s cubic-bezier(.76,0,.24,1), visibility 0s .7s; }
 .menu-open .immersive-menu-panel { clip-path: inset(0); visibility: visible; pointer-events: auto; transition: clip-path .8s cubic-bezier(.76,0,.24,1), visibility 0s; }
 .immersive-menu-content { min-height: 100svh; width: 100%; padding: 125px clamp(28px,7vw,112px) 35px; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; }
 .immersive-menu-intro { opacity: 0; transform: translateY(-10px); transition: opacity .4s, transform .4s; }
@@ -54,6 +54,7 @@
   .immersive-menu-links a { font-size: clamp(38px,6vw,62px); }
 }
 @media (max-width:700px) {
+  .immersive-menu-panel { background-image: linear-gradient(180deg,rgba(7,28,23,.78),rgba(7,28,23,.85)),url('/images/navigation/menu-coast-mobile.webp'); }
   .immersive-menu-content { padding: 100px 7% 28px; gap: 24px; }
   .immersive-menu-main { grid-template-columns: 1fr; gap: 26px; }
   .immersive-menu-links a { font-size: clamp(36px,9vw,60px); }
