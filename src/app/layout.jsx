@@ -4,7 +4,6 @@ import "../styles.css";
 import "../navigation.css";
 import "../image-cards.css";
 import SmoothScroll from "../components/SmoothScroll";
-import PageLoader from "../components/PageLoader";
 import { siteUrl, JsonLd } from "../lib/seo";
 export const metadata = {
   metadataBase: siteUrl,
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
       </head>
       <body id="top">
         <SmoothScroll />
-        <PageLoader />
         <JsonLd
           data={{
             "@context": "https://schema.org",

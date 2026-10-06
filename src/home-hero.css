@@ -1,0 +1,84 @@
+/* Photographic theatre: looping landscapes and foreground depth. */
+.home .hero.destination-theatre { height: 100svh; min-height: 650px; padding: 0; display: block; isolation: isolate; background: #102e27; }
+.theatre-accessible-title { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.theatre-track { display: flex; height: 100%; width: 100%; transition: transform 1.8s cubic-bezier(.65,0,.25,1); }
+.theatre-track.theatre-reset { transition: none; }
+.theatre-scene { flex: 0 0 100%; height: 100%; position: relative; overflow: hidden; isolation: isolate; }
+.theatre-landscape, .theatre-foreground { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+.theatre-landscape { z-index: -3; }
+.theatre-wash { position: absolute; inset: 0; z-index: -2; background: linear-gradient(0deg,#061b17e8,transparent 65%),linear-gradient(180deg,#102e2760,transparent 30%); }
+.theatre-title { position: absolute; inset: 30% 5% auto; text-align: center; color: white; z-index: -1; }
+.theatre-title > span { font-size: 11px; letter-spacing: .3em; font-weight: 500; }
+.theatre-title > strong { display: block; font-weight: 600; font-size: clamp(64px,11vw,172px); letter-spacing: -.065em; line-height: 1.25; }
+.theatre-foreground { pointer-events: none; mask-image: linear-gradient(transparent 43%,#0003 56%,#000 68%); -webkit-mask-image: linear-gradient(transparent 43%,#0003 56%,#000 68%); filter: brightness(.65); z-index: 0; }
+.theatre-caption { position: absolute; top: 58%; left: 7%; right: 7%; text-align: center; color: white; z-index: 2; animation: theatre-caption-in 1s ease both; }
+.theatre-caption p { font-size: clamp(17px,2vw,26px); font-weight: 400; margin: 0 0 18px; line-height: 1.45; color: #fff; }
+.theatre-caption .story-button { --action-surface: var(--paper); --action-text: var(--paper); --action-inverse: var(--forest); }
+.theatre-destinations { position: absolute; left: 7%; right: 7%; bottom: 85px; display: flex; justify-content: space-between; gap: 20px; z-index: 4; }
+.theatre-destinations button { display: flex; align-items: center; gap: 15px; padding: 8px; border: 0; color: white; background: transparent; cursor: pointer; text-align: left; opacity: .65; transition: opacity .3s; }
+.theatre-destinations button[aria-pressed="true"], .theatre-destinations button:hover { opacity: 1; }
+.theatre-thumb { display: block; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex-shrink: 0; box-shadow: 0 0 0 5px #ffffff14; }
+.theatre-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.theatre-destinations small { display: block; font-size: 9px; letter-spacing: .14em; margin-bottom: 6px; }
+.theatre-destinations strong { font-size: 14px; letter-spacing: .03em; font-weight: 600; }
+.theatre-destinations button:focus-visible, .theatre-scroll:focus-visible { outline: 2px solid white; outline-offset: 5px; }
+.theatre-scroll { position: absolute; bottom: 22px; left: calc(50% - 22px); width: 44px; height: 44px; display: grid; place-items: center; color: white; font-size: 24px; z-index: 4; }
+@keyframes theatre-caption-in { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0; } }
+@media (max-width:700px) {
+  .home .hero.destination-theatre { min-height: 620px; }
+  .theatre-title { top: 31%; }
+  .theatre-title > strong { font-size: clamp(56px,13vw,90px); }
+  .theatre-caption { top: 53%; }
+  .theatre-caption p { font-size: 17px; max-width: 310px; margin: 0 auto 16px; }
+  .theatre-destinations { left: 4%; right: 4%; bottom: 85px; gap: 6px; }
+  .theatre-destinations button { flex-direction: column; text-align: center; gap: 11px; padding: 6px; flex: 1; }
+  .theatre-thumb { width: 40px; height: 40px; }
+  .theatre-destinations small { font-size: 8px; }
+  .theatre-destinations strong { font-size: 11px; }
+}
+@media (prefers-reduced-motion:reduce) { .theatre-track, .theatre-caption { transition: none; animation: none; } }
+@font-face { font-family: 'Caveat'; src: url('/fonts/caveat.ttf') format('truetype'); font-style: normal; font-weight: 400 700; font-display: swap; }
+.theatre-landscape { object-position: center; }
+.theatre-title { top: 43%; }
+.theatre-title > strong { text-transform: uppercase; font-weight: 800; font-size: clamp(70px,11.5vw,180px); letter-spacing: -.045em; line-height: 1.05; white-space: nowrap; }
+.theatre-foreground { mask-image: none; -webkit-mask-image: none; filter: none; }
+.theatre-caption { top: 64%; }
+.theatre-caption p { font-family: 'Caveat', cursive; font-weight: 500; font-size: clamp(30px,3.8vw,58px); line-height: 1.15; color: #dfb755; text-shadow: 0 2px 12px #102e2760; margin-bottom: 18px; }
+@media (max-width:700px) {
+  .theatre-title { top: 40%; left: 3%; right: 3%; }
+  .theatre-title > strong { font-size: clamp(42px,11vw,78px); }
+  .theatre-caption { top: 57%; }
+  .theatre-caption p { font-size: 30px; max-width: 340px; }
+}
+.theatre-title { top: 34%; } @media (max-width:700px) { .theatre-title { top: 38%; } }
+/* Each scene shares one crop and explicit stacking: photo, title, landmark, shade. */
+.theatre-track { position: absolute; inset: 0; display: block; transition: none; }
+.theatre-scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 1s ease, visibility 0s 1s; }
+.theatre-scene.is-active { opacity: 1; visibility: visible; transition: opacity 1s ease; }
+.theatre-landscape { z-index: 0; }
+.theatre-title { z-index: 1; top: var(--subject-title-y, 40%); transform: translateY(-50%); }
+.theatre-foreground { z-index: 2; }
+.theatre-wash { z-index: 3; pointer-events: none; background: linear-gradient(0deg,#061b17bd,transparent 52%),linear-gradient(180deg,#102e2740,transparent 25%); }
+@media (max-width:700px) {
+  .theatre-title { top: var(--subject-title-y,38%); }
+  /* Keep the title near the skyline in a portrait crop, retaining foreground depth. */
+  .theatre-scene:nth-child(2) .theatre-title { top: var(--subject-title-y); }
+  .theatre-caption { top: 55%; }
+}
+@media (prefers-reduced-motion:reduce) { .theatre-scene { transition: none; } }
+
+.theatre-scene:nth-child(2) .theatre-title > strong { display: flex; justify-content: space-between; font-size: clamp(70px,10.8vw,180px); }
+@media (max-width:700px) { .theatre-scene:nth-child(2) .theatre-title > strong { font-size: clamp(38px,11vw,78px); } }
+
+/* A quiet entrance, with lettering held behind the photographic foreground. */
+.theatre-scene.is-active .theatre-title > strong { animation: theatre-type-in 1.4s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes theatre-type-in { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion:reduce) { .theatre-scene.is-active .theatre-title > strong { animation: none; } }
+/* Keep the luminance silhouettes below the title on the open landscape slides. */
+.theatre-foreground.foreground-0,
+.theatre-foreground.foreground-2 { clip-path: inset(54% 0 0); }
+@media (max-width:700px) {
+  .theatre-foreground.foreground-0,
+  .theatre-foreground.foreground-2 { clip-path: inset(57% 0 0); }
+}
+

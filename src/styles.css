@@ -824,6 +824,35 @@ footer {
   letter-spacing: 0.12em;
   flex: 1;
 }
+
+/* The site should read as one continuous canvas; keep controls and cards styled,
+   but remove decorative section and content divider rules. */
+.site-header,
+.home .site-header,
+.hero-bottom,
+.value-row,
+.footer-top,
+.filters,
+.information-content details,
+.section-heading,
+.card-discover,
+.journey-stop-list li {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+footer,
+.section,
+.philosophy,
+.home-about,
+.home-why,
+.tour-categories,
+.selected-journeys,
+.home-travel-gallery {
+  border: 0;
+}
+
+.footer-mail { border-bottom: 0; }
 .filters select,
 .filters input {
   display: block;
@@ -2208,6 +2237,8 @@ html.lenis { scroll-behavior: auto; }
 
 /* Floating navigation and a footer revealed at the end of the page. */
 .home-about-action { display: flex; justify-content: center; }
+.page-shell main section { border-top: 0; border-bottom: 0; }
+.page-shell .hero-bottom, .page-shell .value-row, .page-shell .home-why-grid article { border-top: 0; border-bottom: 0; }
 .page-shell .site-header.reference-header,
 .page-shell .site-header.reference-header.is-floating,
 .page-shell.home .site-header.reference-header:not(.is-floating) {

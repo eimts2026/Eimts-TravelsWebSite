@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import "../home-hero.css";
 import HomeContent from "../components/HomeContent";
 import PageShell from "../components/PageShell";
 import { metadata as seo } from "../lib/seo";
