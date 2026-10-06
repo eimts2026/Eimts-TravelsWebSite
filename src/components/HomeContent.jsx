@@ -5,6 +5,7 @@ import packages from "../data/packages.js";
 import MorphGallery from "./MorphGallery";
 import TourCategories from "./TourCategories";
 import HomeAbout from "./HomeAbout";
+import HomePlaces from "./HomePlaces";
 const galleryPhotos = [
   ["stilt-fishermen", "Stilt fishermen at sunset"],
   ["waterfall", "A waterfall in Sri Lanka’s lush highlands"],
@@ -17,6 +18,7 @@ export default function HomeContent() {
   return <>
     <HomeAbout />
     <TourCategories />
+    <HomePlaces />
     <section className="section selected-journeys">
       <div className="section-heading"><div><span className="eyebrow">NOW, IMAGINE YOUR DAYS</span><h2>Journeys worth<br /><em>making time for.</em></h2></div><SiteLink className="text-link" href="/packages/">Explore all packages ↗</SiteLink></div>
       <div className="journey-grid">{["sri-lanka-beach-wildlife-tour", "6-day-amboseli-and-masai-mara-luxury-safari", "sri-lanka-honeymoon-escape"].map(slug => <JourneyCard key={slug} trip={packages.find(p => p.url === "/packages/" + slug + "/")} />)}</div>

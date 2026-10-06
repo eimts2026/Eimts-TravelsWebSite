@@ -1,6 +1,8 @@
 import SiteLink from './SiteLink';
 import SiteImage from './SiteImage';
 import AboutMotion from './AboutMotion';
+import AboutHeroVideo from './AboutHeroVideo';
+import AboutCount from './AboutCount';
 import packages, { groupPackageVariants } from '../data/packages';
 
 const values = [
@@ -13,10 +15,9 @@ export default function About() {
   const journeys = groupPackageVariants(packages);
   return <AboutMotion>
     <section className="about-opening" aria-labelledby="about-title" data-parallax-layers>
-      <div className="about-opening-landscape" data-parallax-layer="1"><img src="/videos/packages/poster.webp" alt="Misty tea country in Sri Lanka" width="1280" height="720" fetchPriority="high" /></div>
+      <div className="about-opening-landscape" data-parallax-layer="1"><AboutHeroVideo /></div>
       <div className="about-opening-wash" data-parallax-layer="2" aria-hidden="true" />
       <div className="about-opening-title" data-parallax-layer="3"><span className="eyebrow">THE PEOPLE BEHIND YOUR JOURNEY</span><h1 id="about-title">A world to explore.<br /><em>A story to share.</em></h1><p>We’re Emerald Isle Travels.<br />Our story begins with the places that move you.</p></div>
-      <figure className="about-opening-window" data-parallax-layer="4"><SiteImage src="/images/navigation/kenya.webp" alt="Elephants beneath Kilimanjaro in Amboseli, Kenya" sizes="(max-width: 700px) 42vw, 28vw" /><figcaption>From island paths to open plains.</figcaption></figure>
       <a className="about-scroll-cue" href="#our-story">SCROLL INTO OUR STORY <span aria-hidden="true">↓</span></a>
     </section>
     <section className="about-story-chapter" id="our-story" aria-labelledby="our-story-title">
@@ -29,7 +30,7 @@ export default function About() {
     </section>
     <section className="about-horizons" aria-labelledby="about-horizons-title"><figure className="about-image-card"><SiteImage src="/images/navigation/kenya.webp" alt="A herd of elephants in Amboseli National Park, Kenya" sizes="100vw" /></figure><div><span className="eyebrow">TWO PLACES. SO MANY POSSIBILITIES.</span><h2 id="about-horizons-title" data-about-reveal>Different horizons.<br /><em>The same thoughtful care.</em></h2></div></section>
     <section className="about-values" aria-labelledby="values-title"><div className="about-values-heading"><span className="eyebrow">WHAT GUIDES US</span><h2 id="values-title" data-about-reveal>Our values.<br /><em>Your peace of mind.</em></h2><p data-about-reveal>The principles we bring to every conversation, every plan and every journey.</p></div><div className="about-values-list">{values.map(([title, description]) => <article key={title}><h3 data-about-reveal>{title}</h3><p data-about-reveal>{description}</p></article>)}</div></section>
-    <section className="about-facts" aria-label="Our travel collection"><span className="eyebrow">OUR WORLD, AT A GLANCE</span><div className="about-facts-grid"><div><strong>02</strong><h3 data-about-reveal>Destinations</h3><p data-about-reveal>Sri Lanka &amp; Kenya</p></div><div><strong>{journeys.length}</strong><h3 data-about-reveal>Distinct journeys</h3><p data-about-reveal>In our current travel collection</p></div><div><strong>{journeys.filter(p=>p.country === 'Sri Lanka').length}</strong><h3 data-about-reveal>Island discoveries</h3><p data-about-reveal>Journeys through Sri Lanka</p></div><div><strong>{journeys.filter(p=>p.country === 'Kenya').length}</strong><h3 data-about-reveal>Kenyan adventures</h3><p data-about-reveal>Journeys through Kenya</p></div></div></section>
-    <section className="about-invitation"><span className="eyebrow">THE NEXT STORY COULD BE YOURS</span><h2 data-about-reveal>Where do you<br /><em>want to begin?</em></h2><SiteLink className="button" href="/contact/">Tell us your travel ideas</SiteLink><SiteLink className="text-link" href="/packages/">Explore our journeys</SiteLink></section>
+    <section className="about-facts" aria-label="Our travel collection"><span className="eyebrow">OUR WORLD, AT A GLANCE</span><div className="about-facts-grid"><div><AboutCount value={2} /><h3 data-about-reveal>Destinations</h3><p data-about-reveal>Sri Lanka &amp; Kenya</p></div><div><AboutCount value={journeys.length} /><h3 data-about-reveal>Distinct journeys</h3><p data-about-reveal>In our current travel collection</p></div><div><AboutCount value={journeys.filter(p=>p.country === 'Sri Lanka').length} /><h3 data-about-reveal>Island discoveries</h3><p data-about-reveal>Journeys through Sri Lanka</p></div><div><AboutCount value={journeys.filter(p=>p.country === 'Kenya').length} /><h3 data-about-reveal>Kenyan adventures</h3><p data-about-reveal>Journeys through Kenya</p></div></div></section>
+    <section className="about-invitation"><span className="eyebrow">THE NEXT STORY COULD BE YOURS</span><h2 data-about-reveal>Where do you<br /><em>want to begin?</em></h2><SiteLink className="button" href="/contact/">Tell us your travel ideas</SiteLink></section>
   </AboutMotion>;
 }

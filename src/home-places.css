@@ -1,0 +1,29 @@
+.home-places { display: grid; grid-template-columns: .8fr 1.3fr 1fr; align-items: center; gap: clamp(24px,3vw,56px); padding: 90px 7.2%; background: var(--paper); color: var(--forest); }
+.home-places-intro h2 { font: 500 clamp(32px,3.2vw,60px)/1.1 var(--heading); letter-spacing: -.045em; margin: 24px 0; }
+.home-places-intro p { font-size: 15px; line-height: 1.8; color: var(--muted); }
+.home-places-map-wrap { position: relative; min-width: 0; }
+.home-places-island { position: relative; height: 700px; background: radial-gradient(ellipse at center, #d6e9ec80, #e6f0ed30 55%, transparent 72%); }
+.home-places-map { height: 100%; background: #e1ead7; isolation: isolate; clip-path: inset(50%); }
+.home-island-pin { position: absolute; z-index: 3; display: block; border: 0; padding: 0; background: none; color: var(--forest); cursor: pointer; transform: translate(-11px,-30px); }
+.home-island-pin svg { display: block; width: 22px; height: 30px; filter: drop-shadow(0 3px 6px #163d3220); transition: color .25s, scale .25s; }
+.home-island-pin span { position: absolute; left: 26px; top: calc(5px + var(--label-offset, 0px)); font: 700 9px var(--sans); text-transform: uppercase; white-space: nowrap; text-shadow: 0 1px 4px var(--paper), 0 0 6px var(--paper); }
+.home-island-pin.label-west span { left: auto; right: 26px; }
+.home-island-pin.is-selected { color: #bd733f; z-index: 4; }
+.home-island-pin:hover svg { scale: 1.08; }
+.home-island-pin:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; border-radius: 8px; }
+.home-map-attribution { position: absolute; right: 0; bottom: 0; z-index: 5; font-size: 11px; color: var(--muted); }
+.home-map-attribution summary { cursor: pointer; list-style: none; padding: 8px; font-size: 16px; }
+.home-map-attribution p { position: absolute; bottom: 30px; right: 0; width: 210px; padding: 14px; background: var(--paper); border-radius: 8px; box-shadow: 0 8px 30px #163d3218; line-height: 1.6; }
+.home-place-card { min-width: 0; background: #ffffff80; border-radius: 20px; overflow: hidden; }
+.home-place-photo { aspect-ratio: 1/1.08; overflow: hidden; }
+.home-place-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.home-place-photo:hover img { transform: scale(1.035); }
+.home-place-copy { padding: 28px; }
+.home-place-copy h3 { font: 500 clamp(26px,2.2vw,38px)/1.1 var(--heading); letter-spacing: -.03em; margin: 14px 0; }
+.home-place-copy p { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 22px; }
+.home-place-card-content { animation: home-place-enter .45s ease both; }
+.home-places-map-fallback { position: absolute; top: 40%; left: 12%; right: 12%; text-align: center; }
+@keyframes home-place-enter { from { opacity: .35; translate: 0 5px; } to { opacity: 1; translate: 0; } }
+@media (max-width:1100px) { .home-places { grid-template-columns: 1fr 1fr; } .home-places-intro { grid-column: 1/-1; max-width: 650px; } .home-places-island { height: 650px; } }
+@media (max-width:650px) { .home-places { grid-template-columns: minmax(0,1fr); padding: 60px 6%; gap: 28px; } .home-places-island { height: 640px; overflow: clip; } .home-place-photo { aspect-ratio: 4/3; } .home-place-copy { padding: 24px; } .home-island-pin span, .home-island-pin.label-west span { display: none; font-size: 9px; padding: 4px; left: 50%; right: auto; top: -22px; transform: translateX(-50%); background: var(--paper); border-radius: 4px; } .home-island-pin.is-selected span, .home-island-pin:hover span, .home-island-pin:focus-visible span { display: block; } }
+@media (prefers-reduced-motion:reduce) { .home-place-card-content { animation: none; } .home-place-photo img, .home-island-pin svg { transition: none; } }

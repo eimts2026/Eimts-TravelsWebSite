@@ -10,14 +10,18 @@ export default function AboutMotion({ children }) {
       if (preference.matches) return;
       const scene = root.current.querySelector('[data-parallax-layers]');
       const layers = [...scene.querySelectorAll('[data-parallax-layer]')];
-      const texts = [...root.current.querySelectorAll('[data-about-reveal]')];
+      const texts = [...root.current.querySelectorAll('h1, h2, h3, p, .eyebrow')];
       const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); reveal.unobserve(entry.target); }
-      }), { rootMargin: '0px 0px -24px 0px' });
+        if (!entry.isIntersecting) {
+          entry.target.style.setProperty('--about-reveal-offset', entry.boundingClientRect.bottom <= 24 ? '-12px' : '12px');
+        }
+        entry.target.classList.toggle('is-revealed', entry.isIntersecting);
+      }), { rootMargin: '-24px 0px -24px 0px', threshold: 0 });
       texts.forEach(node => {
         node.classList.add('about-reveal-ready');
-        if (node.getBoundingClientRect().top < innerHeight) node.classList.add('is-revealed');
-        else reveal.observe(node);
+        const bounds = node.getBoundingClientRect();
+        if (bounds.top < innerHeight && bounds.bottom > 0) node.classList.add('is-revealed');
+        reveal.observe(node);
       });
       let frame = 0;
       const update = () => {
@@ -35,7 +39,10 @@ export default function AboutMotion({ children }) {
         cancelAnimationFrame(frame); reveal.disconnect();
         removeEventListener('scroll', schedule); removeEventListener('resize', schedule);
         layers.forEach(layer => layer.style.removeProperty('--about-layer-y'));
-        texts.forEach(node => node.classList.remove('about-reveal-ready', 'is-revealed'));
+        texts.forEach(node => {
+          node.classList.remove('about-reveal-ready', 'is-revealed');
+          node.style.removeProperty('--about-reveal-offset');
+        });
       };
     };
     setup(); preference.addEventListener('change', setup);
