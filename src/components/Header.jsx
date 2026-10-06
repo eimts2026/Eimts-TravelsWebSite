@@ -99,8 +99,8 @@ export default function Header() {
           </div>)}</nav>
           <div className="immersive-menu-destinations">
             <div className="immersive-menu-images">
-              <SiteLink href="/destinations/sri-lanka/" aria-label="Explore Sri Lanka" onClick={() => setOpen(false)}><SiteImage src="/images/navigation/sri-lanka-bridge.webp" alt="A traveler overlooking the Nine Arch Bridge in Ella, Sri Lanka" sizes="(max-width: 700px) 45vw, 23vw" /><span>Sri Lanka <i aria-hidden="true">↗</i></span></SiteLink>
-              <SiteLink href="/destinations/kenya/" aria-label="Explore Kenya" onClick={() => setOpen(false)}><SiteImage src="/images/navigation/kenya.webp" alt="Elephants in Amboseli National Park, Kenya, with Kilimanjaro behind them, photographed by Ninaras" sizes="(max-width: 700px) 45vw, 23vw" /><span>Kenya <i aria-hidden="true">↗</i></span></SiteLink>
+              <SiteLink href="/packages/?country=Sri%20Lanka" aria-label="Explore Sri Lanka" onClick={() => setOpen(false)}><SiteImage src="/images/navigation/sri-lanka-bridge.webp" alt="A traveler overlooking the Nine Arch Bridge in Ella, Sri Lanka" sizes="(max-width: 700px) 45vw, 23vw" /><span>Sri Lanka <i aria-hidden="true">↗</i></span></SiteLink>
+              <SiteLink href="/packages/?country=Kenya" aria-label="Explore Kenya" onClick={() => setOpen(false)}><SiteImage src="/images/navigation/kenya.webp" alt="Elephants in Amboseli National Park, Kenya, with Kilimanjaro behind them, photographed by Ninaras" sizes="(max-width: 700px) 45vw, 23vw" /><span>Kenya <i aria-hidden="true">↗</i></span></SiteLink>
             </div>
           </div>
         </div>

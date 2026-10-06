@@ -67,8 +67,8 @@
 }
 @media (prefers-reduced-motion:reduce) { .theatre-scene { transition: none; } }
 
-.theatre-scene:nth-child(2) .theatre-title > strong { display: flex; justify-content: space-between; font-size: clamp(70px,10.8vw,180px); }
-@media (max-width:700px) { .theatre-scene:nth-child(2) .theatre-title > strong { font-size: clamp(38px,11vw,78px); } }
+.theatre-scene.scene-1 .theatre-title > strong { display: flex; justify-content: space-between; font-size: clamp(70px,10.8vw,180px); }
+@media (max-width:700px) { .theatre-scene.scene-1 .theatre-title > strong { font-size: clamp(38px,11vw,78px); } }
 
 /* A quiet entrance, with lettering held behind the photographic foreground. */
 .theatre-scene.is-active .theatre-title > strong { animation: theatre-type-in 1.4s cubic-bezier(.2,.7,.2,1) both; }
@@ -80,5 +80,46 @@
 @media (max-width:700px) {
   .theatre-foreground.foreground-0,
   .theatre-foreground.foreground-2 { clip-path: inset(57% 0 0); }
+}
+
+/* A small band of real palm silhouettes passes in front of the central letters. */
+.theatre-foreground.foreground-0 {
+  clip-path: none;
+  mask-image: linear-gradient(90deg,transparent 44%,#000 47%,#000 55%,transparent 59%),linear-gradient(transparent calc(var(--subject-title-y,40vh) - 35px),#000 calc(var(--subject-title-y,40vh) + 5px));
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(90deg,transparent 44%,#000 47%,#000 55%,transparent 59%),linear-gradient(transparent calc(var(--subject-title-y,40vh) - 35px),#000 calc(var(--subject-title-y,40vh) + 5px));
+  -webkit-mask-composite: source-in;
+}
+.theatre-scene.scene-0 .theatre-title > strong { text-shadow: 0 2px 14px #102e271a; }
+
+/* Keep the landscape and its foreground perfectly aligned during the drift. */
+.theatre-landscape, .theatre-foreground {
+  transform-origin: center;
+  animation: theatre-photo-drift 15s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.destination-theatre.is-running .theatre-scene.is-active .theatre-landscape,
+.destination-theatre.is-running .theatre-scene.is-active .theatre-foreground { animation-play-state: running; }
+@keyframes theatre-photo-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .theatre-landscape, .theatre-foreground { animation: none; }
+}
+
+/* Sliding photographic chapters; duplicate end frames make the wrap seamless. */
+.theatre-track { display: flex; width: 100%; transition: transform 2s cubic-bezier(.65,0,.25,1); }
+.theatre-track.theatre-reset { transition: none; }
+.theatre-scene { position: relative; inset: auto; flex: 0 0 100%; opacity: 1; visibility: visible; transition: none; perspective: 1400px; }
+.theatre-foreground { animation-name: theatre-depth-drift; }
+.destination-theatre.is-running .theatre-scene .theatre-landscape,
+.destination-theatre.is-running .theatre-scene .theatre-foreground { animation-play-state: running; }
+@keyframes theatre-depth-drift {
+  from { transform: scale(1) translate3d(0,0,0); }
+  to { transform: scale(1.05) translate3d(0,-2px,0); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .theatre-track { transition: none; }
 }
 

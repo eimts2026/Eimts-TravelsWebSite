@@ -17,7 +17,7 @@ export default function Gallery() {
         </p>
       </section>
       <section className="section gallery-grid">
-        <SiteLink href="/packages/sri-lanka-beach-wildlife-tour/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/sri-lanka-beach-wildlife-tour.webp"
             alt="9 Days Sri Lanka Beach & Wildlife Adventure"
@@ -29,7 +29,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/7-day-kenya-safari-adventure-2/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/kenya-giraffes.webp"
             alt="7-Day Kenya Safari Adventure"
@@ -41,7 +41,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/7-day-sopa-lodges-circuit-safari/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/7-day-sopa-lodges-circuit-safari.webp"
             alt="7-Day Sopa Lodges Circuit Safari"
@@ -53,7 +53,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/6-day-amboseli-and-masai-mara-luxury-safari/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/kenya-elephants.webp"
             alt="6-Day Amboseli and Masai Mara Luxury Safari"
@@ -65,7 +65,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/6-day-sopa-all-inclusive-safari-in-kenya/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/kenya-elephants.webp"
             alt="6-Day Sopa All-inclusive Safari in Kenya"
@@ -77,7 +77,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/sri-lanka-lsland-loop-our/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/sigiriya.webp"
             alt="Sri Lanka Island Loop Tour"
@@ -89,7 +89,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/sri-lanka-wildlife-safari-experience/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/sri-lanka-wildlife-safari-experience.webp"
             alt="Sri Lanka Wildlife Safari Experience"
@@ -101,7 +101,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.webp"
             alt="8-Day Masai Mara, Amboseli, All-Inclusive Kenya Safari"
@@ -115,7 +115,7 @@ export default function Gallery() {
             {"↗"}
           </span>
         </SiteLink>
-        <SiteLink href="/packages/sri-lanka-pilgrimage-tour/">
+        <SiteLink href="/packages/">
           <SiteImage
             src="/images/travel/sri-lanka-pilgrimage-tour.webp"
             alt="Sri Lanka Pilgrimage Tour"

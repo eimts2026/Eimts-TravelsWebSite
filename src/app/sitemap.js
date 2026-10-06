@@ -4,8 +4,6 @@ export default function sitemap() {
   return [
     "/",
     "/packages/",
-    "/destinations/sri-lanka/",
-    "/destinations/kenya/",
     "/about/",
     "/gallery/",
     "/contact/",

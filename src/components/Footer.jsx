@@ -21,8 +21,8 @@ export default function Footer() {
         <div className="footer-columns">
           <div>
             <span className="eyebrow">{"YOUR NEXT CHAPTER"}</span>
-            <SiteLink href="/destinations/sri-lanka/">{"Discover Sri Lanka"}</SiteLink>
-            <SiteLink href="/destinations/kenya/">{"Explore Kenya"}</SiteLink>
+            <SiteLink href="/packages/?country=Sri%20Lanka">{"Discover Sri Lanka"}</SiteLink>
+            <SiteLink href="/packages/?country=Kenya">{"Explore Kenya"}</SiteLink>
             <SiteLink href="/packages/">{"All journeys"}</SiteLink>
             <SocialLinks className="footer-socials" />
           </div>

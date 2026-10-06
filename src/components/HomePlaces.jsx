@@ -22,19 +22,22 @@ export default function HomePlaces() {
 
   useEffect(() => {
     if (!enabled) return;
+    const element = canvas.current;
+    if (!element) return;
     let disposed = false, map, resize;
     import('leaflet').then(module => {
       if (disposed) return;
       const L = module.default || module;
-      map = L.map(canvas.current, { attributionControl: false, scrollWheelZoom: false, dragging: false, zoomControl: false, touchZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, zoomSnap: .1 });
+      map = L.map(element, { attributionControl: false, scrollWheelZoom: false, dragging: false, zoomControl: false, touchZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, zoomSnap: .1 });
       const fit = () => {
+        if (disposed || !element.isConnected) return;
         map.fitBounds([[5.7, 79.4], [9.95, 82]], { padding: [28, 32], animate: false });
         const path = coastline.map(ring => ring.map(([lng, lat], index) => {
           const point = map.latLngToContainerPoint([lat, lng]);
           return `${index ? 'L' : 'M'}${point.x} ${point.y}`;
         }).join(' ') + 'Z').join(' ');
-        canvas.current.style.clipPath = `path('${path}')`;
-        const { width, height } = canvas.current.getBoundingClientRect();
+        element.style.clipPath = `path('${path}')`;
+        const { width, height } = element.getBoundingClientRect();
         const labels = [];
         setPinPositions(Object.fromEntries([...places].sort((a, b) => b.lat - a.lat).map(item => {
           const point = map.latLngToContainerPoint([item.lat, item.lng]);
@@ -53,8 +56,11 @@ export default function HomePlaces() {
       L.tileLayer(process.env.NEXT_PUBLIC_MAP_TILE_URL || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: process.env.NEXT_PUBLIC_MAP_TILE_ATTRIBUTION || '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 19,
       }).addTo(map);
-      resize = new ResizeObserver(() => { map.invalidateSize({ pan: false }); fit(); });
-      resize.observe(canvas.current);
+      resize = new ResizeObserver(() => {
+        if (disposed || !element.isConnected) return;
+        map.invalidateSize({ pan: false }); fit();
+      });
+      resize.observe(element);
     }).catch(() => { if (!disposed) setMapFailed(true); });
     return () => { disposed = true; resize?.disconnect(); map?.remove(); };
   }, [enabled]);
