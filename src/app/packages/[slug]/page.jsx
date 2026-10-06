@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import packages from "../../../data/packages.json";
+import packages from "../../../data/packages.js";
 import TripDetail from "../../../components/TripDetail";
 import PageShell from "../../../components/PageShell";
 import { metadata as seo, JsonLd, siteUrl } from "../../../lib/seo";

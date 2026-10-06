@@ -1,4 +1,5 @@
 import Content from "../../components/About";
+import "../../about.css";
 import PageShell from "../../components/PageShell";
 import { metadata as seo } from "../../lib/seo";
 export const metadata = seo(

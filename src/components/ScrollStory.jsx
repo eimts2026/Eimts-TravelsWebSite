@@ -10,13 +10,56 @@ export default function ScrollStory() {
     const setup = () => {
       dispose();
       if (preference.matches) return;
+      const nodes = new Set();
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.setAttribute("data-home-text-visible", "");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+      const collect = () => {
+        document.querySelectorAll(".page-shell.home main :is(h1,h2,h3,h4,h5,h6,p)").forEach(node => {
+          if (nodes.has(node) || node.closest(".hero")) return;
+          nodes.add(node);
+          // Already visible text stays readable, including after route restoration.
+          if (node.getBoundingClientRect().top < innerHeight) {
+            node.setAttribute("data-home-text-visible", "");
+          }
+          const siblings = [...node.parentElement.children].filter(item => item.matches("h1,h2,h3,h4,h5,h6,p"));
+          node.style.setProperty("--home-text-delay", `${Math.min(siblings.indexOf(node), 2) * 60}ms`);
+          node.setAttribute("data-home-text", "");
+          if (!node.hasAttribute("data-home-text-visible")) observer.observe(node);
+        });
+      };
+      collect();
+      const mutations = new MutationObserver(collect);
+      mutations.observe(document.body, { childList: true, subtree: true });
+      dispose = () => {
+        observer.disconnect(); mutations.disconnect();
+        nodes.forEach(node => {
+          node.removeAttribute("data-home-text");
+          node.removeAttribute("data-home-text-visible");
+          node.style.removeProperty("--home-text-delay");
+        });
+      };
+    };
+    setup(); preference.addEventListener("change", setup);
+    return () => { dispose(); preference.removeEventListener("change", setup); };
+  }, [pathname]);
+  useEffect(() => {
+    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    let dispose = () => {};
+    const setup = () => {
+      dispose();
+      if (preference.matches) return;
       let images = [], cards = [], texts = [], frame = 0, stopped = false;
       const values = new Map();
       const imageSelector = ".hero-scene, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";
       const collect = () => {
-        images = [...document.querySelectorAll(imageSelector)];
+        images = [...document.querySelectorAll(imageSelector)].filter(node => !node.closest('.package-collection-page'));
         cards = [...document.querySelectorAll(".home-about-image")];
-        texts = [...document.querySelectorAll("main h2, main h3, main p, main .eyebrow")].filter(node => !node.closest(".hero, .package-hero, .category-stack-card, .morph-gallery, .journey-map, .information-intro, .information-layout"));
+        texts = [...document.querySelectorAll("main h2, main h3, main p, main .eyebrow")].filter(node => !node.closest(".page-shell.home, .about-narrative, .hero, .package-hero, .package-collection-page, .category-stack-card, .morph-gallery, .journey-map, .information-intro, .information-layout"));
         texts.forEach(node => node.setAttribute("data-story-text", ""));
         schedule();
       };

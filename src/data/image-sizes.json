@@ -246,5 +246,65 @@
   "/images/travel/sri-lanka-wildlife-safari-experience.webp": {
     "width": 800,
     "height": 750
+  },
+  "/images/package-collection/cards/7-day-kenya-safari-adventure-2.webp": {
+    "width": 900,
+    "height": 507
+  },
+  "/images/package-collection/cards/6-day-amboseli-and-masai-mara-luxury-safari.webp": {
+    "width": 800,
+    "height": 450
+  },
+  "/images/package-collection/cards/9-day-wildlife-diani-beach-safari.webp": {
+    "width": 820,
+    "height": 520
+  },
+  "/images/package-collection/cards/6-day-sopa-all-inclusive-safari-in-kenya.webp": {
+    "width": 660,
+    "height": 440
+  },
+  "/images/package-collection/cards/3-day-mid-range-masai-mara-lake-naivasha-safari.webp": {
+    "width": 900,
+    "height": 500
+  },
+  "/images/package-collection/cards/10-day-best-of-kenya-safari-mara-amboseli-samburu-ol-pejeta-naivasha.webp": {
+    "width": 750,
+    "height": 450
+  },
+  "/images/package-collection/cards/5-day-lake-naivasha-lake-nakuru-masai-mara-safari.webp": {
+    "width": 850,
+    "height": 500
+  },
+  "/images/package-collection/cards/4-days-lake-naivasha-lake-nakuru-masai-mara-4x4-safari.webp": {
+    "width": 669,
+    "height": 446
+  },
+  "/images/package-collection/cards/4-days-maasai-mara-lake-naivasha-lake-nakuru-budget-safari.webp": {
+    "width": 750,
+    "height": 420
+  },
+  "/images/package-collection/cards/sri-lanka-leopard.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "/images/home-gallery/sigiriya.webp": {
+    "width": 1600,
+    "height": 611
+  },
+  "/images/home-gallery/waterfall.webp": {
+    "width": 1600,
+    "height": 891
+  },
+  "/images/home-gallery/nine-arch-bridge.webp": {
+    "width": 1600,
+    "height": 812
+  },
+  "/images/navigation/sri-lanka.webp": {
+    "width": 1400,
+    "height": 1050
+  },
+  "/images/navigation/kenya.webp": {
+    "width": 1400,
+    "height": 933
   }
 }

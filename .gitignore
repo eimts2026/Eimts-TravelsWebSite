@@ -6,3 +6,4 @@ dist/
 .next/
 out/
 __pycache__/
+tmp/

@@ -52,6 +52,12 @@ export default async function InformationPage({ params }) {
       </nav>
       <article className="information-content" aria-label={page.title}>
         <Content blocks={page.blocks.slice(1)} />
+        {information === "disclaimer" && <section aria-labelledby="photo-credits">
+          <h2 id="photo-credits">Photography credits</h2>
+          <p>Navigation photograph of Sigiriya: <a href="https://commons.wikimedia.org/wiki/File:SigiriyaRock.jpg">Santhoshj</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+          <p>Navigation photograph of Amboseli National Park with Mount Kilimanjaro: <a href="https://commons.wikimedia.org/wiki/File:Amboseli_National_Park_and_Mt._Kilimanjaro.jpg">Ninaras</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+          <p>Both photographs have been resized, converted to WebP and cropped for display.</p>
+        </section>}
         <SiteLink className="text-link" href="/contact/">Get in touch ↗</SiteLink>
       </article>
     </div>

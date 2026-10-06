@@ -1,49 +1,42 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import SiteLink from "./SiteLink";
+import SiteLink from './SiteLink';
+import { useEffect, useRef, useState } from 'react';
 
 export default function PackageHero() {
-  const video = useRef(null);
-  const section = useRef(null);
-  const [playing, setPlaying] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const manualPause = useRef(false);
+  const film = useRef(null);
+  const cover = useRef(null);
+  const [ready, setReady] = useState(false);
   useEffect(() => {
-    const film = video.current;
-    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    const video = film.current;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
     let visible = true;
     const update = () => {
-      if (preference.matches || document.hidden || !visible || manualPause.current) film.pause();
-      else film.play().catch(() => setPlaying(false));
+      if (motion.matches || document.hidden || !visible) {
+        video.pause();
+        if (motion.matches) setReady(false);
+      } else {
+        if (!video.getAttribute('src')) video.src = '/videos/packages/tourism.mp4';
+        video.play().catch(() => setReady(false));
+      }
     };
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update(); });
-    observer.observe(section.current);
-    preference.addEventListener("change", update);
-    document.addEventListener("visibilitychange", update);
+    observer.observe(cover.current);
+    motion.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
     update();
-    return () => { observer.disconnect(); film.pause(); preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", update); };
+    return () => { video.pause(); observer.disconnect(); motion.removeEventListener('change', update); document.removeEventListener('visibilitychange', update); };
   }, []);
-  const toggle = () => {
-    const film = video.current;
-    if (film.paused) { manualPause.current = false; film.play().catch(() => setPlaying(false)); }
-    else { manualPause.current = true; film.pause(); }
-  };
-  return <section ref={section} className="package-hero" aria-labelledby="package-hero-title">
-    <div className="package-hero-media" aria-hidden="true">
-      <img src="/videos/packages/poster.webp" alt="" fetchPriority="high" />
-      <video ref={video} hidden={failed} muted loop playsInline preload="none" poster="/videos/packages/poster.webp" onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }}>
-        <source src="/videos/packages/journeys.mp4" type="video/mp4" />
-      </video>
+  return <section ref={cover} className="packages-cover" aria-labelledby="packages-title">
+    <div className="packages-cover-media" aria-hidden="true">
+      <img src="/videos/packages/poster.webp" alt="" width="1280" height="720" fetchPriority="high" />
+      <video ref={film} className={ready ? 'is-ready' : ''} muted loop playsInline preload="none" poster="/videos/packages/poster.webp" onPlaying={() => setReady(true)} onError={() => setReady(false)} />
     </div>
-    <div className="package-hero-copy">
-      <span className="eyebrow">SRI LANKA & KENYA · OUR JOURNEYS</span>
-      <h1 id="package-hero-title">Find your<br /><em>somewhere.</em></h1>
-      <p>From island trails to open savannahs.<br />Discover a journey that feels like you.</p>
-      <SiteLink className="package-hero-cta" href="#journey-collection">Explore packages <span aria-hidden="true">↓</span></SiteLink>
-    </div>
-    <div className="package-hero-bottom">
-      <span>Two destinations. A world of possibility.</span>
-      {!failed && <button type="button" onClick={toggle} aria-label={playing ? "Pause background video" : "Play background video"}>{playing ? "Pause film Ⅱ" : "Play film ▷"}</button>}
+    <div className="packages-cover-shade" />
+    <div className="packages-cover-copy">
+      <span className="packages-kicker">THE EMERALD ISLE COLLECTION</span>
+      <h1 id="packages-title">Extraordinary places.<br /><em>Your kind of journey.</em></h1>
+      <p>Island discoveries in Sri Lanka.<br />Wild encounters in Kenya. Find the journey that calls to you.</p>
+      <SiteLink className="button light" href="#journey-collection">Find your journey</SiteLink>
     </div>
   </section>;
 }

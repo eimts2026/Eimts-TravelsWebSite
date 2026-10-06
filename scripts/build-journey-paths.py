@@ -162,7 +162,7 @@ def curve(a, b, mode):
 
 
 def main():
-    command = 'import {getJourneyRoute} from "./src/data/journey-routes.js"; import fs from "node:fs"; const trips=JSON.parse(fs.readFileSync("src/data/packages.json","utf8")); console.log(JSON.stringify(trips.map(t=>({slug:t.url.split("/").filter(Boolean).at(-1),country:t.country,...getJourneyRoute(t)}))));'
+    command = 'import {getJourneyRoute} from "./src/data/journey-routes.js"; import trips from "./src/data/packages.js"; console.log(JSON.stringify(trips.map(t=>({slug:t.url.split("/").filter(Boolean).at(-1),country:t.country,...getJourneyRoute(t)}))));'
     manifest = json.loads(subprocess.check_output(["node", "--input-type=module", "-e", command], cwd=ROOT, text=True))
     generated, shared = {}, {}
     for route in manifest:

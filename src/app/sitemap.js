@@ -1,4 +1,4 @@
-import packages from "../data/packages.json";
+import packages from "../data/packages.js";
 import { siteUrl } from "../lib/seo";
 export default function sitemap() {
   return [

@@ -2,9 +2,11 @@ import fs from "node:fs/promises";
 import assert from "node:assert/strict";
 import { filterPackages } from "../src/data/filter.js";
 import { journeyRoutes, getJourneyRoute } from "../src/data/journey-routes.js";
-const packages = JSON.parse(
-  await fs.readFile("src/data/packages.json", "utf8"),
-);
+import packages, { groupPackageVariants } from '../src/data/packages.js';
+assert.equal(groupPackageVariants(packages).length, 33);
+assert.equal(new Set(packages.map(p => p.image)).size, 34);
+const variant = packages.find(p => p.itinerarySource);
+assert.equal(variant.itinerary, packages.find(p => p.url === variant.itinerarySource).itinerary);
 const fontCss = await fs.readFile('public/fonts/fonts.css', 'utf8');
 for (const match of fontCss.matchAll(/url\(['"]?(\/fonts\/[^)'"\s]+)/g)) {
   await fs.access('public' + match[1]);

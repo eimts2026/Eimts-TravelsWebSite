@@ -5,7 +5,7 @@ import PackageHero from "./PackageHero";
 import JourneyCard from "./JourneyCard";
 import { useEffect, useState } from "react";
 import { tourCategories } from "../data/tour-categories";
-import packages from "../data/packages.json";
+import packages from "../data/packages.js";
 import { filterPackages } from "../data/filter";
 export default function Catalogue({ destination = "" }) {
   const [country, setCountry] = useState(destination);

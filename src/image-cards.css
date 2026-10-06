@@ -1,0 +1,18 @@
+/* Zoom only the photograph; existing card positioning and scroll movement stay intact. */
+.page-shell :is(.destination-card, .card-image, .home-about-image, .category-stack-card, .gallery-grid > a, .immersive-menu-images > a, .philosophy-photo, .contact-photo, .collection-card-photo) img,
+.page-shell .morph-gallery :is(.morph-gallery-photo, .morph-gallery-canvas, .morph-gallery-thumbnails img) {
+  transition: transform .7s cubic-bezier(.22,.61,.36,1), opacity .4s ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  .page-shell :is(.destination-card, .card-image, .home-about-image, .category-stack-card, .gallery-grid > a, .immersive-menu-images > a, .philosophy-photo, .contact-photo):hover img,
+  .page-shell .collection-card:hover .collection-card-photo img,
+  .page-shell .morph-gallery:hover :is(.morph-gallery-photo, .morph-gallery-canvas),
+  .page-shell .morph-gallery-thumbnails button:hover img { transform: scale(1.04); }
+}
+.page-shell :is(.destination-card, .journey-card-link, .gallery-grid > a, .immersive-menu-images > a):focus-visible img,
+.page-shell .collection-card:focus-within .collection-card-photo img,
+.page-shell .morph-gallery-thumbnails button:focus-visible img { transform: scale(1.04); }
+@media (prefers-reduced-motion:reduce) {
+  .page-shell :is(.destination-card, .card-image, .home-about-image, .category-stack-card, .gallery-grid > a, .immersive-menu-images > a, .philosophy-photo, .contact-photo, .collection-card-photo) img,
+  .page-shell .morph-gallery :is(.morph-gallery-photo, .morph-gallery-canvas, .morph-gallery-thumbnails img) { transform: none !important; transition: none; }
+}

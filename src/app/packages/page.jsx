@@ -1,4 +1,7 @@
-import Content from "../../components/Catalogue";
+import Content from "../../components/PackageCollection";
+import "../../packages.css";
+import { Suspense } from "react";
+import Loading from "../loading";
 import PageShell from "../../components/PageShell";
 import { metadata as seo } from "../../lib/seo";
 export const metadata = seo(
@@ -9,7 +12,7 @@ export const metadata = seo(
 export default function Page() {
   return (
     <PageShell>
-      <Content />
+      <Suspense fallback={<Loading />}><Content /></Suspense>
     </PageShell>
   );
 }
