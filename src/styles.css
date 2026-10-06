@@ -897,6 +897,27 @@ footer {
   font-size: 42px;
   margin: 14px 0 26px;
 }
+.highlights-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+.highlights-activities-grid > div > h2 {
+  font-size: 42px;
+  margin: 14px 0 26px;
+}
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+@media (max-width: 768px) {
+  .highlights-activities-grid,
+  .inclusions-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
 .rich-text {
   font-size: 13px;
   color: #59685b;
@@ -907,6 +928,10 @@ footer {
   font-size: 15px;
   color: var(--forest);
   margin: 24px 0 12px;
+}
+.rich-text h3:first-child,
+.rich-text h4:first-child {
+  margin-top: 0;
 }
 .rich-text li {
   margin-bottom: 8px;
