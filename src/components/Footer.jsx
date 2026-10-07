@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>{"© 2026 Emerald Isle Travels. All rights reserved."}</span>
           <span>{"A little further from ordinary."}</span>
-          <SiteLink href="#top">{"Back to top ↑"}</SiteLink>
+
         </div>
       </footer>
     </>

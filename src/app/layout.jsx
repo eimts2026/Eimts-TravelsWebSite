@@ -4,6 +4,7 @@ import "../styles.css";
 import "../navigation.css";
 import "../image-cards.css";
 import SmoothScroll from "../components/SmoothScroll";
+import ScrollToTop from "../components/ScrollToTop";
 import { siteUrl, JsonLd } from "../lib/seo";
 export const metadata = {
   metadataBase: siteUrl,
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           }}
         />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

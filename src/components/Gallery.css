@@ -1,0 +1,136 @@
+.travel-photo-gallery {
+  background: #f7f7f5;
+  padding: 16px 32px 128px;
+}
+.travel-photo-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  height: clamp(300px, 31vw, 460px);
+  max-width: 1600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #25382a;
+}
+.travel-photo-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  z-index: -2;
+}
+.travel-photo-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #111b1830 0%, #0b141c38 35%, #07120dea 100%);
+}
+.travel-photo-hero h1 {
+  margin: 0;
+  padding: 24px;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: clamp(46px, 6.5vw, 100px);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+  text-align: center;
+}
+.travel-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 112px auto 0;
+}
+.travel-photo {
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1.74;
+  background: #e2e5df;
+}
+.travel-photo-wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 2.28;
+}
+.travel-photo > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .travel-photo-gallery { padding: 16px 24px 80px; }
+  .travel-photo-grid { margin-top: 72px; gap: 20px; }
+}
+@media (max-width: 767px) {
+  .travel-photo-gallery { padding: 16px 16px 56px; }
+  .travel-photo-hero { height: 280px; border-radius: 10px; }
+  .travel-photo-hero h1 { font-size: clamp(42px, 10vw, 68px); padding: 16px; }
+  .travel-photo-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 48px; }
+  .travel-photo, .travel-photo-wide { grid-column: auto; aspect-ratio: 1.4; border-radius: 10px; }
+}
+
+/* Photographs stay in their frames; the viewer preserves their full proportions. */
+button.travel-photo { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; }
+.travel-photo > img, .travel-photo-hero > img { transition: transform 850ms cubic-bezier(.22,.61,.36,1); }
+.travel-photo-hero-open { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; background: transparent; cursor: zoom-in; }
+@media (hover: hover) and (pointer: fine) {
+  .travel-photo:hover > img, .travel-photo-hero:has(.travel-photo-hero-open:hover) > img { transform: scale(1.025); }
+}
+.travel-photo:focus-visible, .travel-photo-hero-open:focus-visible { outline: 3px solid var(--forest); outline-offset: 5px; }
+.travel-photo-hero-open:focus-visible { outline-color: white; outline-offset: -8px; }
+.travel-photo-viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  padding: 76px 80px;
+  background: #07110df5;
+  color: #fff;
+  overflow: hidden;
+}
+.travel-photo-viewer[open] { display: flex; align-items: center; justify-content: center; }
+.travel-photo-viewer::backdrop { background: #07110d; }
+.travel-photo-full { display: block; width: 100%; height: 100%; object-fit: contain; }
+.travel-photo-viewer button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff14;
+  color: #fff;
+  cursor: pointer;
+  font: 26px/1 var(--sans);
+  transition: background 250ms cubic-bezier(.22,.61,.36,1);
+}
+.travel-photo-viewer button:hover { background: #ffffff30; }
+.travel-photo-viewer button:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.travel-photo-close { top: 16px; right: 20px; }
+.travel-photo-previous { left: 16px; top: calc(50% - 24px); }
+.travel-photo-next { right: 16px; top: calc(50% - 24px); }
+.travel-photo-count { position: absolute; top: 30px; left: 24px; font-size: 13px; letter-spacing: .12em; }
+@media (max-width: 767px) {
+  .travel-photo-viewer { padding: 76px 12px 88px; }
+  .travel-photo-previous, .travel-photo-next { top: auto; bottom: 20px; }
+  .travel-photo-previous { left: calc(50% - 60px); }
+  .travel-photo-next { right: calc(50% - 60px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .travel-photo > img, .travel-photo-hero > img, .travel-photo-viewer button { transition: none; }
+  .travel-photo:hover > img, .travel-photo-hero > img { transform: none; }
+}

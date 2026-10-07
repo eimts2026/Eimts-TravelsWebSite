@@ -310,5 +310,69 @@
   "/images/navigation/kenya.webp": {
     "width": 1400,
     "height": 933
+  },
+  "/images/gallery/savannah-sunset.webp": {
+    "width": 2560,
+    "height": 1706
+  },
+  "/images/gallery/ella-nine-arch-bridge.webp": {
+    "width": 2560,
+    "height": 1600
+  },
+  "/images/gallery/amboseli-kilimanjaro.webp": {
+    "width": 2560,
+    "height": 1713
+  },
+  "/images/gallery/sigiriya.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/gallery/nuwara-eliya-tea.webp": {
+    "width": 2560,
+    "height": 1889
+  },
+  "/images/gallery/kenya-giraffe.webp": {
+    "width": 2560,
+    "height": 1703
+  },
+  "/images/gallery/mirissa-coast.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/gallery/stilt-fishermen.webp": {
+    "width": 2560,
+    "height": 1709
+  },
+  "/images/gallery/zebra-herd.webp": {
+    "width": 2560,
+    "height": 2048
+  },
+  "/images/gallery/sri-lanka-highlands.webp": {
+    "width": 2560,
+    "height": 1922
+  },
+  "/images/gallery/mount-kenya-elephants.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/gallery/diani-beach.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/gallery/wildebeest-migration.webp": {
+    "width": 2560,
+    "height": 1753
+  },
+  "/images/gallery/lakeside-temple.webp": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/images/gallery/lamu-dhow.webp": {
+    "width": 2560,
+    "height": 1635
+  },
+  "/images/gallery/amboseli-safari.webp": {
+    "width": 2560,
+    "height": 1713
   }
 }

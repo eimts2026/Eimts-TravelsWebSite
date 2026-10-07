@@ -1,151 +1,64 @@
-import SiteLink from "./SiteLink";
+"use client";
+import { useEffect, useRef, useState } from "react";
 import SiteImage from "./SiteImage";
+import { galleryHero, galleryPhotos } from "../data/gallery";
+import "./Gallery.css";
+
+const photos = [galleryHero, ...galleryPhotos];
 export default function Gallery() {
+  const [active, setActive] = useState(null);
+  const viewer = useRef(null);
+  const isOpen = active !== null;
+  const photo = isOpen ? photos[active] : null;
+  const move = direction => setActive(index => (index + direction + photos.length) % photos.length);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const dialog = viewer.current;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    dialog.showModal();
+    return () => {
+      dialog.close();
+      document.body.style.overflow = overflow;
+    };
+  }, [isOpen]);
+
   return (
-    <>
-      <section className="page-intro">
-        <span className="eyebrow">{"A WINDOW INTO THE JOURNEY"}</span>
-        <h1>
-          {"Stay a little."}
-          <br />
-          <em>{"Look a little closer."}</em>
-        </h1>
-        <p>
-          {
-            "Wildlife encounters, island escapes and moments worth travelling for."
-          }
-        </p>
+    <div className="travel-photo-gallery">
+      <section className="travel-photo-hero" aria-labelledby="travel-gallery-title">
+        <SiteImage src={galleryHero.src} alt={galleryHero.alt} sizes="100vw" loading="eager" fetchPriority="high" />
+        <h1 id="travel-gallery-title">Travel Gallery</h1>
+        <button className="travel-photo-hero-open" type="button" aria-label="View the full savannah sunset photograph" onClick={() => setActive(0)} />
       </section>
-      <section className="section gallery-grid">
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/sri-lanka-beach-wildlife-tour.webp"
-            alt="9 Days Sri Lanka Beach & Wildlife Adventure"
-            loading="lazy"
-          />
-          <span>
-            {"Sri Lanka"}
-            <strong>{"9 Days Sri Lanka Beach & Wildlife Adventure"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/kenya-giraffes.webp"
-            alt="7-Day Kenya Safari Adventure"
-            loading="lazy"
-          />
-          <span>
-            {"Kenya"}
-            <strong>{"7-Day Kenya Safari Adventure"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/7-day-sopa-lodges-circuit-safari.webp"
-            alt="7-Day Sopa Lodges Circuit Safari"
-            loading="lazy"
-          />
-          <span>
-            {"Kenya"}
-            <strong>{"7-Day Sopa Lodges Circuit Safari"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/kenya-elephants.webp"
-            alt="6-Day Amboseli and Masai Mara Luxury Safari"
-            loading="lazy"
-          />
-          <span>
-            {"Kenya"}
-            <strong>{"6-Day Amboseli and Masai Mara Luxury Safari"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/kenya-elephants.webp"
-            alt="6-Day Sopa All-inclusive Safari in Kenya"
-            loading="lazy"
-          />
-          <span>
-            {"Kenya"}
-            <strong>{"6-Day Sopa All-inclusive Safari in Kenya"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/sigiriya.webp"
-            alt="Sri Lanka Island Loop Tour"
-            loading="lazy"
-          />
-          <span>
-            {"Sri Lanka"}
-            <strong>{"Sri Lanka Island Loop Tour"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/sri-lanka-wildlife-safari-experience.webp"
-            alt="Sri Lanka Wildlife Safari Experience"
-            loading="lazy"
-          />
-          <span>
-            {"Sri Lanka"}
-            <strong>{"Sri Lanka Wildlife Safari Experience"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.webp"
-            alt="8-Day Masai Mara, Amboseli, All-Inclusive Kenya Safari"
-            loading="lazy"
-          />
-          <span>
-            {"Kenya"}
-            <strong>
-              {"8-Day Masai Mara, Amboseli, All-Inclusive Kenya Safari"}
-            </strong>
-            {"↗"}
-          </span>
-        </SiteLink>
-        <SiteLink href="/packages/">
-          <SiteImage
-            src="/images/travel/sri-lanka-pilgrimage-tour.webp"
-            alt="Sri Lanka Pilgrimage Tour"
-            loading="lazy"
-          />
-          <span>
-            {"Sri Lanka"}
-            <strong>{"Sri Lanka Pilgrimage Tour"}</strong>
-            {"↗"}
-          </span>
-        </SiteLink>
+      <section className="travel-photo-grid" aria-label="Photographs of Sri Lanka and Kenya">
+        {galleryPhotos.map((photo, index) => (
+          <button type="button" className={`travel-photo${index % 3 === 2 ? " travel-photo-wide" : ""}`} key={photo.id} aria-label={`View full photograph: ${photo.alt}`} onClick={() => setActive(index + 1)}>
+            <SiteImage
+              src={photo.src}
+              alt={photo.alt}
+              sizes={index % 3 === 2
+                ? "(max-width: 767px) calc(100vw - 32px), (max-width: 1440px) 86vw, 1280px"
+                : "(max-width: 767px) calc(100vw - 32px), (max-width: 1440px) 43vw, 628px"}
+              style={{ objectPosition: photo.position || "center" }}
+            />
+          </button>
+        ))}
       </section>
-      <section className="enquiry-band">
-        <div>
-          <span className="eyebrow">{"YOUR JOURNEY, YOUR WAY"}</span>
-          <h2>
-            {"Let’s make it "}
-            <em>{"yours."}</em>
-          </h2>
-          <p>
-            {
-              "A place you’ve dreamed of. A pace that feels right. Tell us what you have in mind."
-            }
-          </p>
-        </div>
-        <SiteLink className="button light" href="/contact/">
-          {"Plan my journey "}
-          <span aria-hidden="true">{"↗"}</span>
-        </SiteLink>
-      </section>
-    </>
+      <dialog ref={viewer} className="travel-photo-viewer" aria-label="Full photograph viewer" data-lenis-prevent onClose={() => setActive(null)} onCancel={() => setActive(null)} onClick={event => { if (event.target === event.currentTarget) setActive(null); }} onKeyDown={event => {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+          event.preventDefault();
+          move(event.key === "ArrowLeft" ? -1 : 1);
+        }
+      }}>
+        {photo && <>
+          <span className="travel-photo-count" aria-live="polite">{active + 1} / {photos.length}</span>
+          <button type="button" className="travel-photo-close" aria-label="Close photograph viewer" autoFocus onClick={() => setActive(null)}>×</button>
+          <button type="button" className="travel-photo-previous" aria-label="Previous photograph" onClick={() => move(-1)}>←</button>
+          <img className="travel-photo-full" src={photo.src} alt={photo.alt} />
+          <button type="button" className="travel-photo-next" aria-label="Next photograph" onClick={() => move(1)}>→</button>
+        </>}
+      </dialog>
+    </div>
   );
 }

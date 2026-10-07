@@ -7,9 +7,10 @@ export default function SmoothScroll() {
     let disposed = false;
     let generation = 0;
     let menuOpen = false;
-    const top = () => {
-      if (instance) instance.scrollTo(0, { immediate: true, force: true });
-      else window.scrollTo({ top: 0, behavior: 'instant' });
+    const top = event => {
+      const immediate = event?.detail?.smooth !== true || motion.matches;
+      if (instance) instance.scrollTo(0, { immediate, force: true });
+      else window.scrollTo({ top: 0, behavior: immediate ? 'instant' : 'smooth' });
     };
     const menu = event => {
       menuOpen = event.detail;
