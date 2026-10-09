@@ -3,7 +3,7 @@ import "../../about.css";
 import PageShell from "../../components/PageShell";
 import { metadata as seo } from "../../lib/seo";
 export const metadata = seo(
-  "Our Story",
+  "About Our Sri Lanka & Kenya Travel Team",
   "Meet Emerald Isle Travels and discover our approach to personal journeys in Sri Lanka and Kenya.",
   "/about/",
 );

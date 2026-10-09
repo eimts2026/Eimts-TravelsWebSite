@@ -1,4 +1,5 @@
 import Content from "../../components/PackageCollection";
+import "../../about.css";
 import "../../packages.css";
 import { Suspense } from "react";
 import Loading from "../loading";

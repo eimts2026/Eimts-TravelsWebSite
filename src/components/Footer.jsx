@@ -1,9 +1,11 @@
 import SiteLink from "./SiteLink";
 import SocialLinks from "./SocialLinks";
+import SiteImage from "./SiteImage";
 export default function Footer() {
   return (
     <>
-      <footer className="sticky-footer" aria-label="Site footer">
+      <footer className="sticky-footer scenic-footer" aria-label="Site footer">
+        <SiteImage className="footer-background-image" src="/images/home-gallery/nine-arch-bridge.webp" alt="" sizes="100vw" />
         <div className="footer-top">
           <SiteLink className="brand" href="/" aria-label="Emerald Isle Travels home">
             <span className="brand-artwork"><img src="/images/emerald-isle-logo.webp" alt="Emerald Isle Travels" width="320" height="355" decoding="async" /></span>

@@ -1,42 +1,18 @@
-"use client";
+import SiteImage from './SiteImage';
 import SiteLink from './SiteLink';
-import { useEffect, useRef, useState } from 'react';
 
-export default function PackageHero() {
-  const film = useRef(null);
-  const cover = useRef(null);
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    const video = film.current;
-    const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    let visible = true;
-    const update = () => {
-      if (motion.matches || document.hidden || !visible) {
-        video.pause();
-        if (motion.matches) setReady(false);
-      } else {
-        if (!video.getAttribute('src')) video.src = '/videos/packages/tourism.mp4';
-        video.play().catch(() => setReady(false));
-      }
-    };
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update(); });
-    observer.observe(cover.current);
-    motion.addEventListener('change', update);
-    document.addEventListener('visibilitychange', update);
-    update();
-    return () => { video.pause(); observer.disconnect(); motion.removeEventListener('change', update); document.removeEventListener('visibilitychange', update); };
-  }, []);
-  return <section ref={cover} className="packages-cover" aria-labelledby="packages-title">
-    <div className="packages-cover-media" aria-hidden="true">
-      <img src="/videos/packages/poster.webp" alt="" width="1280" height="720" fetchPriority="high" />
-      <video ref={film} className={ready ? 'is-ready' : ''} muted loop playsInline preload="none" poster="/videos/packages/poster.webp" onPlaying={() => setReady(true)} onError={() => setReady(false)} />
+export default function PackageHero({ destinations }) {
+  return <section className="packages-cover about-container" aria-labelledby="packages-title">
+    <div className="about-section-heading">
+      <span className="about-kicker">The Emerald Isle collection</span>
+      <h1 id="packages-title">Find your kind of journey.</h1>
+      <p>Island discoveries in Sri Lanka. Wild encounters in Kenya.<br className="packages-desktop-break" /> Thoughtfully planned experiences, with room to make them yours.</p>
     </div>
-    <div className="packages-cover-shade" />
-    <div className="packages-cover-copy">
-      <span className="packages-kicker">THE EMERALD ISLE COLLECTION</span>
-      <h1 id="packages-title">Extraordinary places.<br /><em>Your kind of journey.</em></h1>
-      <p>Island discoveries in Sri Lanka.<br />Wild encounters in Kenya. Find the journey that calls to you.</p>
-      <SiteLink className="button light" href="#journey-collection">Find your journey</SiteLink>
+    <div className="packages-destination-scenes">
+      {destinations.map(({ country, count, image, alt, description }, index) => <SiteLink key={country} href={`/packages/?country=${encodeURIComponent(country)}#journey-collection`} className="packages-destination-scene" aria-label={`Explore ${country}, ${count} journeys`}>
+        <SiteImage src={image} alt={alt} loading="eager" fetchPriority={index === 0 ? 'high' : 'auto'} sizes="(max-width: 640px) 90vw, 42vw" />
+        <div className="packages-destination-caption"><div><span>{count} journeys to discover</span><h2>{country}</h2><p>{description}</p></div><span className="packages-scene-arrow" aria-hidden="true">↗</span></div>
+      </SiteLink>)}
     </div>
   </section>;
 }

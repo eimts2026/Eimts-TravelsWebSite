@@ -1,6 +1,7 @@
 import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 import JourneyMap from "./JourneyMap";
+import AboutMotion from "./AboutMotion";
 import { getJourneyRoute } from "../data/journey-routes";
 
 // Only trusted, sanitized package content belongs in these editorial fragments.
@@ -11,7 +12,7 @@ function RichText({ html }) {
 }
 export default function TripDetail({ trip: p }) {
   return (
-    <>
+    <AboutMotion><div className="trip-detail-page">
       <section className="detail-hero">
         <SiteImage src={p.image} sizes="100vw" loading="eager" fetchPriority="high" alt={p.imageAlt || p.title} />
         <div>
@@ -26,19 +27,19 @@ export default function TripDetail({ trip: p }) {
       </section>
       <div className="detail-layout section">
         <article>
-          <section className="detail-section">
+          <section className="detail-section" data-about-reveal>
             <span className="eyebrow">YOUR JOURNEY AT A GLANCE</span>
             <h2>
-              A little closer to <em>extraordinary.</em>
+              A little closer to extraordinary.
             </h2>
             <RichText html={p.overview} />
           </section>
           <JourneyMap route={getJourneyRoute(p)} country={p.country} />
-          <section className="detail-section" id="itinerary">
+          <section className="detail-section" id="itinerary" data-about-reveal>
             <span className="eyebrow">ONE DAY AT A TIME</span>
             <h2>The itinerary</h2>
             {p.itinerary.map((d, i) => (
-              <details className="itinerary-day" key={i} open={i === 0}>
+              <details className="itinerary-day" name="journey-itinerary" key={i} open={i === 0}>
                 <summary>
                   {d.title}
                   <span aria-hidden="true">+</span>
@@ -55,6 +56,7 @@ export default function TripDetail({ trip: p }) {
               return (
                 <section
                   className="detail-section highlights-activities-grid"
+                  data-about-reveal
                   key={i}
                 >
                   <div>
@@ -82,7 +84,7 @@ export default function TripDetail({ trip: p }) {
               const parts = s.body.split(/(?=<h3>What[’']s Not Included<\/h3>)/i);
               if (parts.length === 2) {
                 return (
-                  <section className="detail-section" key={i}>
+                  <section className="detail-section" key={i} data-about-reveal>
                     <h2>{s.title}</h2>
                     <div className="inclusions-grid">
                       <RichText html={parts[0]} />
@@ -94,7 +96,7 @@ export default function TripDetail({ trip: p }) {
             }
 
             return (
-              <section className="detail-section" key={i}>
+              <section className="detail-section" key={i} data-about-reveal>
                 <h2>{s.title}</h2>
                 <RichText html={s.body} />
               </section>
@@ -135,6 +137,6 @@ export default function TripDetail({ trip: p }) {
         </aside>
       </div>
 
-    </>
+    </div></AboutMotion>
   );
 }

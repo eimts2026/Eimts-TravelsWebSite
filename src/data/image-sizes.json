@@ -1,4 +1,6 @@
 {
+  "/images/navigation/sri-lanka-sunset.webp": { "width": 480, "height": 480 },
+  "/images/navigation/kenya-sunset.webp": { "width": 1400, "height": 700 },
   "/images/packages/1-day-best-of-nairobi-city-excursion.webp": {
     "width": 2560,
     "height": 1440
@@ -374,5 +376,25 @@
   "/images/gallery/amboseli-safari.webp": {
     "width": 2560,
     "height": 1713
+  },
+  "/images/about/bridge.webp": {
+    "width": 1000,
+    "height": 1500
+  },
+  "/images/about/tea.webp": {
+    "width": 844,
+    "height": 1500
+  },
+  "/images/about/coast.webp": {
+    "width": 844,
+    "height": 1500
+  },
+  "/images/about/safari.webp": {
+    "width": 1000,
+    "height": 1500
+  },
+  "/images/about/footer.webp": {
+    "width": 1125,
+    "height": 1500
   }
 }

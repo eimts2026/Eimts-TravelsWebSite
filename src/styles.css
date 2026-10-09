@@ -1147,9 +1147,7 @@ details[open] summary > span {
   margin-bottom: 24px;
 }
 #enquiry-result {
-  border: 1px solid var(--line);
-  padding: 23px;
-  margin-top: 20px;
+  display: block;
 }
 #enquiry-result p {
   font-size: 12px;
@@ -2338,3 +2336,13 @@ html.lenis { scroll-behavior: auto; }
 @media (prefers-reduced-motion: reduce) {
   .page-shell .site-header.reference-header { transition: none; }
 }
+/* A continuous Nine Arch Bridge landscape behind the complete footer. */
+.scenic-footer { isolation: isolate; overflow: hidden; background: #10251e; padding-top: 80px; }
+.scenic-footer .footer-background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 53%; z-index: -2; }
+.scenic-footer::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg,rgba(4,18,13,.61),rgba(4,18,13,.76)); }
+.scenic-footer .footer-top p, .scenic-footer .footer-columns a, .scenic-footer .footer-bottom, .scenic-footer .footer-mail { color: #f2f5ed; }
+.scenic-footer .footer-columns .eyebrow { color: #e0dfb3; }
+.scenic-footer .footer-columns a { min-height: 32px; display: inline-flex; align-items: center; }
+.scenic-footer .footer-columns a:hover { color: #d5e89b; }
+.scenic-footer a:focus-visible { outline: 2px solid #e0eaa6; outline-offset: 5px; }
+@media (max-width:700px) { .scenic-footer { padding-top: 55px; } .scenic-footer .footer-background-image { object-position: 49% center; } .scenic-footer::before { background: rgba(4,18,13,.75); } .scenic-footer .footer-columns a { min-height: 44px; } }

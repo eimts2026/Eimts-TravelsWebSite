@@ -178,7 +178,7 @@ const loadImage = (src)=>new Promise((resolve, reject)=>{
         img1.onerror = ()=>reject(new Error("could not load " + src));
         img1.src = src;
     });
-export default function MorphGallery({ items, height = "100svh", duration = 1500, noiseScale = 3.5, edge = 0.15, drift = 0.5, loop = true, autoplay = 0, playbackControls = true, arrows = true, thumbnails = true, index, defaultIndex = 0, onIndexChange, className = "" }) {
+export default function MorphGallery({ items, height = "100svh", duration = 1500, noiseScale = 3.5, edge = 0.15, drift = 0.5, loop = true, autoplay = 0, playbackControls = true, arrows = true, thumbnails = true, showCaption = true, index, defaultIndex = 0, onIndexChange, className = "" }) {
     const canvasRef = React.useRef(null);
     const [uncontrolled, setUncontrolled] = React.useState(()=>wrapIndex(defaultIndex, items.length, loop));
     const active = index === undefined ? uncontrolled : wrapIndex(index, items.length, loop);
@@ -491,7 +491,7 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
         <button type="button" className="morph-gallery-arrow previous" onClick={()=>go(active - 1)} disabled={atStart} aria-label="Previous image">←</button>
         <button type="button" className="morph-gallery-arrow next" onClick={()=>go(active + 1)} disabled={atEnd} aria-label="Next image">→</button>
       </>}
-      <div className="morph-gallery-caption"><span className="eyebrow">SRI LANKA, THROUGH OUR LENS</span><p>{current?.alt}</p><span>{String(active + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span></div>
+      {showCaption && <div className="morph-gallery-caption"><span className="eyebrow">SRI LANKA, THROUGH OUR LENS</span><p>{current?.alt}</p><span>{String(active + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span></div>}
       {playbackControls && !!autoplay && !reduced && <button className="gallery-playback" type="button" onClick={()=>setUserPaused(value=>!value)} aria-label={userPaused ? "Play slideshow" : "Pause slideshow"}>{userPaused ? "Play slideshow" : "Pause slideshow"}</button>}
       {thumbnails && <ul className="morph-gallery-thumbnails">{items.map((item, i)=><li key={item.src}>
         <button type="button" onClick={()=>go(i)} aria-current={i === active} aria-label={"Show " + item.alt}>

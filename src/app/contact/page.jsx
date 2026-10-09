@@ -1,4 +1,6 @@
 import Content from "../../components/Contact";
+import "../../about.css";
+import "../../contact.css";
 import PageShell from "../../components/PageShell";
 import { metadata as seo } from "../../lib/seo";
 export const metadata = seo(

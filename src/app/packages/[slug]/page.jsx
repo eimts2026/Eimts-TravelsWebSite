@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import "../../../about.css";
+import "../../../trip-detail.css";
 import packages from "../../../data/packages.js";
 import TripDetail from "../../../components/TripDetail";
 import PageShell from "../../../components/PageShell";

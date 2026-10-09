@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import SiteImage from "./SiteImage";
+import AboutMotion from "./AboutMotion";
 import { galleryHero, galleryPhotos } from "../data/gallery";
 import "./Gallery.css";
 
@@ -25,15 +26,22 @@ export default function Gallery() {
   }, [isOpen]);
 
   return (
-    <div className="travel-photo-gallery">
-      <section className="travel-photo-hero" aria-labelledby="travel-gallery-title">
+    <AboutMotion>
+    <div className="travel-photo-gallery about-container">
+      <header className="travel-gallery-intro">
+        <span className="about-kicker">The travel journal</span>
+        <h1 id="travel-gallery-title">A world worth<br />looking closer at.</h1>
+        <p>Quiet coastlines. Wild horizons. Moments from Sri Lanka and Kenya that stay with you long after the journey.</p>
+      </header>
+      <section className="travel-photo-hero" aria-label="Kenyan savannah sunset">
         <SiteImage src={galleryHero.src} alt={galleryHero.alt} sizes="100vw" loading="eager" fetchPriority="high" />
-        <h1 id="travel-gallery-title">Travel Gallery</h1>
+        <div className="travel-hero-caption"><span>01 / 16 — Kenya</span><h2>The art of slowing down.</h2><span className="travel-photo-hint">View full photograph ↗</span></div>
         <button className="travel-photo-hero-open" type="button" aria-label="View the full savannah sunset photograph" onClick={() => setActive(0)} />
       </section>
+      <div className="travel-gallery-heading" data-about-reveal><div><span className="about-kicker">Through our lens</span><h2>Places. People. Perspective.</h2></div><p>Two destinations. Sixteen moments.<br />Select a photograph to see the whole story.</p></div>
       <section className="travel-photo-grid" aria-label="Photographs of Sri Lanka and Kenya">
         {galleryPhotos.map((photo, index) => (
-          <button type="button" className={`travel-photo${index % 3 === 2 ? " travel-photo-wide" : ""}`} key={photo.id} aria-label={`View full photograph: ${photo.alt}`} onClick={() => setActive(index + 1)}>
+          <button type="button" data-about-reveal className={`travel-photo${index % 3 === 2 ? " travel-photo-wide" : ""}`} key={photo.id} aria-label={`View full photograph: ${photo.alt}`} onClick={() => setActive(index + 1)}>
             <SiteImage
               src={photo.src}
               alt={photo.alt}
@@ -42,6 +50,7 @@ export default function Gallery() {
                 : "(max-width: 767px) calc(100vw - 32px), (max-width: 1440px) 43vw, 628px"}
               style={{ objectPosition: photo.position || "center" }}
             />
+            <span className="travel-photo-overlay"><span className="travel-photo-number">{String(index + 2).padStart(2, "0")} / 16</span><span className="travel-photo-expand" aria-hidden="true">↗</span></span>
           </button>
         ))}
       </section>
@@ -60,5 +69,6 @@ export default function Gallery() {
         </>}
       </dialog>
     </div>
+    </AboutMotion>
   );
 }
