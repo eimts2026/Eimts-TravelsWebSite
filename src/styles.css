@@ -2192,9 +2192,9 @@ html.lenis { scroll-behavior: auto; }
 .home-about-heading { text-align: center; margin: 0 auto 42px; }
 .home-about h2, .home-why h2 { font-size: clamp(34px, 3.7vw, 60px); line-height: 1.12; margin: 12px 0; }
 .home-about-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 56px); max-width: 1600px; margin: auto; align-items: start; }
-.home-about-image { margin: 0; position: relative; overflow: hidden; aspect-ratio: 3 / 5; transform: translateY(var(--about-card-shift, 0px)); }
+.home-about-image { margin: 0; position: relative; overflow: hidden; aspect-ratio: 3 / 5; isolation: isolate; contain: paint; }
 .home-about-image-right { margin-top: 64px; aspect-ratio: 3 / 4; }
-.home-about-image img { width: 100%; height: 100%; object-fit: cover; }
+.home-about-image img { display: block; width: 100%; height: 100%; object-fit: cover; translate: 0 var(--story-shift, 0px); scale: 1.12; }
 @media (prefers-reduced-motion: reduce) { .home-about-image { transform: none; } }
 .home-about-image figcaption { position: absolute; bottom: 20px; left: 20px; right: 20px; color: white; font-size: 10px; letter-spacing: .12em; z-index: 1; }
 .home-about-image::after { content: ""; position: absolute; inset: 65% 0 0; background: linear-gradient(transparent, #102e27a0); }
@@ -2346,3 +2346,6 @@ html.lenis { scroll-behavior: auto; }
 .scenic-footer .footer-columns a:hover { color: #d5e89b; }
 .scenic-footer a:focus-visible { outline: 2px solid #e0eaa6; outline-offset: 5px; }
 @media (max-width:700px) { .scenic-footer { padding-top: 55px; } .scenic-footer .footer-background-image { object-position: 49% center; } .scenic-footer::before { background: rgba(4,18,13,.75); } .scenic-footer .footer-columns a { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) {
+  .home-about-image img { translate: none; scale: 1; }
+}

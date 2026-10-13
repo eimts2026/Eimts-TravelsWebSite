@@ -70,7 +70,7 @@ export default function Hero() {
       {loopScenes.map((scene, slot) => {
         const position = scenes.indexOf(scene);
         return <div className={`theatre-scene scene-${position}${position === index ? ' is-active' : ''}`} key={`${scene.title}-${slot}`}>
-        <img className="theatre-landscape" src={scene.image} alt="" fetchPriority={position === 0 ? 'high' : 'auto'} />
+        <img className="theatre-landscape" src={scene.image} alt="" width={scene.width} height={scene.height} fetchPriority={position === 0 ? 'high' : 'auto'} />
         <div className="theatre-title"><span>{scene.place}</span><strong>{position === 1 ? <><span>Lion</span><span>Rock</span></> : scene.display}</strong></div>
         <svg className={`theatre-foreground foreground-${position}`} viewBox={`0 0 ${scene.width} ${scene.height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>

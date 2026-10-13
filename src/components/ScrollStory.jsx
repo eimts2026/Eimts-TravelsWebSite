@@ -20,7 +20,7 @@ export default function ScrollStory() {
       }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
       const collect = () => {
         document.querySelectorAll(".page-shell.home main :is(h1,h2,h3,h4,h5,h6,p)").forEach(node => {
-          if (nodes.has(node) || node.closest(".hero")) return;
+          if (nodes.has(node) || node.closest(".hero, .destination-journey")) return;
           nodes.add(node);
           // Already visible text stays readable, including after route restoration.
           if (node.getBoundingClientRect().top < innerHeight) {
@@ -53,12 +53,11 @@ export default function ScrollStory() {
     const setup = () => {
       dispose();
       if (preference.matches) return;
-      let images = [], cards = [], texts = [], frame = 0, stopped = false;
+      let images = [], texts = [], frame = 0, stopped = false;
       const values = new Map();
-      const imageSelector = ".hero-scene, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";
+      const imageSelector = ".home-about-image img, .hero-scene, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";
       const collect = () => {
         images = [...document.querySelectorAll(imageSelector)].filter(node => !node.closest('.package-collection-page'));
-        cards = [...document.querySelectorAll(".home-about-image")];
         texts = [...document.querySelectorAll("main h2, main h3, main p, main .eyebrow")].filter(node => !node.closest(".page-shell.home, .about-narrative, .hero, .package-hero, .package-collection-page, .category-stack-card, .morph-gallery, .journey-map, .information-intro, .information-layout"));
         texts.forEach(node => node.setAttribute("data-story-text", ""));
         schedule();
@@ -78,19 +77,12 @@ export default function ScrollStory() {
         // Read all geometry before changing styles; text offsets are removed
         // from their bounds so the effect does not feed back into itself.
         const imagePositions = images.filter(node => node.isConnected && node.parentElement).map(node => [node, node.parentElement.getBoundingClientRect()]);
-        const cardPositions = cards.filter(node => node.isConnected).map(node => [node, node.getBoundingClientRect(), values.get(node) || 0]);
         const textPositions = texts.filter(node => node.isConnected).map(node => [node, node.getBoundingClientRect(), values.get(node) || 0]);
         imagePositions.forEach(([node, box]) => {
-          const travel = Math.min(node.matches(".hero-scene") ? 16 : 28, box.height * .07);
+          if (box.bottom < -80 || box.top > height + 80) return;
+          const travel = Math.min(node.matches(".home-about-image img") ? 12 : node.matches(".hero-scene") ? 16 : 28, box.height * .05);
           const shift = Math.max(-travel, Math.min(travel, (height / 2 - box.top - box.height / 2) * .075));
           settling = apply(node, shift, "--story-shift") || settling;
-        });
-        cardPositions.forEach(([node, box, previous]) => {
-          // Measure the unshifted card to avoid feeding its animation back into itself.
-          const center = box.top - previous + box.height / 2;
-          const travel = innerWidth <= 640 ? 8 : 24;
-          const shift = Math.max(-travel, Math.min(travel, (height / 2 - center) * .08));
-          settling = apply(node, shift, "--about-card-shift") || settling;
         });
         textPositions.forEach(([node, box, previous]) => {
           const center = box.top - previous + box.height / 2;

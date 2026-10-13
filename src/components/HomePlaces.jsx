@@ -1,13 +1,21 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import coastline from '../data/sri-lanka-coastline';
-import places from '../data/home-places';
+import sriLankaPlaces from '../data/home-places';
+import kenyaPlaces from '../data/kenya-home-places';
+import kenyaBoundary from '../data/kenya-boundary';
 
-export default function HomePlaces() {
+const countries = [
+  { id: 'sri-lanka', name: 'Sri Lanka', title: 'Small island.', line: 'Endless discovery.', intro: 'From forest-covered fortresses to hill-country railways and palm-lined shores, discover the places that could become part of your journey.', places: sriLankaPlaces, outline: coastline, bounds: [[5.7,79.4],[9.95,82]], divide: 80.5 },
+  { id: 'kenya', name: 'Kenya', title: 'Wide horizons.', line: 'Wild possibilities.', intro: 'From open savannahs to the Indian Ocean, explore the landscapes that make a Kenyan journey unforgettable.', places: kenyaPlaces, outline: kenyaBoundary, bounds: [[-4.8,33.7],[5.5,42]], divide: 37 },
+];
+
+function DestinationPanel({ country, onFocus }) {
+  const places = country.places;
   const section = useRef(null);
   const canvas = useRef(null);
   const [enabled, setEnabled] = useState(false);
-  const [selected, setSelected] = useState('sigiriya');
+  const [selected, setSelected] = useState(country.places[0].id);
   const [pinPositions, setPinPositions] = useState({});
   const [mapFailed, setMapFailed] = useState(false);
   const place = places.find(item => item.id === selected);
@@ -31,8 +39,8 @@ export default function HomePlaces() {
       map = L.map(element, { attributionControl: false, scrollWheelZoom: false, dragging: false, zoomControl: false, touchZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, zoomSnap: .1 });
       const fit = () => {
         if (disposed || !element.isConnected) return;
-        map.fitBounds([[5.7, 79.4], [9.95, 82]], { padding: [28, 32], animate: false });
-        const path = coastline.map(ring => ring.map(([lng, lat], index) => {
+        map.fitBounds(country.bounds, { padding: [28, 32], animate: false });
+        const path = country.outline.map(ring => ring.map(([lng, lat], index) => {
           const point = map.latLngToContainerPoint([lat, lng]);
           return `${index ? 'L' : 'M'}${point.x} ${point.y}`;
         }).join(' ') + 'Z').join(' ');
@@ -42,7 +50,7 @@ export default function HomePlaces() {
         setPinPositions(Object.fromEntries([...places].sort((a, b) => b.lat - a.lat).map(item => {
           const point = map.latLngToContainerPoint([item.lat, item.lng]);
           const labelWidth = item.name.length * 6;
-          const left = item.lng < 80.5 ? point.x - 15 - labelWidth : point.x + 15;
+          const left = item.lng < country.divide ? point.x - 15 - labelWidth : point.x + 15;
           let offset = 0;
           for (const candidate of [0, -16, 16, -32, 32]) {
             const top = point.y - 25 + candidate;
@@ -63,29 +71,91 @@ export default function HomePlaces() {
       resize.observe(element);
     }).catch(() => { if (!disposed) setMapFailed(true); });
     return () => { disposed = true; resize?.disconnect(); map?.remove(); };
-  }, [enabled]);
+  }, [enabled, country, places]);
 
-  return <section ref={section} className="home-places" aria-labelledby="home-places-heading">
+  return <section ref={section} className={`home-places country-${country.id}`} aria-labelledby={`${country.id}-heading`} onFocusCapture={onFocus}>
     <div className="home-places-intro">
-      <span className="eyebrow">A PLACE FOR EVERY KIND OF DAY</span>
-      <h2 id="home-places-heading">Small island.<br /><em>Endless discovery.</em></h2>
-      <p>From forest-covered fortresses to hill-country railways and palm-lined shores, discover the places that could become part of your journey.</p>
+      <span className="eyebrow">{country.name} · A PLACE FOR EVERY KIND OF DAY</span>
+      <h2 id={`${country.id}-heading`}>{country.title}<br /><em>{country.line}</em></h2>
+      <p>{country.intro}</p>
     </div>
     <div className="home-places-map-wrap">
-      <div className="home-places-island" role="group" aria-label="Explore places on the Sri Lanka map">
+      <div className="home-places-island" role="group" aria-label={`Explore places on the ${country.name} map`}>
         <div ref={canvas} className="home-places-map" aria-hidden="true" />
-        {places.map(item => pinPositions[item.id] && <button key={item.id} type="button" className={`home-island-pin${selected === item.id ? ' is-selected' : ''}${item.lng < 80.5 ? ' label-west' : ''}`} style={pinPositions[item.id]} aria-label={`Discover ${item.name}`} aria-pressed={selected === item.id} aria-controls="home-place-card" onClick={() => setSelected(item.id)}>
+        {places.map(item => pinPositions[item.id] && <button key={item.id} type="button" className={`home-island-pin${selected === item.id ? ' is-selected' : ''}${item.lng < country.divide ? ' label-west' : ''}`} style={pinPositions[item.id]} aria-label={`Discover ${item.name}`} aria-pressed={selected === item.id} aria-controls={`${country.id}-place-card`} onClick={() => setSelected(item.id)}>
           <svg viewBox="0 0 44 58" aria-hidden="true"><path d="M22 0C10 0 0 10 0 22c0 15 22 36 22 36s22-21 22-36C44 10 34 0 22 0Z" fill="currentColor" /><circle cx="22" cy="22" r="13" fill="#fff" /></svg><span>{item.name}</span>
         </button>)}
       </div>
-      {mapFailed && <p className="home-places-map-fallback">Use the place buttons to explore Sri Lanka.</p>}
-      <details className="home-map-attribution"><summary aria-label="Map attribution">ⓘ</summary><p>Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>. Coastline via <a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> (<a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">ODbL</a>).</p></details>
+      {mapFailed && <p className="home-places-map-fallback">The map is unavailable. Explore {place.name} below.</p>}
+      <details className="home-map-attribution"><summary aria-label="Map attribution">ⓘ</summary><p>Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>. Boundary via <a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> ({country.id === 'kenya' ? 'public domain' : <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">ODbL</a>}).</p></details>
     </div>
-    <article id="home-place-card" className="home-place-card" aria-live="polite" aria-atomic="true">
+    <article id={`${country.id}-place-card`} className="home-place-card" aria-live="polite" aria-atomic="true">
       <div key={place.id} className="home-place-card-content">
         <div className="home-place-photo"><img src={place.image} alt={place.alt} width="1400" height="1050" loading="lazy" /></div>
         <div className="home-place-copy"><span className="eyebrow">{place.label}</span><h3>{place.name}</h3><p>{place.description}</p></div>
       </div>
     </article>
   </section>;
+}
+
+
+export default function HomePlaces() {
+  const root = useRef(null);
+  const track = useRef(null);
+  const pinned = useRef(false);
+  useEffect(() => {
+    const element = root.current;
+    const rail = track.current;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const desktop = matchMedia('(min-width: 1000px) and (min-height: 650px)');
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!pinned.current) return;
+      const bounds = element.getBoundingClientRect();
+      const range = element.offsetHeight - rail.parentElement.offsetHeight;
+      const progress = Math.max(0, Math.min(1, -bounds.top / Math.max(1, range)));
+      const slide = Math.max(0, Math.min(1, (progress - .12) / .76));
+      rail.style.transform = `translate3d(${-slide * element.clientWidth}px,0,0)`;
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const configure = () => {
+      pinned.current = desktop.matches && !motion.matches;
+      element.classList.toggle('is-pinned', pinned.current);
+      rail.style.removeProperty('transform');
+      if (pinned.current) {
+        rail.parentElement.scrollLeft = 0;
+        element.style.setProperty('--destination-travel', `${element.clientWidth * 1.4}px`);
+      } else element.style.removeProperty('--destination-travel');
+      schedule();
+    };
+    const resize = new ResizeObserver(configure);
+    resize.observe(element);
+    motion.addEventListener('change', configure);
+    desktop.addEventListener('change', configure);
+    addEventListener('scroll', schedule, {passive:true});
+    configure();
+    return () => {
+      resize.disconnect(); cancelAnimationFrame(frame);
+      motion.removeEventListener('change', configure);
+      desktop.removeEventListener('change', configure);
+      removeEventListener('scroll', schedule);
+      element.classList.remove('is-pinned');
+      rail.style.removeProperty('transform');
+    };
+  }, []);
+  const revealFocusedPanel = index => {
+    if (!pinned.current) return;
+    const element = root.current;
+    const range = element.offsetHeight - track.current.parentElement.offsetHeight;
+    const start = element.getBoundingClientRect().top + scrollY;
+    const target = start + range * (index ? .9 : .1);
+    if (Math.abs(scrollY - target) > range * .12) window.scrollTo({top:target, behavior:'instant'});
+  };
+  return <div className="destination-journey" ref={root}>
+    <div className="destination-viewport"><div className="destination-track" ref={track}>
+      {countries.map((country, index) => <DestinationPanel key={country.id} country={country} onFocus={() => revealFocusedPanel(index)} />)}
+    </div></div>
+    <p className="destination-swipe-note">Sri Lanka → Kenya · Swipe to explore</p>
+  </div>;
 }
