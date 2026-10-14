@@ -48,7 +48,6 @@ export default function Footer() {
             </SiteLink>
             <SiteLink href="https://wa.me/447474714569" aria-label="WhatsApp (+44) 74 7471 4569">{"(+44) 74 7471 4569"}</SiteLink>
             <SiteLink href="tel:+94114627909">{"(+94) 11 462 7909"}</SiteLink>
-            <SiteLink href="https://wa.me/94764190752" aria-label="WhatsApp (+94) 76 419 0752">{"(+94) 76 419 0752"}</SiteLink>
             <SiteLink href="https://wa.me/94743840971" aria-label="WhatsApp (+94) 74 384 0971">{"(+94) 74 384 0971"}</SiteLink>
             <SiteLink href="https://maps.app.goo.gl/3vPpcnE5MrizodWDA" target="_blank" rel="noopener noreferrer" aria-label="View 198, Galle Road, Dehiwala-Mount Lavinia on Google Maps (opens in a new tab)">{"198, Galle Rd, Dehiwala-Mount Lavinia 10370, Sri Lanka"}</SiteLink>
           </div>
