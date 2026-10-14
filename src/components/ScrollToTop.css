@@ -2,7 +2,7 @@
 .scroll-to-top {
   position: fixed;
   right: max(24px, env(safe-area-inset-right));
-  bottom: max(24px, env(safe-area-inset-bottom));
+  bottom: calc(max(24px, env(safe-area-inset-bottom)) + 116px);
   z-index: 100;
   display: grid;
   place-items: center;
@@ -28,18 +28,51 @@
 }
 .scroll-to-top:active { transform: scale(.94); }
 .scroll-to-top:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-.floating-whatsapp { bottom: calc(max(24px, env(safe-area-inset-bottom)) + 58px); background: #128c4a; }
-.floating-whatsapp svg { width: 24px; height: 24px; }
-.floating-whatsapp-label { position: absolute; right: calc(100% + 12px); display: grid; gap: 3px; width: max-content; padding: 11px 15px; border: 1px solid #476b57; border-radius: 12px; background: #102c22; color: #fff; box-shadow: 0 6px 24px #0006; text-align: left; font: 12px/1.35 var(--sans); opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(5px); transition: opacity 180ms ease, transform 180ms ease, visibility 180ms; }
-.floating-whatsapp-label strong { font-size: 14px; color: #d0de91; }
-.floating-whatsapp-label::after { content: ''; position: absolute; right: -5px; top: calc(50% - 5px); width: 9px; height: 9px; background: inherit; border-top: 1px solid #ffffff25; border-right: 1px solid #ffffff25; transform: rotate(45deg); }
-@media (hover: hover) and (pointer: fine) { .floating-whatsapp:hover .floating-whatsapp-label { opacity: 1; visibility: visible; transform: none; } }
-.floating-whatsapp:focus-visible .floating-whatsapp-label { opacity: 1; visibility: visible; transform: none; }
-@media (hover: hover) and (pointer: fine) { .floating-whatsapp:hover { background: #087638; } }
+
+.travel-guide-launcher {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s;
+}
+.travel-guide-launcher.is-visible { visibility: visible; opacity: 1; transform: none; animation: travel-guide-arrive .65s ease both; }
+.travel-guide-portrait { display: block; width: 104px; height: 104px; object-fit: contain; filter: drop-shadow(0 3px 5px #102e2740); transition: transform .25s ease; }
+.travel-guide-label { display: block; color: var(--forest); text-align: right; font: 600 11px/1.3 var(--sans); text-shadow: none; transition: color .2s ease; }
+.travel-guide-label.on-dark { color: #fffdf2; }
+.travel-guide-launcher.is-visible .travel-guide-label { animation: travel-guide-notice 6s ease-in-out infinite; }
+.travel-guide-launcher:focus-within .travel-guide-label { animation: none; opacity: 1; }
+@keyframes travel-guide-notice {
+  0%, 12%, 88%, 100% { opacity: 0; }
+  25%, 72% { opacity: 1; }
+}
+.travel-guide-label strong { font-size: 22px; letter-spacing: -.02em; }
+.travel-guide-launcher:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; border-radius: 8px; }
+@media (hover: hover) and (pointer: fine) {
+  .travel-guide-launcher:hover .travel-guide-portrait { transform: translateY(-3px) rotate(-2deg); }
+  .travel-guide-launcher:hover { text-decoration: none; }
+  .travel-guide-launcher.is-visible:hover .travel-guide-label { animation: none; opacity: 1; }
+}
+@keyframes travel-guide-arrive { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
 @media (max-width: 767px) {
-  .scroll-to-top { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); }
-  .floating-whatsapp { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 58px); }
+  .scroll-to-top { right: max(16px, env(safe-area-inset-right)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 88px); }
+  .travel-guide-launcher { right: max(10px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); gap: 0; }
+  .travel-guide-portrait { width: 76px; height: 76px; }
+  .travel-guide-label { font-size: 9px; }
+  .travel-guide-label strong { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scroll-to-top, .scroll-to-top svg, .floating-whatsapp-label { transition: none; transform: none !important; }
+  .travel-guide-launcher.is-visible .travel-guide-label { animation: none; opacity: 1; transition: none; }
+  .scroll-to-top, .scroll-to-top svg, .travel-guide-launcher, .travel-guide-portrait { animation: none !important; transition: none; transform: none !important; }
 }
+@media print { .travel-guide-launcher, .scroll-to-top { display: none; } }

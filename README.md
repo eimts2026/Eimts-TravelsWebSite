@@ -90,3 +90,14 @@ GMAIL_APP_PASSWORD=your-google-app-password
 - **Dynamic Pre-rendered Packages**: All 34 journey packages are statically pre-rendered at build time with tailored metadata and breadcrumb schemas.
 - **SEO & Performance Optimization**: Pre-rendered semantic HTML, optimized OpenGraph/Twitter cards, automated `sitemap.xml`, and structured data (JSON-LD).
 - **Smooth Animations & Scroll Control**: Native Lenis smooth scrolling integration and custom `ScrollToTop` floating controllers.
+
+
+<!--
+  ____             _               _               
+ |  _ \  _____   _(_)_ __   ___   | |__  _   _     
+ | | | |/ _ \ \ / / | '_ \ / _ \  | '_ \| | | |    
+ | |_| |  __/\ V /| | | | |  __/  | |_) | |_| |    
+ |____/ \___| \_/ |_|_| |_|\___|  |_.__/ \__, |    
+                                         |___/     
+  Built by Gaveen Perera — 2026
+-->

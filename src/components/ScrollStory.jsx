@@ -5,47 +5,52 @@ import { usePathname } from "next/navigation";
 export default function ScrollStory() {
   const pathname = usePathname();
   useEffect(() => {
+    if (pathname !== "/") return;
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    let generation = 0;
     let dispose = () => {};
-    const setup = () => {
+    const setup = async () => {
+      const current = ++generation;
       dispose();
       if (preference.matches) return;
+      const { animate } = await import("animejs");
+      if (current !== generation || preference.matches) return;
+      const animations = new Set();
       const nodes = new Set();
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
-          entry.target.setAttribute("data-home-text-visible", "");
-          observer.unobserve(entry.target);
+          const node = entry.target;
+          observer.unobserve(node);
+          // Animate only at entry; content remains readable if scripts fail.
+          const animation = animate(node, {
+            opacity: [.35, 1], y: [18, 0],
+            duration: 700, ease: "outCubic",
+            onComplete: self => { self.revert(); animations.delete(self); },
+          });
+          animations.add(animation);
         });
-      }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+      }, { threshold: .08, rootMargin: "0px 0px -24px 0px" });
       const collect = () => {
-        document.querySelectorAll(".page-shell.home main :is(h1,h2,h3,h4,h5,h6,p)").forEach(node => {
-          if (nodes.has(node) || node.closest(".hero, .destination-journey")) return;
+        document.querySelectorAll(".page-shell.home main :is(h2,h3,p,.eyebrow), .page-shell.home .journey-grid > *").forEach(node => {
+          if (nodes.has(node) || node.closest(".hero, .destination-journey, .morph-gallery, .category-stack-card") || (node.parentElement.closest(".journey-grid") && !node.matches(".journey-grid > *"))) return;
           nodes.add(node);
-          // Already visible text stays readable, including after route restoration.
-          if (node.getBoundingClientRect().top < innerHeight) {
-            node.setAttribute("data-home-text-visible", "");
-          }
-          const siblings = [...node.parentElement.children].filter(item => item.matches("h1,h2,h3,h4,h5,h6,p"));
-          node.style.setProperty("--home-text-delay", `${Math.min(siblings.indexOf(node), 2) * 60}ms`);
-          node.setAttribute("data-home-text", "");
-          if (!node.hasAttribute("data-home-text-visible")) observer.observe(node);
+          if (node.getBoundingClientRect().top >= innerHeight - 24) observer.observe(node);
         });
       };
       collect();
       const mutations = new MutationObserver(collect);
-      mutations.observe(document.body, { childList: true, subtree: true });
+      mutations.observe(document.querySelector("main"), { childList: true, subtree: true });
       dispose = () => {
         observer.disconnect(); mutations.disconnect();
-        nodes.forEach(node => {
-          node.removeAttribute("data-home-text");
-          node.removeAttribute("data-home-text-visible");
-          node.style.removeProperty("--home-text-delay");
-        });
+        animations.forEach(animation => animation.revert());
+        animations.clear();
       };
     };
-    setup(); preference.addEventListener("change", setup);
-    return () => { dispose(); preference.removeEventListener("change", setup); };
+    // A failed optional animation import must never hide page content.
+    const refresh = () => { setup().catch(() => {}); };
+    refresh(); preference.addEventListener("change", refresh);
+    return () => { generation++; dispose(); preference.removeEventListener("change", refresh); };
   }, [pathname]);
   useEffect(() => {
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
