@@ -6,6 +6,7 @@ import "../image-cards.css";
 import SmoothScroll from "../components/SmoothScroll";
 import ScrollToTop from "../components/ScrollToTop";
 import { siteUrl, JsonLd } from "../lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 export const metadata = {
   metadataBase: siteUrl,
   title: {
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
           }}
         />
         {children}
+        <Analytics />
         <ScrollToTop />
       </body>
     </html>
