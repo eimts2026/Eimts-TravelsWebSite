@@ -81,9 +81,9 @@ export default function Contact() {
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></svg>
               <span><span className="contact-channel-label">Write to us</span><strong>travels@emeraldisle.lk</strong></span><span className="contact-channel-arrow" aria-hidden="true">↗</span>
             </SiteLink>
-            <SiteLink href="https://wa.me/94764190752" className="contact-channel" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp, +94 76 419 0752 (opens in a new tab)">
+            <SiteLink href="https://wa.me/94743840971" className="contact-channel" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp, +94 74 384 0971 (opens in a new tab)">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2 1.7-6A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 11h8m-8 4h5" /></svg>
-              <span><span className="contact-channel-label">Chat on WhatsApp</span><strong>+94 76 419 0752</strong></span><span className="contact-channel-arrow" aria-hidden="true">↗</span>
+              <span><span className="contact-channel-label">Chat on WhatsApp</span><strong>+94 74 384 0971</strong></span><span className="contact-channel-arrow" aria-hidden="true">↗</span>
             </SiteLink>
             <SiteLink href="tel:+94114627909" className="contact-channel">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 3 4 1 1 5-3 2a15 15 0 0 0 6 6l2-3 5 1 1 4c0 1-1 2-2 2A18 18 0 0 1 3 5c0-1 1-2 2-2Z" /></svg>
