@@ -180,6 +180,19 @@ const loadImage = (src)=>new Promise((resolve, reject)=>{
     });
 export default function MorphGallery({ items, height = "100svh", duration = 1500, noiseScale = 3.5, edge = 0.15, drift = 0.5, loop = true, autoplay = 0, playbackControls = true, arrows = true, thumbnails = true, showCaption = true, index, defaultIndex = 0, onIndexChange, className = "" }) {
     const canvasRef = React.useRef(null);
+    const rootRef = React.useRef(null);
+    const wake = React.useRef(null);
+    const inView = React.useRef(false);
+    const [visible, setVisible] = React.useState(false);
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            inView.current = entry.isIntersecting;
+            setVisible(entry.isIntersecting);
+            if (entry.isIntersecting) wake.current?.();
+        });
+        observer.observe(rootRef.current);
+        return () => observer.disconnect();
+    }, []);
     const [uncontrolled, setUncontrolled] = React.useState(()=>wrapIndex(defaultIndex, items.length, loop));
     const active = index === undefined ? uncontrolled : wrapIndex(index, items.length, loop);
     const [failed, setFailed] = React.useState(false);
@@ -231,6 +244,7 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
             to: active
         };
         previous.current = active;
+        wake.current?.();
     }, [
         active
     ]);
@@ -273,7 +287,7 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
         canvas1.addEventListener("webglcontextlost", onLost);
         canvas1.addEventListener("webglcontextrestored", onRestored);
         const resize = ()=>{
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 1.5);
             const w = Math.round(canvas1.clientWidth * dpr);
             const h = Math.round(canvas1.clientHeight * dpr);
             if (w === 0 || h === 0 || canvas1.width === w && canvas1.height === h) return;
@@ -281,6 +295,7 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
             canvas1.height = h;
             gl.viewport(0, 0, w, h);
             dirty = true;
+            wake.current?.();
         };
         const observer = new ResizeObserver(resize);
         observer.observe(canvas1);
@@ -332,13 +347,20 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
             gl.uniform1f(uniforms.drift, t.drift);
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         };
-        const frame = ()=>{
-            if (!document.hidden && (dirty || progress < 1 || request.current)) {
+        const schedule = () => {
+            if (!disposed && !raf && !document.hidden && inView.current) raf = requestAnimationFrame(frame);
+        };
+        const frame = () => {
+            raf = 0;
+            if (disposed || document.hidden || !inView.current) return;
+            if (dirty || progress < 1 || request.current) {
                 draw();
                 dirty = false;
             }
-            raf = requestAnimationFrame(frame);
+            if (progress < 1 || request.current) schedule();
         };
+        wake.current = schedule;
+        document.addEventListener("visibilitychange", schedule);
         const start = async ()=>{
             try {
                 program = link(gl, VERT, FRAG);
@@ -398,8 +420,9 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
                             running = true;
                             resize();
                             setReady(true);
-                            raf = requestAnimationFrame(frame);
+                            schedule();
                         }
+                        schedule();
                     }, ()=>{
                         // One broken URL should cost one slide, not the effect. Only
                         // when nothing at all loads is there no gallery to shade.
@@ -415,6 +438,8 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
         void start();
         return ()=>{
             disposed = true;
+            wake.current = null;
+            document.removeEventListener("visibilitychange", schedule);
             cancelAnimationFrame(raf);
             observer.disconnect();
             canvas1.removeEventListener("webglcontextlost", onLost);
@@ -435,11 +460,12 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
     ]);
     // ---- autoplay ------------------------------------------------------------
     React.useEffect(()=>{
-        if (!autoplay || reduced || paused || userPaused || items.length < 2) return;
+        if (!autoplay || !visible || reduced || paused || userPaused || items.length < 2) return;
         const id = window.setInterval(()=>go(active + 1), Math.max(autoplay, 600));
         return ()=>window.clearInterval(id);
     }, [
         autoplay,
+        visible,
         reduced,
         paused,
         userPaused,
@@ -477,12 +503,12 @@ export default function MorphGallery({ items, height = "100svh", duration = 1500
     const atStart = !loop && active === 0;
     const atEnd = !loop && active === items.length - 1;
     const current = items[active];
-    return <section className={"morph-gallery " + className} style={{
+    return <section ref={rootRef} className={"morph-gallery " + className} style={{
         height
     }} role="region" aria-roledescription="carousel" aria-label="Travel gallery" tabIndex={0} onKeyDown={onKeyDown} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerCancel={()=>{
         swipe.current = null;
     }}>
-      <img className="morph-gallery-photo" src={current?.src} alt={current?.alt ?? ""}/>
+      <img loading="lazy" decoding="async" className="morph-gallery-photo" src={current?.src} alt={current?.alt ?? ""}/>
       {!failed && <canvas ref={canvasRef} className="morph-gallery-canvas" style={{
         opacity: ready ? 1 : 0
     }} aria-hidden="true"/>}

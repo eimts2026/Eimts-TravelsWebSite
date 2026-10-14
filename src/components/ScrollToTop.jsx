@@ -34,10 +34,12 @@ export default function ScrollToTop() {
     schedule();
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
+    window.addEventListener('site:theme', schedule);
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
+      window.removeEventListener('site:theme', schedule);
     };
   }, []);
   useEffect(() => {

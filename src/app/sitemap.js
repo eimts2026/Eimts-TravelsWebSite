@@ -9,6 +9,7 @@ export default function sitemap() {
     "/contact/",
     "/privacy-policy/",
     "/terms-of-use/",
+    "/cancellation-policy/",
     "/disclaimer/",
     "/faq-page/",
     ...packages.map((p) => p.url),

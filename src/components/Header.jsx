@@ -27,9 +27,12 @@ export default function Header() {
     setOpen(false);
     let previous = Math.max(0, scrollY);
     setHidden(false);
-    const scroll = () => {
+    let frame = 0;
+    const surfaces = [...document.querySelectorAll('.hero, .packages-cover, .about-opening, .about-purpose, .about-horizons, .philosophy, .home-travel-gallery, footer')];
+    const update = () => {
+      frame = 0;
       const current = Math.max(0, scrollY);
-      setOnDark([...document.querySelectorAll('.hero, .packages-cover, .about-opening, .about-purpose, .about-horizons, .philosophy, .home-travel-gallery, footer')].some(node => {
+      setOnDark(surfaces.some(node => {
         const rect = node.getBoundingClientRect();
         return rect.top <= 48 && rect.bottom > 70;
       }));
@@ -38,10 +41,11 @@ export default function Header() {
       else if (Math.abs(current - previous) >= 12) setHidden(current > previous);
       if (Math.abs(current - previous) >= 12 || current < 120) previous = current;
     };
+    const scroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     scroll();
     addEventListener('scroll', scroll, { passive: true });
     addEventListener('resize', scroll);
-    return () => { removeEventListener('scroll', scroll); removeEventListener('resize', scroll); };
+    return () => { cancelAnimationFrame(frame); removeEventListener('scroll', scroll); removeEventListener('resize', scroll); };
   }, [pathname]);
 
   useEffect(() => {
@@ -84,9 +88,10 @@ export default function Header() {
           requestAnimationFrame(() => dispatchEvent(new CustomEvent('site:top')));
         }
       }}><span className="brand-artwork"><img src="/images/emerald-isle-logo.webp" alt="Emerald Isle Travels" width="320" height="355" decoding="async" /></span></SiteLink>
+      <div className="header-actions">
       <button className="immersive-menu-toggle" ref={toggle} type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="immersive-menu-panel" onClick={() => setOpen(value => !value)}>
         <span className="immersive-toggle-bars" aria-hidden="true"><i /><i /><i /></span>
-      </button>
+      </button></div>
     </header>
     <div className="immersive-menu-panel" id="immersive-menu-panel" aria-hidden={!open} inert={!open} data-lenis-prevent>
       <div className="immersive-menu-content">

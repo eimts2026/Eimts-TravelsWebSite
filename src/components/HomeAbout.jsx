@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteLink from "./SiteLink";
 const reasons = [
   ["01", "Journeys made around you", "Adventure, culture or relaxation — thoughtfully planned packages that bring together the experiences you enjoy."],
@@ -10,7 +11,7 @@ export default function HomeAbout() {
     <section className="home-about" id="about-emerald" aria-labelledby="home-about-heading">
       <div className="home-about-heading"><span className="eyebrow">ABOUT EMERALD ISLE TRAVELS</span><h2 id="home-about-heading">Unforgettable journeys.<br /><em>Thoughtfully brought together.</em></h2></div>
       <div className="home-about-layout">
-        <figure className="home-about-image"><img src="/images/tour-categories/adventure.webp" alt="Hikers exploring Sri Lanka’s lush mountain landscapes" width="800" height="1000" loading="lazy" /></figure>
+        <figure className="home-about-image"><Image sizes="(max-width: 700px) 90vw, 35vw" src="/images/tour-categories/adventure.webp" alt="Hikers exploring Sri Lanka’s lush mountain landscapes" width="800" height="1000" loading="lazy" /></figure>
         <div className="home-about-copy">
           <p className="home-about-lead"><strong>Emerald Isle Travels (Pvt) Ltd</strong> is a travel company committed to creating unforgettable journeys through expertly designed tours, safari adventures, and unique travel experiences. Our goal is to help travelers explore incredible destinations while enjoying comfort, safety, and authentic local experiences.</p>
           <p>We specialize in organizing well-planned travel packages that combine adventure, nature, culture, and relaxation. From witnessing the breathtaking wildlife of Kenya to exploring the diverse beauty and heritage of Sri Lanka, every journey we design is created with care and attention to detail.</p>
@@ -18,7 +19,7 @@ export default function HomeAbout() {
           <p>At Emerald Isle Travels, we believe that travel should inspire, connect people with nature and culture, and create memories that last a lifetime.</p>
           <div className="home-about-action"><SiteLink className="text-link" href="/about/">About Us</SiteLink></div>
         </div>
-        <figure className="home-about-image home-about-image-right"><img src="/images/tour-categories/safari.webp" alt="Elephants beneath acacia trees on Kenya’s savannah" width="800" height="1000" loading="lazy" /></figure>
+        <figure className="home-about-image home-about-image-right"><Image sizes="(max-width: 700px) 90vw, 35vw" src="/images/tour-categories/safari.webp" alt="Elephants beneath acacia trees on Kenya’s savannah" width="800" height="1000" loading="lazy" /></figure>
       </div>
     </section>
     <section className="home-why" aria-labelledby="home-why-heading">

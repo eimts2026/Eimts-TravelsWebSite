@@ -49,23 +49,12 @@
 .contact-enquiry-form input[type="date"]:hover { border-color: #dbe98a; background-color: #182126 !important; }
 .contact-enquiry-form select:invalid { color: #99a79f; }
 .contact-enquiry-form select option { color: #f3f4f1; background: #12191f; }
-.travel-select { position: relative; margin-top: 9px; }
-.travel-select-trigger { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:50px; padding:13px 14px; border:1px solid #52605d; border-radius:9px; background:#12191f; color:#99a79f; text-align:left; font:400 16px/1.5 var(--sans); transition:border-color .2s,background .2s,box-shadow .2s; }
-.travel-select-trigger.has-value { color:#f3f4f1; }
-.travel-select-trigger:hover,.travel-select.is-open .travel-select-trigger { border-color:#dbe98a; background:#182126; box-shadow:0 0 0 3px #dbe98a18; }
-.travel-select-chevron { color:#dbe98a; font-size:22px; line-height:1; transition:transform .2s; }
-.travel-select.is-open .travel-select-chevron { transform:rotate(180deg); }
-.travel-select-menu { position:absolute; z-index:20; inset:calc(100% + 8px) 0 auto; overflow:hidden; border:1px solid #dbe98a; border-radius:12px; background:#0d1419; box-shadow:0 18px 40px #0009; padding:6px; animation:travel-menu-in .18s ease-out; }
-.travel-select-option { display:flex; align-items:center; justify-content:space-between; width:100%; padding:13px 12px; border:0; border-radius:7px; background:transparent; color:#f3f4f1; text-align:left; font:500 15px/1.4 var(--sans); cursor:pointer; }
-.travel-select-option:hover,.travel-select-option[aria-selected=true] { background:#dbe98a; color:#101a18; }
-@keyframes travel-menu-in { from { opacity:0; transform:translateY(-6px) scale(.98); } to { opacity:1; transform:none; } }
-.travel-date { position:relative; margin-top:9px; }
-.travel-date input[type="date"] { color-scheme:dark; width:100%; margin-top:0; padding-right:50px; background:#12191f !important; }
-.travel-date input[type="date"]::-webkit-calendar-picker-indicator { opacity:0; width:34px; height:100%; position:absolute; right:0; cursor:pointer; }
-.travel-date-trigger { position:absolute; top:50%; right:10px; transform:translateY(-50%); display:grid; place-items:center; width:32px; height:32px; border:0; border-radius:7px; background:transparent; color:#dbe98a; font-size:18px; cursor:pointer; transition:background .2s, transform .2s; }
-.travel-date-trigger:hover { background:#dbe98a20; transform:translateY(-50%) scale(1.06); }
-.travel-date:focus-within input[type="date"] { border-color:#dbe98a; background:#182126 !important; box-shadow:0 0 0 3px #dbe98a18; }
-.contact-enquiry-form input[type="date"]::-webkit-calendar-picker-indicator { opacity: 1; filter: invert(88%) sepia(35%) saturate(500%) hue-rotate(25deg); cursor: pointer; }
+.travel-date { position: relative; margin-top: 9px; }
+.travel-date input[type="date"] { width: 100%; margin-top: 0; padding-right: 48px; }
+.travel-date-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; color: var(--about-accent); pointer-events: none; }
+.travel-date-icon svg { display: block; width: 100%; height: 100%; }
+.contact-enquiry-form .travel-date input::-webkit-calendar-picker-indicator { position: absolute; right: 0; top: 0; width: 44px; height: 100%; opacity: 0; cursor: pointer; }
+@supports not selector(::-webkit-calendar-picker-indicator) { .travel-date-icon { display: none; } .travel-date input[type="date"] { padding-right: 14px; } }
 .contact-enquiry-form textarea { resize: vertical; min-height: 140px; }
 .contact-enquiry-form :is(input,select,textarea):focus-visible { outline: 2px solid var(--about-accent); border-color: transparent; background: #182126; }
 .contact-enquiry-form .small-note { font-size: 12px; line-height: 1.7; margin: 23px 0; max-width: 440px; }
@@ -112,3 +101,35 @@
  .contact-enquiry-form #enquiry-result { padding: 18px; }
  .contact-enquiry-form .story-button .action-label { font-size: 11px; padding-right: 12px; }
 }
+
+/* Both card faces share the form height, so confirmation does not shift the page. */
+.contact-enquiry-card { grid-column: 2; grid-row: 1; min-width: 0; perspective: 1400px; scroll-margin-top: 100px; }
+.contact-enquiry-flipper { position: relative; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.22,1,.36,1); }
+.contact-enquiry-card.is-sent .contact-enquiry-flipper { transform: rotateY(180deg); }
+.contact-enquiry-card .contact-enquiry-form, .contact-enquiry-success { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.contact-enquiry-success { position: absolute; inset: 0; display: grid; align-items: center; padding: 38px; border-radius: 22px; background: var(--about-surface); transform: rotateY(180deg); text-align: center; }
+.contact-success-content { outline: none; }
+.contact-success-icon { width: 70px; height: 70px; margin: 0 auto 26px; color: var(--about-accent); }
+.contact-enquiry-success h2 { font-size: clamp(28px,3vw,38px); line-height: 1.15; margin-bottom: 18px; }
+.contact-enquiry-success p { margin: 0 auto 24px; max-width: 340px; }
+.contact-enquiry-success span { color: var(--about-muted); font-size: 13px; }
+.contact-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.contact-enquiry-form .story-button { min-height: 52px; border: 1px solid var(--about-accent); border-radius: 30px; padding: 4px 18px 4px 4px; gap: 14px; }
+.contact-enquiry-form .story-button:focus-visible { outline: 2px solid var(--about-accent); outline-offset: 5px; }
+.contact-enquiry-form .story-button:disabled { cursor: wait; opacity: .65; }
+.contact-enquiry-form .story-button:disabled .action-circle { transform: none; }
+.contact-enquiry-form select { min-height: 52px; }
+@media (max-width:800px) { .contact-enquiry-card { grid-column: 1; grid-row: auto; } }
+@media (prefers-reduced-motion:reduce) {
+  .contact-enquiry-flipper { transition: none; transform: none !important; }
+  .contact-enquiry-success { transform: none; visibility: hidden; }
+  .is-sent .contact-enquiry-success { visibility: visible; }
+  .is-sent .contact-enquiry-form { visibility: hidden; }
+}
+
+.page-shell .contact-enquiry-form .story-button.story-button { min-height: 52px; padding: 0; border: 1px solid var(--about-accent); border-radius: 28px; background: var(--about-accent); transition: background .2s, opacity .2s; }
+.contact-enquiry-form .story-button .action-circle { width: 48px; background: transparent; }
+.contact-enquiry-form .story-button .action-label { padding: 15px 22px 15px 52px; color: #162018; }
+.page-shell .contact-enquiry-form .story-button:hover:not(:disabled) { background: #e7edb5; }
+.contact-enquiry-form #enquiry-result.enquiry-result-error { margin-top: 20px; padding: 16px; border: 1px solid #e0a48e; border-radius: 10px; }
+.contact-enquiry-form #enquiry-result p { margin: 0; }

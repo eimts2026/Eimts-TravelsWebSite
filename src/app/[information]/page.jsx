@@ -26,8 +26,8 @@ function Content({ blocks }) {
       elements.push(<ul key={i}>{items.map(text => <li key={text}>{text}</li>)}</ul>);
     } else if (block.tag === "h2" && /^\d+\. /.test(block.text)) {
       const answer = [];
-      while (blocks[i + 1]?.tag === "p") answer.push(blocks[++i].text);
-      elements.push(<details key={i}><summary>{block.text}</summary>{answer.map(text => <p key={text}>{text}</p>)}</details>);
+      while (["p", "li"].includes(blocks[i + 1]?.tag)) answer.push(blocks[++i]);
+      elements.push(<details key={i}><summary>{block.text}</summary><Content blocks={answer} /></details>);
     } else {
       const Tag = block.tag === "strong" ? "h3" : block.tag;
       elements.push(<Tag key={i}>{block.text}</Tag>);

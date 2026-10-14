@@ -7,6 +7,7 @@ Next.js App Router website for Emerald Isle Travels using JavaScript, React 19, 
 ## Getting Started
 
 ### Prerequisites
+
 - **Node.js**: `22.12.0` or higher
 - **npm**: v10+
 
@@ -56,10 +57,10 @@ GMAIL_SMTP_USER=your-email@example.com
 GMAIL_APP_PASSWORD=your-google-app-password
 ```
 
-| Variable | Description | Required |
-| :--- | :--- | :--- |
-| `SITE_URL` | Canonical URL prefix for SEO, metadata, and sitemaps. | Optional (defaults to production URL) |
-| `GMAIL_SMTP_USER` | Gmail / Google Workspace account used for SMTP sending. | Required for `/api/enquiry` submissions |
+| Variable             | Description                                                    | Required                                |
+| :------------------- | :------------------------------------------------------------- | :-------------------------------------- |
+| `SITE_URL`           | Canonical URL prefix for SEO, metadata, and sitemaps.          | Optional (defaults to production URL)   |
+| `GMAIL_SMTP_USER`    | Gmail / Google Workspace account used for SMTP sending.        | Required for `/api/enquiry` submissions |
 | `GMAIL_APP_PASSWORD` | App-specific password generated from Google Security settings. | Required for `/api/enquiry` submissions |
 
 ---
@@ -91,13 +92,18 @@ GMAIL_APP_PASSWORD=your-google-app-password
 - **SEO & Performance Optimization**: Pre-rendered semantic HTML, optimized OpenGraph/Twitter cards, automated `sitemap.xml`, and structured data (JSON-LD).
 - **Smooth Animations & Scroll Control**: Native Lenis smooth scrolling integration and custom `ScrollToTop` floating controllers.
 
+### Enquiry email on Vercel
+
+Configure `GMAIL_SMTP_USER`, `GMAIL_APP_PASSWORD`, and `SITE_URL` in the project's Vercel environment variables for Production (and Preview if enquiries must work there), then redeploy. Keep actual `.env.local` credentials out of Git. Use a Google App Password for the SMTP account, not the regular account password. The application sends via `smtp.gmail.com:465` with TLS to `travels@emeraldisle.lk`.
+
+A successful API response means SMTP accepted the recipient; it does not prove inbox placement. Check spam/quarantine and the sending account for bounce messages if an accepted enquiry is not in the inbox. Failed SMTP attempts log only an error code and numeric response code in server logs; credentials and enquiry content are not logged.
 
 <!--
-  ____             _               _               
- |  _ \  _____   _(_)_ __   ___   | |__  _   _     
- | | | |/ _ \ \ / / | '_ \ / _ \  | '_ \| | | |    
- | |_| |  __/\ V /| | | | |  __/  | |_) | |_| |    
- |____/ \___| \_/ |_|_| |_|\___|  |_.__/ \__, |    
-                                         |___/     
+  ____             _               _
+ |  _ \  _____   _(_)_ __   ___   | |__  _   _
+ | | | |/ _ \ \ / / | '_ \ / _ \  | '_ \| | | |
+ | |_| |  __/\ V /| | | | |  __/  | |_) | |_| |
+ |____/ \___| \_/ |_|_| |_|\___|  |_.__/ \__, |
+                                         |___/
   Built by Gaveen Perera — 2026
 -->

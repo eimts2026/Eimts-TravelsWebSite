@@ -13,7 +13,7 @@ export default function ScrollStory() {
       const current = ++generation;
       dispose();
       if (preference.matches) return;
-      const { animate } = await import("animejs");
+      const { animate } = await import("animejs/animation");
       if (current !== generation || preference.matches) return;
       const animations = new Set();
       const nodes = new Set();
@@ -57,7 +57,7 @@ export default function ScrollStory() {
     let dispose = () => {};
     const setup = () => {
       dispose();
-      if (preference.matches) return;
+      if (preference.matches || matchMedia("(max-width: 767px)").matches) return;
       let images = [], texts = [], frame = 0, stopped = false;
       const values = new Map();
       const imageSelector = ".home-about-image img, .hero-scene, .philosophy-photo img, .destination-card img, .card-image img, .category-stack-card img, .gallery-grid > a img";

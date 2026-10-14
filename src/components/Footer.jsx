@@ -38,6 +38,7 @@ export default function Footer() {
             <span className="eyebrow">{"OTHER PAGES"}</span>
             <SiteLink href="/privacy-policy/">{"Privacy & Policy"}</SiteLink>
             <SiteLink href="/terms-of-use/">{"Terms of Use"}</SiteLink>
+            <SiteLink href="/cancellation-policy/">{"Cancellation Policy"}</SiteLink>
             <SiteLink href="/disclaimer/">{"Disclaimer"}</SiteLink>
             <SiteLink href="/faq-page/">{"FAQ"}</SiteLink>
           </div>

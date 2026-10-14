@@ -1,9 +1,15 @@
 {
-  "/images/navigation/sri-lanka-sunset.webp": { "width": 480, "height": 480 },
-  "/images/navigation/kenya-sunset.webp": { "width": 1400, "height": 700 },
+  "/images/navigation/sri-lanka-sunset.webp": {
+    "width": 480,
+    "height": 480
+  },
+  "/images/navigation/kenya-sunset.webp": {
+    "width": 1400,
+    "height": 700
+  },
   "/images/packages/1-day-best-of-nairobi-city-excursion.webp": {
-    "width": 2560,
-    "height": 1440
+    "width": 1920,
+    "height": 1080
   },
   "/images/packages/10-day-best-of-kenya-safari-mara-amboseli-samburu-ol-pejeta-naivasha.jpg": {
     "width": 750,
@@ -30,8 +36,8 @@
     "height": 565
   },
   "/images/packages/4-day-luxury-masai-mara-lake-naivasha-safari.webp": {
-    "width": 2560,
-    "height": 1578
+    "width": 1920,
+    "height": 1184
   },
   "/images/packages/4-days-lake-naivasha-lake-nakuru-masai-mara-4x4-safari.jpg": {
     "width": 669,
@@ -42,8 +48,8 @@
     "height": 420
   },
   "/images/packages/5-day-kenya-safari-amboseli-lake-naivasha-masai-mara.webp": {
-    "width": 2560,
-    "height": 1644
+    "width": 1920,
+    "height": 1233
   },
   "/images/packages/5-day-lake-naivasha-lake-nakuru-masai-mara-safari.jpg": {
     "width": 850,
@@ -146,8 +152,8 @@
     "height": 602
   },
   "/images/travel/1-day-best-of-nairobi-city-excursion.webp": {
-    "width": 2400,
-    "height": 1350
+    "width": 1920,
+    "height": 1080
   },
   "/images/travel/10-day-best-of-kenya-safari.webp": {
     "width": 1600,
@@ -166,12 +172,12 @@
     "height": 565
   },
   "/images/travel/4-day-luxury-masai-mara-lake-naivasha-safari.webp": {
-    "width": 2400,
-    "height": 1479
+    "width": 1920,
+    "height": 1183
   },
   "/images/travel/5-day-kenya-safari-amboseli-lake-naivasha-masai-mara.webp": {
-    "width": 2400,
-    "height": 1541
+    "width": 1920,
+    "height": 1233
   },
   "/images/travel/5-days-lake-naivasha-lake-nakuru-masai-mara-kenyan-safari.webp": {
     "width": 1600,
@@ -206,28 +212,28 @@
     "height": 1014
   },
   "/images/travel/kenya-elephants.webp": {
-    "width": 2400,
-    "height": 1600
+    "width": 1920,
+    "height": 1280
   },
   "/images/travel/kenya-giraffes.webp": {
-    "width": 2400,
-    "height": 1600
+    "width": 1920,
+    "height": 1280
   },
   "/images/travel/peaks-and-tea-trails.webp": {
     "width": 1200,
     "height": 602
   },
   "/images/travel/sigiriya.webp": {
-    "width": 1800,
-    "height": 2400
+    "width": 1440,
+    "height": 1920
   },
   "/images/travel/sri-lanka-beach-wildlife-tour.webp": {
     "width": 1280,
     "height": 720
   },
   "/images/travel/sri-lanka-beach.webp": {
-    "width": 2400,
-    "height": 1600
+    "width": 1920,
+    "height": 1280
   },
   "/images/travel/sri-lanka-honeymoon-escape.webp": {
     "width": 1200,
@@ -314,68 +320,68 @@
     "height": 933
   },
   "/images/gallery/savannah-sunset.webp": {
-    "width": 2560,
-    "height": 1706
+    "width": 1920,
+    "height": 1280
   },
   "/images/gallery/ella-nine-arch-bridge.webp": {
-    "width": 2560,
-    "height": 1600
+    "width": 1920,
+    "height": 1200
   },
   "/images/gallery/amboseli-kilimanjaro.webp": {
-    "width": 2560,
-    "height": 1713
+    "width": 1920,
+    "height": 1285
   },
   "/images/gallery/sigiriya.webp": {
-    "width": 2560,
-    "height": 1920
-  },
-  "/images/gallery/nuwara-eliya-tea.webp": {
-    "width": 2560,
-    "height": 1889
-  },
-  "/images/gallery/kenya-giraffe.webp": {
-    "width": 2560,
-    "height": 1703
-  },
-  "/images/gallery/mirissa-coast.webp": {
-    "width": 2560,
-    "height": 1920
-  },
-  "/images/gallery/stilt-fishermen.webp": {
-    "width": 2560,
-    "height": 1709
-  },
-  "/images/gallery/zebra-herd.webp": {
-    "width": 2560,
-    "height": 2048
-  },
-  "/images/gallery/sri-lanka-highlands.webp": {
-    "width": 2560,
-    "height": 1922
-  },
-  "/images/gallery/mount-kenya-elephants.webp": {
-    "width": 2560,
-    "height": 1707
-  },
-  "/images/gallery/diani-beach.webp": {
-    "width": 2560,
-    "height": 1920
-  },
-  "/images/gallery/wildebeest-migration.webp": {
-    "width": 2560,
-    "height": 1753
-  },
-  "/images/gallery/lakeside-temple.webp": {
-    "width": 2560,
+    "width": 1920,
     "height": 1440
   },
+  "/images/gallery/nuwara-eliya-tea.webp": {
+    "width": 1920,
+    "height": 1417
+  },
+  "/images/gallery/kenya-giraffe.webp": {
+    "width": 1920,
+    "height": 1277
+  },
+  "/images/gallery/mirissa-coast.webp": {
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/gallery/stilt-fishermen.webp": {
+    "width": 1920,
+    "height": 1282
+  },
+  "/images/gallery/zebra-herd.webp": {
+    "width": 1920,
+    "height": 1536
+  },
+  "/images/gallery/sri-lanka-highlands.webp": {
+    "width": 1920,
+    "height": 1442
+  },
+  "/images/gallery/mount-kenya-elephants.webp": {
+    "width": 1920,
+    "height": 1280
+  },
+  "/images/gallery/diani-beach.webp": {
+    "width": 1920,
+    "height": 1440
+  },
+  "/images/gallery/wildebeest-migration.webp": {
+    "width": 1920,
+    "height": 1315
+  },
+  "/images/gallery/lakeside-temple.webp": {
+    "width": 1920,
+    "height": 1080
+  },
   "/images/gallery/lamu-dhow.webp": {
-    "width": 2560,
-    "height": 1635
+    "width": 1920,
+    "height": 1226
   },
   "/images/gallery/amboseli-safari.webp": {
-    "width": 2560,
-    "height": 1713
+    "width": 1920,
+    "height": 1285
   },
   "/images/about/bridge.webp": {
     "width": 1000,

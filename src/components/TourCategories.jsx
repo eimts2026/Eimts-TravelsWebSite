@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import SiteLink from "./SiteLink";
 import { tourCategories } from "../data/tour-categories";
@@ -41,7 +42,7 @@ export default function TourCategories() {
           const distance = Math.abs(offset);
           const spacing = width < 640 ? 90 : width < 1024 ? 130 : 170;
           return <div key={item.id} className="category-stack-card" aria-hidden="true" style={{ transform: `translate(-50%, -50%) translate(${offset * spacing}px, ${distance * (width < 640 ? 20 : 40)}px) rotate(${offset * (width < 640 ? 8 : 12)}deg) scale(${1 - distance * (width < 640 ? .06 : .12)})`, zIndex: Math.round(100 - distance * 10), opacity: Math.min(1, (total / 2 - distance) * 2) }}>
-            <img src={item.image} alt="" width="800" height="1000" loading="lazy" draggable="false" />
+            <Image sizes="(max-width: 700px) 90vw, 35vw" src={item.image} alt="" width="800" height="1000" loading="lazy" draggable="false" />
             <div className="category-stack-shade" style={{ opacity: Math.min(.5, distance * .2) }} />
             <span className="category-stack-badge">{String(index + 1).padStart(2, "0")} / 05</span>
             <div className="category-stack-caption" style={{ opacity: Math.max(0, 1 - distance * 2) }}><h3>{item.title}</h3><p>{item.copy}</p></div>

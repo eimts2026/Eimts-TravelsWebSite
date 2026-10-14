@@ -1,0 +1,617 @@
+[
+  {
+    "file": "/images/about/bridge.webp",
+    "before": 290304,
+    "after": 226932
+  },
+  {
+    "file": "/images/about/coast.webp",
+    "before": 299180,
+    "after": 230962
+  },
+  {
+    "file": "/images/about/footer.webp",
+    "before": 402866,
+    "after": 331186
+  },
+  {
+    "file": "/images/about/safari.webp",
+    "before": 81782,
+    "after": 61226
+  },
+  {
+    "file": "/images/about/tea.webp",
+    "before": 495634,
+    "after": 403092
+  },
+  {
+    "file": "/images/emerald-isle-logo.jpeg",
+    "before": 867249,
+    "after": 74780
+  },
+  {
+    "file": "/images/emerald-isle-logo.webp",
+    "before": 36032,
+    "after": 29144
+  },
+  {
+    "file": "/images/gallery/amboseli-kilimanjaro.webp",
+    "before": 662178,
+    "after": 233742
+  },
+  {
+    "file": "/images/gallery/amboseli-safari.webp",
+    "before": 342020,
+    "after": 73930
+  },
+  {
+    "file": "/images/gallery/diani-beach.webp",
+    "before": 179926,
+    "after": 61476
+  },
+  {
+    "file": "/images/gallery/ella-nine-arch-bridge.webp",
+    "before": 1225942,
+    "after": 490298
+  },
+  {
+    "file": "/images/gallery/kenya-giraffe.webp",
+    "before": 648186,
+    "after": 224394
+  },
+  {
+    "file": "/images/gallery/lakeside-temple.webp",
+    "before": 733568,
+    "after": 292414
+  },
+  {
+    "file": "/images/gallery/lamu-dhow.webp",
+    "before": 575652,
+    "after": 210856
+  },
+  {
+    "file": "/images/gallery/mirissa-coast.webp",
+    "before": 1020382,
+    "after": 393604
+  },
+  {
+    "file": "/images/gallery/mount-kenya-elephants.webp",
+    "before": 1057704,
+    "after": 403716
+  },
+  {
+    "file": "/images/gallery/nuwara-eliya-tea.webp",
+    "before": 1031008,
+    "after": 440816
+  },
+  {
+    "file": "/images/gallery/savannah-sunset.webp",
+    "before": 505310,
+    "after": 170910
+  },
+  {
+    "file": "/images/gallery/sigiriya.webp",
+    "before": 1379936,
+    "after": 563710
+  },
+  {
+    "file": "/images/gallery/sri-lanka-highlands.webp",
+    "before": 608936,
+    "after": 180606
+  },
+  {
+    "file": "/images/gallery/stilt-fishermen.webp",
+    "before": 735428,
+    "after": 283084
+  },
+  {
+    "file": "/images/gallery/wildebeest-migration.webp",
+    "before": 537628,
+    "after": 202910
+  },
+  {
+    "file": "/images/gallery/zebra-herd.webp",
+    "before": 1170310,
+    "after": 427196
+  },
+  {
+    "file": "/images/home-gallery/cave-temple.webp",
+    "before": 482546,
+    "after": 331918
+  },
+  {
+    "file": "/images/home-gallery/city-heritage.webp",
+    "before": 568892,
+    "after": 428956
+  },
+  {
+    "file": "/images/home-gallery/coastal-bay.webp",
+    "before": 685892,
+    "after": 480992
+  },
+  {
+    "file": "/images/home-gallery/coconut-coast.webp",
+    "before": 658548,
+    "after": 495390
+  },
+  {
+    "file": "/images/home-gallery/nine-arch-bridge.webp",
+    "before": 526434,
+    "after": 357386
+  },
+  {
+    "file": "/images/home-gallery/palm-coast.webp",
+    "before": 492544,
+    "after": 331044
+  },
+  {
+    "file": "/images/home-gallery/red-mosque.webp",
+    "before": 623690,
+    "after": 322432
+  },
+  {
+    "file": "/images/home-gallery/sigiriya-summit.webp",
+    "before": 713310,
+    "after": 519694
+  },
+  {
+    "file": "/images/home-gallery/stilt-fishermen.webp",
+    "before": 293748,
+    "after": 177222
+  },
+  {
+    "file": "/images/home-gallery/waterfall.webp",
+    "before": 641858,
+    "after": 447984
+  },
+  {
+    "file": "/images/navigation/kenya-sunset.webp",
+    "before": 54532,
+    "after": 44482
+  },
+  {
+    "file": "/images/navigation/kenya.webp",
+    "before": 318598,
+    "after": 244654
+  },
+  {
+    "file": "/images/navigation/sri-lanka.webp",
+    "before": 243942,
+    "after": 176850
+  },
+  {
+    "file": "/images/package-collection/cards/10-day-best-of-kenya-safari-mara-amboseli-samburu-ol-pejeta-naivasha.webp",
+    "before": 61964,
+    "after": 51562
+  },
+  {
+    "file": "/images/package-collection/cards/3-day-mid-range-masai-mara-lake-naivasha-safari.webp",
+    "before": 61422,
+    "after": 48994
+  },
+  {
+    "file": "/images/package-collection/cards/4-days-lake-naivasha-lake-nakuru-masai-mara-4x4-safari.webp",
+    "before": 64962,
+    "after": 54270
+  },
+  {
+    "file": "/images/package-collection/cards/5-day-lake-naivasha-lake-nakuru-masai-mara-safari.webp",
+    "before": 110070,
+    "after": 93270
+  },
+  {
+    "file": "/images/package-collection/cards/6-day-amboseli-and-masai-mara-luxury-safari.webp",
+    "before": 82292,
+    "after": 69404
+  },
+  {
+    "file": "/images/package-collection/cards/6-day-sopa-all-inclusive-safari-in-kenya.webp",
+    "before": 44692,
+    "after": 36740
+  },
+  {
+    "file": "/images/package-collection/cards/7-day-kenya-safari-adventure-2.webp",
+    "before": 44090,
+    "after": 36004
+  },
+  {
+    "file": "/images/package-collection/cards/sri-lanka-leopard.webp",
+    "before": 228868,
+    "after": 179630
+  },
+  {
+    "file": "/images/package-collection/hero-still.webp",
+    "before": 263806,
+    "after": 206652
+  },
+  {
+    "file": "/images/packages/1-day-best-of-nairobi-city-excursion.webp",
+    "before": 439956,
+    "after": 180536
+  },
+  {
+    "file": "/images/packages/10-day-best-of-kenya-safari-mara-amboseli-samburu-ol-pejeta-naivasha.jpg",
+    "before": 72005,
+    "after": 57613
+  },
+  {
+    "file": "/images/packages/10-day-best-of-kenya-safari.jpg",
+    "before": 345696,
+    "after": 248307
+  },
+  {
+    "file": "/images/packages/10-day-off-the-beaten-path-kenya-safari-meru-samburu-ol-pejeta-masai-mara.jpg",
+    "before": 439013,
+    "after": 308258
+  },
+  {
+    "file": "/images/packages/3-day-masai-mara-lake-naivasha-budget-safari.jpg",
+    "before": 423850,
+    "after": 304956
+  },
+  {
+    "file": "/images/packages/3-day-mid-range-masai-mara-lake-naivasha-safari.jpg",
+    "before": 80947,
+    "after": 67227
+  },
+  {
+    "file": "/images/packages/4-day-luxury-masai-mara-lake-naivasha-safari.webp",
+    "before": 884964,
+    "after": 417078
+  },
+  {
+    "file": "/images/packages/4-days-lake-naivasha-lake-nakuru-masai-mara-4x4-safari.jpg",
+    "before": 73288,
+    "after": 59208
+  },
+  {
+    "file": "/images/packages/4-days-maasai-mara-lake-naivasha-lake-nakuru-budget-safari.jpg",
+    "before": 72696,
+    "after": 60280
+  },
+  {
+    "file": "/images/packages/5-day-kenya-safari-amboseli-lake-naivasha-masai-mara.webp",
+    "before": 285958,
+    "after": 139102
+  },
+  {
+    "file": "/images/packages/5-day-lake-naivasha-lake-nakuru-masai-mara-safari.jpg",
+    "before": 119436,
+    "after": 96121
+  },
+  {
+    "file": "/images/packages/5-days-lake-naivasha-lake-nakuru-masai-mara-kenyan-safari.jpg",
+    "before": 294530,
+    "after": 207270
+  },
+  {
+    "file": "/images/packages/6-day-amboseli-and-masai-mara-luxury-safari.jpg",
+    "before": 90206,
+    "after": 73990
+  },
+  {
+    "file": "/images/packages/6-day-amboseli-lake-nakuru-masai-mara-adventure.jpg",
+    "before": 217106,
+    "after": 173042
+  },
+  {
+    "file": "/images/packages/6-day-sopa-all-inclusive-safari-in-kenya.jpg",
+    "before": 55113,
+    "after": 43266
+  },
+  {
+    "file": "/images/packages/6-nights-7-days-sri-lanka-tour.webp",
+    "before": 418728,
+    "after": 329304
+  },
+  {
+    "file": "/images/packages/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.jpg",
+    "before": 505191,
+    "after": 368844
+  },
+  {
+    "file": "/images/packages/7-day-masai-mara-amboseli-naivasha-hells-gate-nakuru.jpg",
+    "before": 230117,
+    "after": 154927
+  },
+  {
+    "file": "/images/packages/7-day-sopa-lodges-circuit-safari.jpg",
+    "before": 287198,
+    "after": 201678
+  },
+  {
+    "file": "/images/packages/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.jpg",
+    "before": 401449,
+    "after": 294816
+  },
+  {
+    "file": "/images/packages/best-of-both-sri-lanka-tour.jpg",
+    "before": 533026,
+    "after": 374237
+  },
+  {
+    "file": "/images/packages/off-the-beaten-path-north-east-12-days.jpg",
+    "before": 88988,
+    "after": 70814
+  },
+  {
+    "file": "/images/packages/sri-lanka-honeymoon-escape.jpg",
+    "before": 319493,
+    "after": 257168
+  },
+  {
+    "file": "/images/packages/sri-lanka-pilgrimage-tour.jpg",
+    "before": 86739,
+    "after": 73014
+  },
+  {
+    "file": "/images/packages/sri-lanka-surf-and-wellness-tour.jpg",
+    "before": 199101,
+    "after": 142471
+  },
+  {
+    "file": "/images/packages/sri-lanka-wildlife-safari-experience.jpg",
+    "before": 134968,
+    "after": 108988
+  },
+  {
+    "file": "/images/packages/the-classic-highlights.jpg",
+    "before": 77369,
+    "after": 62727
+  },
+  {
+    "file": "/images/places/anuradhapura.webp",
+    "before": 105694,
+    "after": 81378
+  },
+  {
+    "file": "/images/places/arugam-bay.webp",
+    "before": 158752,
+    "after": 131556
+  },
+  {
+    "file": "/images/places/batticaloa.webp",
+    "before": 134370,
+    "after": 105708
+  },
+  {
+    "file": "/images/places/bentota.webp",
+    "before": 123332,
+    "after": 101408
+  },
+  {
+    "file": "/images/places/chilaw.webp",
+    "before": 167102,
+    "after": 131304
+  },
+  {
+    "file": "/images/places/colombo.webp",
+    "before": 119054,
+    "after": 97238
+  },
+  {
+    "file": "/images/places/galle.webp",
+    "before": 222814,
+    "after": 180070
+  },
+  {
+    "file": "/images/places/hambantota.webp",
+    "before": 78882,
+    "after": 59920
+  },
+  {
+    "file": "/images/places/haputale.webp",
+    "before": 69060,
+    "after": 54200
+  },
+  {
+    "file": "/images/places/hikkaduwa.webp",
+    "before": 58846,
+    "after": 43746
+  },
+  {
+    "file": "/images/places/jaffna.webp",
+    "before": 128722,
+    "after": 105526
+  },
+  {
+    "file": "/images/places/kalpitiya.webp",
+    "before": 104736,
+    "after": 84866
+  },
+  {
+    "file": "/images/places/kandy.webp",
+    "before": 170764,
+    "after": 141934
+  },
+  {
+    "file": "/images/places/mannar.webp",
+    "before": 115242,
+    "after": 94534
+  },
+  {
+    "file": "/images/places/negombo.webp",
+    "before": 106516,
+    "after": 81714
+  },
+  {
+    "file": "/images/places/nuwara-eliya.webp",
+    "before": 171010,
+    "after": 142928
+  },
+  {
+    "file": "/images/places/pasikuda.webp",
+    "before": 115966,
+    "after": 90458
+  },
+  {
+    "file": "/images/places/tangalle.webp",
+    "before": 175356,
+    "after": 142974
+  },
+  {
+    "file": "/images/places/trincomalee.webp",
+    "before": 92206,
+    "after": 67140
+  },
+  {
+    "file": "/images/places/yala.webp",
+    "before": 90098,
+    "after": 73570
+  },
+  {
+    "file": "/images/tour-categories/adventure.webp",
+    "before": 194486,
+    "after": 141672
+  },
+  {
+    "file": "/images/tour-categories/beach.webp",
+    "before": 216762,
+    "after": 159186
+  },
+  {
+    "file": "/images/tour-categories/honeymoon.webp",
+    "before": 112054,
+    "after": 73332
+  },
+  {
+    "file": "/images/tour-categories/pilgrimage.webp",
+    "before": 215464,
+    "after": 158592
+  },
+  {
+    "file": "/images/tour-categories/safari.webp",
+    "before": 144934,
+    "after": 102620
+  },
+  {
+    "file": "/images/travel/1-day-best-of-nairobi-city-excursion.webp",
+    "before": 365024,
+    "after": 156220
+  },
+  {
+    "file": "/images/travel/10-day-best-of-kenya-safari.webp",
+    "before": 334648,
+    "after": 226502
+  },
+  {
+    "file": "/images/travel/10-day-off-the-beaten-path-kenya-safari-meru-samburu-ol-pejeta-masai-mara.webp",
+    "before": 423194,
+    "after": 300928
+  },
+  {
+    "file": "/images/travel/3-day-masai-mara-lake-naivasha-budget-safari.webp",
+    "before": 377946,
+    "after": 246218
+  },
+  {
+    "file": "/images/travel/4-day-luxury-masai-mara-lake-naivasha-safari.webp",
+    "before": 890662,
+    "after": 351718
+  },
+  {
+    "file": "/images/travel/5-day-kenya-safari-amboseli-lake-naivasha-masai-mara.webp",
+    "before": 308198,
+    "after": 118532
+  },
+  {
+    "file": "/images/travel/5-days-lake-naivasha-lake-nakuru-masai-mara-kenyan-safari.webp",
+    "before": 240796,
+    "after": 159718
+  },
+  {
+    "file": "/images/travel/6-day-amboseli-lake-nakuru-masai-mara-adventure.webp",
+    "before": 212548,
+    "after": 148056
+  },
+  {
+    "file": "/images/travel/6-nights-7-days-sri-lanka-tour.webp",
+    "before": 436668,
+    "after": 310328
+  },
+  {
+    "file": "/images/travel/7-day-magical-kenya-budget-safari-amboseli-naivasha-nakuru-masai-mara-2.webp",
+    "before": 525922,
+    "after": 360094
+  },
+  {
+    "file": "/images/travel/7-day-masai-mara-amboseli-naivasha-hells-gate-nakuru.webp",
+    "before": 195804,
+    "after": 124238
+  },
+  {
+    "file": "/images/travel/7-day-sopa-lodges-circuit-safari.webp",
+    "before": 229158,
+    "after": 140056
+  },
+  {
+    "file": "/images/travel/8-day-masai-mara-amboseli-all-inclusive-kenya-safari.webp",
+    "before": 368862,
+    "after": 246394
+  },
+  {
+    "file": "/images/travel/best-of-both-sri-lanka-tour.webp",
+    "before": 555760,
+    "after": 389882
+  },
+  {
+    "file": "/images/travel/kenya-elephants.webp",
+    "before": 1233086,
+    "after": 492206
+  },
+  {
+    "file": "/images/travel/kenya-giraffes.webp",
+    "before": 343758,
+    "after": 85044
+  },
+  {
+    "file": "/images/travel/peaks-and-tea-trails.webp",
+    "before": 306202,
+    "after": 206538
+  },
+  {
+    "file": "/images/travel/sigiriya.webp",
+    "before": 911686,
+    "after": 309224
+  },
+  {
+    "file": "/images/travel/sri-lanka-beach-wildlife-tour.webp",
+    "before": 120220,
+    "after": 98902
+  },
+  {
+    "file": "/images/travel/sri-lanka-beach.webp",
+    "before": 794294,
+    "after": 246630
+  },
+  {
+    "file": "/images/travel/sri-lanka-honeymoon-escape.webp",
+    "before": 306390,
+    "after": 212126
+  },
+  {
+    "file": "/images/travel/sri-lanka-pilgrimage-tour.webp",
+    "before": 81720,
+    "after": 53156
+  },
+  {
+    "file": "/images/travel/sri-lanka-surf-and-wellness-tour.webp",
+    "before": 189640,
+    "after": 129874
+  },
+  {
+    "file": "/images/travel/sri-lanka-surf-explorer.webp",
+    "before": 105996,
+    "after": 53518
+  },
+  {
+    "file": "/images/travel/sri-lanka-wildlife-safari-experience.webp",
+    "before": 141748,
+    "after": 97954
+  },
+  {
+    "file": "/images/travel-guide.webp",
+    "before": 21398,
+    "after": 16478
+  }
+]

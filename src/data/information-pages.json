@@ -203,7 +203,6 @@
     "title": "Terms of Use",
     "eyebrow": "Legal Information",
     "source": "https://emeraldisletravels.com/terms-of-use/",
-    "sourceModified": "2026-03-23T09:47:26",
     "blocks": [
       {
         "tag": "p",
@@ -307,7 +306,7 @@
       },
       {
         "tag": "p",
-        "text": "It is the traveler’s sole responsibility to ensure that they possess valid passports, visas, permits, health documentation, vaccination certificates, travel insurance, and any other required documents for entry, transit, or participation in booked activities. We are not responsible for losses arising from missing, invalid, or expired documents."
+        "text": "All passengers are responsible for ensuring that they hold valid passports, visas and other travel documents required for their destination and any transit countries. Passengers should ensure that their passport details are correct and that their passport is in good condition and valid for the period required by the destination country and airline. Visa and entry requirements vary depending on the destination, nationality of the traveller and purpose of travel. Passengers are advised to check the latest requirements with the relevant embassy, consulate, immigration authority or airline before travelling. Where a journey involves transit through another country, passengers are responsible for checking whether a transit visa or any additional documentation is required. Passengers are responsible for providing accurate and complete travel documents. Emerald Isle Travels cannot be held responsible for denied boarding, denied entry, delays or additional costs arising from incorrect, incomplete or invalid travel documentation."
       },
       {
         "tag": "h2",
@@ -327,19 +326,43 @@
       },
       {
         "tag": "h2",
-        "text": "Third-Party Providers"
+        "text": "Our Role & Third-Party Providers"
       },
       {
         "tag": "p",
-        "text": "Your travel arrangements may involve third-party suppliers such as hotels, airlines, transport operators, guides, activity providers, park authorities, insurance providers, and payment gateways. Their own terms, rules, and cancellation conditions may also apply. We are not liable for acts, errors, delays, omissions, or failures caused by third parties."
+        "text": "Emerald Isle Travels may arrange travel services provided by third-party suppliers, including airlines, hotels, transportation providers, tour operators and other service providers. The terms and conditions of the relevant supplier may apply to the services included in your booking. Where a service is provided directly by a third-party supplier, the supplier's applicable terms and conditions will apply."
       },
       {
         "tag": "h2",
-        "text": "Payments, Amendments & Cancellations"
+        "text": "Booking Confirmation"
       },
       {
         "tag": "p",
-        "text": "Payment schedules, deposit requirements, amendment charges, cancellation fees, refunds, and supplier penalties may vary depending on the itinerary, season, destination, service type, and supplier policies. Final commercial terms will be shared during the booking process and must be accepted before confirmation."
+        "text": "Customers are strongly advised to read the applicable booking terms and conditions before confirming their reservation. A booking will be subject to the payment terms communicated at the time of confirmation. The applicable payment schedule and due dates will be stated in the booking confirmation. Any deposit or payment made may be subject to the applicable airline, hotel, tour operator or other supplier's cancellation and amendment conditions."
+      },
+      {
+        "tag": "h2",
+        "text": "Payment"
+      },
+      {
+        "tag": "p",
+        "text": "Customers are required to make payments by the agreed due dates stated in their booking confirmation. Failure to make payment by the applicable due date may result in the cancellation of the booking and applicable cancellation or supplier charges may apply. Payment terms applicable to each booking will be communicated to the customer at the time of confirmation."
+      },
+      {
+        "tag": "h2",
+        "text": "Changes to Your Booking"
+      },
+      {
+        "tag": "p",
+        "text": "Any request to change a confirmed booking must be made in writing. Changes are subject to availability and the terms and conditions of the relevant airline, hotel, tour operator or other service provider. Amendment fees, fare differences or other charges may apply. Some bookings, fares and services may be non-changeable or non-refundable. Any applicable charges will be communicated at the time of the requested change."
+      },
+      {
+        "tag": "h2",
+        "text": "Cancellations & Refunds"
+      },
+      {
+        "tag": "p",
+        "text": "Cancellation and refund conditions depend on the relevant service provider and the type of booking. Please read our Cancellation Policy alongside the terms provided in your booking confirmation."
       },
       {
         "tag": "h2",
@@ -398,6 +421,30 @@
         "text": "We reserve the right to modify or update these Terms of Use at any time without prior notice. Updated terms become effective once published on this website. Your continued use of the website after any changes constitutes acceptance of those updated terms."
       },
       {
+        "tag": "h2",
+        "text": "Travel Insurance"
+      },
+      {
+        "tag": "p",
+        "text": "We strongly recommend that customers obtain appropriate travel insurance before travelling. Travel insurance may provide cover for circumstances such as trip cancellation, medical emergencies, baggage loss or delays, subject to the terms and conditions of the insurance policy. Customers should carefully review their insurance coverage to ensure that it meets their individual travel requirements."
+      },
+      {
+        "tag": "h2",
+        "text": "Flight Changes"
+      },
+      {
+        "tag": "p",
+        "text": "Flight schedules are subject to change by airlines. In the event of a flight cancellation, delay or schedule change, the available options will depend on the airline's applicable terms and conditions. Where we receive information regarding a change from the relevant airline or supplier, we will communicate the information to the customer where reasonably possible. Additional charges may apply depending on the circumstances and the terms of the airline or supplier."
+      },
+      {
+        "tag": "h2",
+        "text": "Special Requests & Medical Requirements"
+      },
+      {
+        "tag": "p",
+        "text": "Customers should inform Emerald Isle Travels of any special requirements or medical conditions that may affect their travel arrangements at the time of booking. We will communicate such requests to the relevant service provider where applicable. However, special requests are subject to availability and cannot always be guaranteed."
+      },
+      {
         "tag": "h3",
         "text": "Important Note"
       },
@@ -405,13 +452,13 @@
         "tag": "p",
         "text": "For specific travel bookings, quotations, and custom safari arrangements, additional booking terms may apply and will be shared separately before confirmation."
       }
-    ]
+    ],
+    "updatedAt": "2026-10-14"
   },
   "disclaimer": {
     "title": "Disclaimer",
     "eyebrow": "Important Notice",
     "source": "https://emeraldisletravels.com/disclaimer/",
-    "sourceModified": "2026-03-23T13:48:23",
     "blocks": [
       {
         "tag": "p",
@@ -511,11 +558,11 @@
       },
       {
         "tag": "h2",
-        "text": "Third-Party Services"
+        "text": "Our Role & Third-Party Services"
       },
       {
         "tag": "p",
-        "text": "Travel services may depend on third-party suppliers including airlines, hotels, transfer providers, guides, insurance companies, payment processors, and external technology services. We are not responsible for service failures, delays, or losses caused directly by such third parties."
+        "text": "Emerald Isle Travels may arrange travel services provided by third-party suppliers, including airlines, hotels, transportation providers, tour operators and other service providers. The terms and conditions of the relevant supplier may apply to the services included in your booking. Where a service is provided directly by a third-party supplier, the supplier's applicable terms and conditions will apply."
       },
       {
         "tag": "h2",
@@ -527,11 +574,27 @@
       },
       {
         "tag": "h2",
-        "text": "Traveler Responsibility"
+        "text": "Passport, Visa & Travel Document Requirements"
       },
       {
         "tag": "p",
-        "text": "Travelers remain responsible for ensuring they meet passport, visa, health, insurance, fitness, and entry requirements relevant to their destinations and activities. Final responsibility for travel readiness rests with the traveler."
+        "text": "All passengers are responsible for ensuring that they hold valid passports, visas and other travel documents required for their destination and any transit countries. Passengers should ensure that their passport details are correct and that their passport is in good condition and valid for the period required by the destination country and airline. Visa and entry requirements vary depending on the destination, nationality of the traveller and purpose of travel. Passengers are advised to check the latest requirements with the relevant embassy, consulate, immigration authority or airline before travelling. Where a journey involves transit through another country, passengers are responsible for checking whether a transit visa or any additional documentation is required. Passengers are responsible for providing accurate and complete travel documents. Emerald Isle Travels cannot be held responsible for denied boarding, denied entry, delays or additional costs arising from incorrect, incomplete or invalid travel documentation."
+      },
+      {
+        "tag": "h2",
+        "text": "Health Requirements"
+      },
+      {
+        "tag": "p",
+        "text": "Passengers are responsible for checking any health, vaccination or other medical requirements applicable to their destination and transit countries. We recommend consulting a qualified healthcare professional or relevant health authority before travelling, particularly when travelling to destinations where specific vaccinations or health precautions may be required."
+      },
+      {
+        "tag": "h2",
+        "text": "Destination-Specific Requirements"
+      },
+      {
+        "tag": "p",
+        "text": "Entry, immigration, customs, health and other travel requirements vary by destination and may change from time to time. Customers are responsible for ensuring that they comply with the requirements applicable to their journey, including requirements for transit countries. Customers are advised to check the latest information with the relevant official authorities before travelling."
       },
       {
         "tag": "h2",
@@ -549,13 +612,13 @@
         "tag": "p",
         "text": "Any confirmed booking, quotation, or custom itinerary will be governed by the final terms, pricing, and supplier conditions shared during the booking process."
       }
-    ]
+    ],
+    "updatedAt": "2026-10-14"
   },
   "faq-page": {
     "title": "Frequently Asked Questions",
     "eyebrow": "Help & Support",
     "source": "https://emeraldisletravels.com/faq-page/",
-    "sourceModified": "2026-03-23T13:48:19",
     "blocks": [
       {
         "tag": "p",
@@ -651,7 +714,7 @@
       },
       {
         "tag": "p",
-        "text": "Travel insurance is strongly recommended for most trips. Coverage can help protect against unexpected cancellations, delays, medical emergencies, baggage issues, and other travel-related risks."
+        "text": "We strongly recommend that customers obtain appropriate travel insurance before travelling. Travel insurance may provide cover for circumstances such as trip cancellation, medical emergencies, baggage loss or delays, subject to the terms and conditions of the insurance policy. Customers should carefully review their insurance coverage to ensure that it meets their individual travel requirements."
       },
       {
         "tag": "h2",
@@ -675,7 +738,7 @@
       },
       {
         "tag": "p",
-        "text": "Changes may be possible depending on availability, supplier conditions, notice period, and the stage of the booking. Additional costs or amendment fees may apply if changes are requested after confirmation."
+        "text": "Any request to change a confirmed booking must be made in writing. Changes are subject to availability and the terms and conditions of the relevant airline, hotel, tour operator or other service provider. Amendment fees, fare differences or other charges may apply. Some bookings, fares and services may be non-changeable or non-refundable. Any applicable charges will be communicated at the time of the requested change."
       },
       {
         "tag": "h2",
@@ -702,6 +765,82 @@
         "text": "Response times may vary depending on the complexity of the inquiry and supplier checks, but we aim to reply as soon as possible with relevant travel guidance and next steps."
       },
       {
+        "tag": "h2",
+        "text": "13. What should I check about my flights before departure?"
+      },
+      {
+        "tag": "p",
+        "text": "Customers are advised to check their flight and travel arrangements before departure, as airlines and other suppliers may make changes to schedules or services. Where applicable, customers should follow any reconfirmation or check-in instructions provided by the airline or Emerald Isle Travels."
+      },
+      {
+        "tag": "h2",
+        "text": "14. How much time should I allow for airport check-in?"
+      },
+      {
+        "tag": "p",
+        "text": "Customers should allow sufficient time for airport check-in, security and immigration procedures. The recommended check-in time may vary depending on the airline, airport and destination. Customers should follow the check-in requirements provided by the relevant airline. Emerald Isle Travels cannot be responsible for missed flights resulting from late arrival at the airport or failure to comply with the airline's check-in requirements."
+      },
+      {
+        "tag": "h2",
+        "text": "15. When will I receive my travel documents?"
+      },
+      {
+        "tag": "p",
+        "text": "Travel documents such as e-tickets, hotel confirmations, vouchers and other relevant documents will be provided through the agreed communication method once the applicable requirements and payments have been completed. Customers are responsible for checking all travel documents upon receipt and informing Emerald Isle Travels immediately if they identify any errors or discrepancies."
+      },
+      {
+        "tag": "h2",
+        "text": "16. How do I tell you about special or medical requirements?"
+      },
+      {
+        "tag": "p",
+        "text": "Customers should inform Emerald Isle Travels of any special requirements or medical conditions that may affect their travel arrangements at the time of booking. We will communicate such requests to the relevant service provider where applicable. However, special requests are subject to availability and cannot always be guaranteed."
+      },
+      {
+        "tag": "h2",
+        "text": "17. What should I check before travelling?"
+      },
+      {
+        "tag": "p",
+        "text": "Before departure, customers are advised to ensure that they have:"
+      },
+      {
+        "tag": "li",
+        "text": "A valid passport and required visa, where applicable"
+      },
+      {
+        "tag": "li",
+        "text": "All required travel documents"
+      },
+      {
+        "tag": "li",
+        "text": "Confirmed flight and accommodation details"
+      },
+      {
+        "tag": "li",
+        "text": "Appropriate travel insurance"
+      },
+      {
+        "tag": "li",
+        "text": "Any required health documentation or medication"
+      },
+      {
+        "tag": "li",
+        "text": "Sufficient funds and the required payment cards"
+      },
+      {
+        "tag": "li",
+        "text": "Any additional documents required for their destination"
+      },
+      {
+        "tag": "h2",
+        "text": "18. What cancellation and refund conditions apply?"
+      },
+      {
+        "tag": "p",
+        "text": "Cancellation and refund conditions depend on the terms and conditions of the relevant service provider and the type of booking. Where a refund is approved, the amount and processing time will depend on the applicable supplier's refund policy and the payment method used. Any applicable cancellation charges, administrative fees, supplier charges or bank charges may be deducted from the refundable amount."
+      },
+      {
         "tag": "h3",
         "text": "Need a Tailor-Made Itinerary?"
       },
@@ -709,6 +848,66 @@
         "tag": "p",
         "text": "If your travel plans are unique, use the website inquiry form and share your preferred dates, destinations, number of travelers, and interests so we can prepare a personalized proposal."
       }
-    ]
+    ],
+    "updatedAt": "2026-10-14"
+  },
+  "cancellation-policy": {
+    "title": "Cancellation Policy",
+    "eyebrow": "Booking & Refund Information",
+    "blocks": [
+      {
+        "tag": "p",
+        "text": "Cancellation and refund conditions depend on the terms and conditions of the relevant service provider and the type of booking. Please read this policy together with your booking confirmation and the applicable supplier terms."
+      },
+      {
+        "tag": "h2",
+        "text": "Booking Confirmation & Supplier Conditions"
+      },
+      {
+        "tag": "p",
+        "text": "Customers are strongly advised to read the applicable booking terms and conditions before confirming their reservation. A booking will be subject to the payment terms communicated at the time of confirmation. The applicable payment schedule and due dates will be stated in the booking confirmation. Any deposit or payment made may be subject to the applicable airline, hotel, tour operator or other supplier's cancellation and amendment conditions."
+      },
+      {
+        "tag": "h2",
+        "text": "Payment Deadlines"
+      },
+      {
+        "tag": "p",
+        "text": "Customers are required to make payments by the agreed due dates stated in their booking confirmation. Failure to make payment by the applicable due date may result in the cancellation of the booking and applicable cancellation or supplier charges may apply. Payment terms applicable to each booking will be communicated to the customer at the time of confirmation."
+      },
+      {
+        "tag": "h2",
+        "text": "Changes to Your Booking"
+      },
+      {
+        "tag": "p",
+        "text": "Any request to change a confirmed booking must be made in writing. Changes are subject to availability and the terms and conditions of the relevant airline, hotel, tour operator or other service provider. Amendment fees, fare differences or other charges may apply. Some bookings, fares and services may be non-changeable or non-refundable. Any applicable charges will be communicated at the time of the requested change."
+      },
+      {
+        "tag": "h2",
+        "text": "Cancellations & Refunds"
+      },
+      {
+        "tag": "p",
+        "text": "Cancellation and refund conditions depend on the terms and conditions of the relevant service provider and the type of booking. Where a refund is approved, the amount and processing time will depend on the applicable supplier's refund policy and the payment method used. Any applicable cancellation charges, administrative fees, supplier charges or bank charges may be deducted from the refundable amount."
+      },
+      {
+        "tag": "h2",
+        "text": "Flight Changes"
+      },
+      {
+        "tag": "p",
+        "text": "Flight schedules are subject to change by airlines. In the event of a flight cancellation, delay or schedule change, the available options will depend on the airline's applicable terms and conditions. Where we receive information regarding a change from the relevant airline or supplier, we will communicate the information to the customer where reasonably possible. Additional charges may apply depending on the circumstances and the terms of the airline or supplier."
+      },
+      {
+        "tag": "h2",
+        "text": "Travel Insurance"
+      },
+      {
+        "tag": "p",
+        "text": "We strongly recommend that customers obtain appropriate travel insurance before travelling. Travel insurance may provide cover for circumstances such as trip cancellation, medical emergencies, baggage loss or delays, subject to the terms and conditions of the insurance policy. Customers should carefully review their insurance coverage to ensure that it meets their individual travel requirements."
+      }
+    ],
+    "updatedAt": "2026-10-14"
   }
 }

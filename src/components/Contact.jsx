@@ -13,8 +13,24 @@ export default function Contact() {
   const [result, setResult] = useState('');
   const [minDate, setMinDate] = useState("");
   const [destination, setDestination] = useState("");
-  const [destinationOpen, setDestinationOpen] = useState(false);
-  const destinationRef = useRef(null);
+  const formRef = useRef(null);
+  const successRef = useRef(null);
+  const requestRef = useRef(null);
+  useEffect(() => () => requestRef.current?.abort(), []);
+  useEffect(() => {
+    if (status !== 'success') return;
+    successRef.current?.focus({ preventScroll: true });
+    successRef.current?.scrollIntoView({ block: 'center', behavior: 'auto' });
+    const timer = setTimeout(() => {
+      formRef.current?.reset();
+      if (formRef.current) formRef.current.elements.package.value = '';
+      setDestination('');
+      setStatus('idle');
+      setResult('');
+      requestAnimationFrame(() => formRef.current?.elements.name.focus({ preventScroll: true }));
+    }, 4650);
+    return () => clearTimeout(timer);
+  }, [status]);
   useEffect(() => {
     const today = new Date();
     setMinDate(
@@ -28,27 +44,27 @@ export default function Contact() {
   useEffect(() => {
     const initial = new URLSearchParams(window.location.search).get("destination");
     if (["Sri Lanka", "Kenya"].includes(initial)) setDestination(initial);
-    const close = (event) => { if (!destinationRef.current?.contains(event.target)) setDestinationOpen(false); };
-    document.addEventListener("pointerdown", close);
-    return () => document.removeEventListener("pointerdown", close);
   }, []);
   async function submit(event) {
     event.preventDefault();
-    if (status === 'sending') return;
-    const data = Object.fromEntries(new FormData(event.currentTarget));
+    if (status === 'sending' || status === 'success' || requestRef.current) return;
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+    requestRef.current = new AbortController();
     setStatus('sending');
     setResult('Sending your enquiry…');
     try {
-      const response = await fetch('/api/enquiry/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const response = await fetch('/api/enquiry/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: requestRef.current.signal });
       const body = await response.json();
       if (!response.ok || !body.ok) throw new Error(body.error || 'Unable to send your enquiry. Please try again.');
-      event.currentTarget.reset();
-      setDestination("");
       setStatus('success');
-      setResult('Thank you. Your enquiry has been submitted to our travel team. We’ll reply to the email address you provided.');
+      setResult('Your message has been sent');
     } catch (error) {
+      if (error.name === 'AbortError') return;
       setStatus('error');
       setResult(error.message === 'Failed to fetch' ? 'Connection lost. We could not confirm delivery. Please contact us before submitting again.' : error.message);
+    } finally {
+      requestRef.current = null;
     }
   }
   return (
@@ -76,8 +92,12 @@ export default function Contact() {
           </div>
         </section>
         <section className="contact-enquiry-layout about-container" aria-labelledby="enquiry-heading">
+        <div className={`contact-enquiry-card${status === 'success' ? ' is-sent' : ''}`}>
+        <div className="contact-enquiry-flipper">
         <form
-          key={params.toString()}
+          ref={formRef}
+          inert={status === 'success'}
+          aria-hidden={status === 'success'}
           id="enquiry-form"
           className="contact-enquiry-form"
           onSubmit={submit}
@@ -111,15 +131,11 @@ export default function Contact() {
           <div className="contact-form-row">
             <label>
               Destination
-              <div className={`travel-select${destinationOpen ? " is-open" : ""}`} ref={destinationRef}>
-                <input type="hidden" name="destination" value={destination} required />
-                <button type="button" className={`travel-select-trigger${destination ? " has-value" : ""}`} aria-haspopup="listbox" aria-expanded={destinationOpen} onClick={() => setDestinationOpen(value => !value)}>
-                  <span>{destination || "Choose a destination"}</span><span className="travel-select-chevron" aria-hidden="true">⌄</span>
-                </button>
-                {destinationOpen && <div className="travel-select-menu" role="listbox">
-                  {["Sri Lanka", "Kenya"].map(option => <button type="button" role="option" aria-selected={destination === option} className="travel-select-option" key={option} onClick={() => { setDestination(option); setDestinationOpen(false); }}><span>{option}</span>{destination === option && <span aria-hidden="true">✓</span>}</button>)}
-                </div>}
-              </div>
+              <select name="destination" required value={destination} onChange={event => setDestination(event.target.value)}>
+                <option value="" disabled>Choose a destination</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Kenya">Kenya</option>
+              </select>
             </label>
             <label>
               Number of travellers
@@ -138,11 +154,11 @@ export default function Contact() {
               Preferred travel date
               <div className="travel-date">
                 <input type="date" name="date" min={minDate} aria-label="Preferred travel date" />
-                <button type="button" className="travel-date-trigger" aria-label="Open travel date calendar" onClick={(event) => { const input = event.currentTarget.previousElementSibling; input?.showPicker?.(); input?.focus(); }}><span aria-hidden="true">▣</span></button>
+                <span className="travel-date-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M7 3v4m10-4v4M3 10h18m-13 4h3m2 0h3m-8 3h3" /></svg></span>
               </div>
             </label>
             <label>
-              Journey you’re interested in
+              Journey you’re interested in (optional)
               <input
                 name="package"
                 defaultValue={params.get("package") || ""}
@@ -162,11 +178,21 @@ export default function Contact() {
             Send your details directly to our travel team. We’ll use them to respond to your enquiry.
           </p>
           <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
-          <ActionButton type="submit" className="button" disabled={status === 'sending'}>
+          <ActionButton type="submit" className="button" disabled={status === 'sending' || status === 'success'}>
             {status === 'sending' ? 'Sending…' : 'Send my enquiry'}
           </ActionButton>
-          {result && <div id="enquiry-result" className={`enquiry-result-${status}`} role="status" aria-live="polite"><p>{result}</p></div>}
+          {status !== 'success' && result && <div id="enquiry-result" className={`enquiry-result-${status}`} role="status" aria-live="polite"><p>{result}</p></div>}
         </form>
+        <div className="contact-enquiry-success" inert={status !== 'success'} aria-hidden={status !== 'success'}>
+          <div ref={successRef} tabIndex={-1} className="contact-success-content">
+            <svg className="contact-success-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke="currentColor" strokeWidth="2" /><path d="m19 32 9 9 18-19" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <h2>Your message has been sent</h2>
+            <p>Thank you for sharing your plans. Our travel team will reply to your email.</p>
+          </div>
+        </div>
+        </div>
+        <p className="contact-announcement" role="status" aria-live="polite">{status === 'success' ? result : ''}</p>
+        </div>
           <aside className="contact-companion">
             <figure className="contact-destination-photo about-image-card">
               <SiteImage src="/images/gallery/mirissa-coast.webp" alt="Turquoise water and palm-lined coastline at Mirissa, Sri Lanka" loading="eager" sizes="(max-width: 800px) 90vw, 35vw" />

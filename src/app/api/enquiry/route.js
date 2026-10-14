@@ -42,6 +42,7 @@ export async function POST(request) {
   if (data.website) return error('Unable to submit this enquiry.', 400);
   const limits = { name: 120, email: 254, destination: 30, guests: 3, date: 10, package: 250, message: 5000 };
   for (const [field, max] of Object.entries(limits)) {
+    if (['date', 'package', 'message'].includes(field) && data[field] === undefined) data[field] = '';
     if (typeof data[field] !== 'string' || data[field].length > max) return error('Please check your enquiry fields.', 400);
     data[field] = data[field].trim();
   }
@@ -67,5 +68,12 @@ export async function POST(request) {
     });
     if (!result.accepted?.includes('travels@emeraldisle.lk')) return error('We could not send your enquiry. Please try again or contact us by WhatsApp.', 502);
     return Response.json({ ok: true });
-  } catch { return error('We could not confirm your enquiry was sent. Please contact us before submitting again.', 502); }
+  } catch (cause) {
+    // Log diagnostic codes only: never credentials, message content or SMTP responses.
+    console.error('Enquiry SMTP failure', {
+      code: /^[A-Z_]+$/.test(cause?.code || '') ? cause.code : 'UNKNOWN',
+      responseCode: Number.isInteger(cause?.responseCode) ? cause.responseCode : undefined,
+    });
+    return error('We could not confirm your enquiry was sent. Please contact us before submitting again.', 502);
+  }
 }

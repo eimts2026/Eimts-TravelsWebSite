@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import { animate } from "animejs";
 import { useEffect, useRef, useState } from 'react';
 import coastline from '../data/sri-lanka-coastline';
 import sriLankaPlaces from '../data/home-places';
@@ -91,7 +93,7 @@ function DestinationPanel({ country, onFocus }) {
     </div>
     <article id={`${country.id}-place-card`} className="home-place-card" aria-live="polite" aria-atomic="true">
       <div key={place.id} className="home-place-card-content">
-        <div className="home-place-photo"><img src={place.image} alt={place.alt} width="1400" height="1050" loading="lazy" /></div>
+        <div className="home-place-photo"><Image sizes="(max-width: 700px) 90vw, 35vw" src={place.image} alt={place.alt} width="1400" height="1050" loading="lazy" /></div>
         <div className="home-place-copy"><span className="eyebrow">{place.label}</span><h3>{place.name}</h3><p>{place.description}</p></div>
       </div>
     </article>
@@ -103,59 +105,84 @@ export default function HomePlaces() {
   const root = useRef(null);
   const track = useRef(null);
   const pinned = useRef(false);
+  const travel = useRef({ first: 0, horizontal: 0, second: 0 });
   useEffect(() => {
     const element = root.current;
     const rail = track.current;
+    const viewport = rail.parentElement;
+    const panels = [...rail.children];
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    const desktop = matchMedia('(min-width: 1000px) and (min-height: 650px)');
-    let frame = 0;
+    let frame = 0, setupFrame = 0, animations = [], dimensions = '';
+    const clamp = value => Math.max(0, Math.min(1, value));
     const update = () => {
       frame = 0;
       if (!pinned.current) return;
-      const bounds = element.getBoundingClientRect();
-      const range = element.offsetHeight - rail.parentElement.offsetHeight;
-      const progress = Math.max(0, Math.min(1, -bounds.top / Math.max(1, range)));
-      const slide = Math.max(0, Math.min(1, (progress - .12) / .76));
-      rail.style.transform = `translate3d(${-slide * element.clientWidth}px,0,0)`;
+      const distance = Math.max(0, -element.getBoundingClientRect().top);
+      const { first, horizontal, second } = travel.current;
+      animations[0]?.seek(clamp((distance - first - 100) / horizontal) * 1000);
+      animations[1]?.seek(clamp(distance / Math.max(1, first)) * 1000);
+      animations[2]?.seek(clamp((distance - first - 200 - horizontal) / Math.max(1, second)) * 1000);
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const configure = () => {
-      pinned.current = desktop.matches && !motion.matches;
+      setupFrame = 0;
+      pinned.current = !motion.matches && CSS.supports('position', 'sticky');
       element.classList.toggle('is-pinned', pinned.current);
-      rail.style.removeProperty('transform');
+      const height = viewport.clientHeight;
+      const first = Math.max(0, panels[0].scrollHeight - height);
+      const second = Math.max(0, panels[1].scrollHeight - height);
+      const horizontal = Math.max(element.clientWidth * 1.4, height * .9);
+      const next = [pinned.current, element.clientWidth, height, first, second].join(':');
+      if (next === dimensions) { schedule(); return; }
+      dimensions = next;
+      animations.forEach(animation => animation.revert());
+      animations = [];
+      travel.current = { first, horizontal, second };
       if (pinned.current) {
-        rail.parentElement.scrollLeft = 0;
-        element.style.setProperty('--destination-travel', `${element.clientWidth * 1.4}px`);
+        element.style.setProperty('--destination-travel', (first + horizontal + second + 300) + 'px');
+        animations = [
+          animate(rail, { translateX: [0, -element.clientWidth], duration: 1000, ease: 'linear', autoplay: false }),
+          animate(panels[0], { translateY: [0, -first], duration: 1000, ease: 'linear', autoplay: false }),
+          animate(panels[1], { translateY: [0, -second], duration: 1000, ease: 'linear', autoplay: false }),
+        ];
       } else element.style.removeProperty('--destination-travel');
       schedule();
     };
-    const resize = new ResizeObserver(configure);
-    resize.observe(element);
+    const resize = new ResizeObserver(() => { if (!setupFrame) setupFrame = requestAnimationFrame(configure); });
+    [element, viewport, ...panels].forEach(node => resize.observe(node));
     motion.addEventListener('change', configure);
-    desktop.addEventListener('change', configure);
-    addEventListener('scroll', schedule, {passive:true});
+    addEventListener('scroll', schedule, { passive: true });
     configure();
     return () => {
-      resize.disconnect(); cancelAnimationFrame(frame);
+      resize.disconnect(); cancelAnimationFrame(frame); cancelAnimationFrame(setupFrame);
+      animations.forEach(animation => animation.revert());
       motion.removeEventListener('change', configure);
-      desktop.removeEventListener('change', configure);
       removeEventListener('scroll', schedule);
       element.classList.remove('is-pinned');
-      rail.style.removeProperty('transform');
+      element.style.removeProperty('--destination-travel');
     };
   }, []);
-  const revealFocusedPanel = index => {
+  const revealFocusedPanel = (index, event) => {
     if (!pinned.current) return;
     const element = root.current;
-    const range = element.offsetHeight - track.current.parentElement.offsetHeight;
+    const { first, horizontal, second } = travel.current;
     const start = element.getBoundingClientRect().top + scrollY;
-    const target = start + range * (index ? .9 : .1);
-    if (Math.abs(scrollY - target) > range * .12) window.scrollTo({top:target, behavior:'instant'});
+    const viewport = track.current.parentElement;
+    const panel = track.current.children[index];
+    const focused = event.target.getBoundingClientRect();
+    const panelBounds = panel.getBoundingClientRect();
+    const vertical = Math.max(0, Math.min(index ? second : first, focused.top - panelBounds.top + focused.height / 2 - viewport.clientHeight / 2));
+    const target = start + (index ? first + horizontal + 200 : 0) + vertical;
+    const current = scrollY - start;
+    if ((!index && current > first + 100) || (index && current < first + horizontal + 100) || focused.top < 76 || focused.bottom > innerHeight - 24) {
+      window.scrollTo({ top: target, behavior: 'instant' });
+    }
+
   };
   return <div className="destination-journey" ref={root}>
     <div className="destination-viewport"><div className="destination-track" ref={track}>
-      {countries.map((country, index) => <DestinationPanel key={country.id} country={country} onFocus={() => revealFocusedPanel(index)} />)}
+      {countries.map((country, index) => <DestinationPanel key={country.id} country={country} onFocus={event => revealFocusedPanel(index, event)} />)}
     </div></div>
-    <p className="destination-swipe-note">Sri Lanka → Kenya · Swipe to explore</p>
+    <p className="destination-swipe-note">Sri Lanka → Kenya · Keep scrolling to explore</p>
   </div>;
 }

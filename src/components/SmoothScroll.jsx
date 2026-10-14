@@ -20,7 +20,7 @@ export default function SmoothScroll() {
       const current = ++generation;
       instance?.destroy();
       instance = undefined;
-      if (motion.matches) return;
+      if (motion.matches || matchMedia("(pointer: coarse)").matches) return;
       const { default: Lenis } = await import("lenis");
       if (!disposed && current === generation && !motion.matches) {
         instance = new Lenis({ autoRaf: true, lerp: 0.075, smoothWheel: true, anchors: { offset: -100 }, syncTouch: false, stopInertiaOnNavigate: true });
