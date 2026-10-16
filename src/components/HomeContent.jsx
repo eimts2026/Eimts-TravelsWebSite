@@ -2,7 +2,8 @@ import SiteLink from "./SiteLink";
 import SiteImage from "./SiteImage";
 import JourneyCard from "./JourneyCard";
 import packages from "../data/packages.js";
-import { HomeTravelGallery, HomeDestinationJourney } from "./DeferredHomeFeatures";
+import { HomeTravelGallery } from "./DeferredHomeFeatures";
+import HomePlaces from "./HomePlaces";
 import TourCategories from "./TourCategories";
 import HomeAbout from "./HomeAbout";
 
@@ -18,9 +19,9 @@ const galleryPhotos = [
 ].map(([name, alt]) => ({ src: `/images/home-gallery/${name}.webp`, thumb: `/images/home-gallery/${name}-thumb.webp`, alt }));
 export default function HomeContent() {
   return <>
+    <HomePlaces />
     <HomeAbout />
     <TourCategories />
-    <HomeDestinationJourney />
     <section className="section selected-journeys">
       <div className="section-heading"><div><span className="eyebrow">NOW, IMAGINE YOUR DAYS</span><h2>Journeys worth<br /><em>making time for.</em></h2></div><SiteLink className="text-link" href="/packages/">Explore all packages ↗</SiteLink></div>
       <div className="journey-grid">{["sri-lanka-beach-wildlife-tour", "6-day-amboseli-and-masai-mara-luxury-safari", "sri-lanka-honeymoon-escape"].map(slug => <JourneyCard key={slug} trip={packages.find(p => p.url === "/packages/" + slug + "/")} />)}</div>

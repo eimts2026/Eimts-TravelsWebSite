@@ -92,6 +92,12 @@ function DestinationPanel({ country, onFocus }) {
       <details className="home-map-attribution"><summary aria-label="Map attribution">ⓘ</summary><p>Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>. Boundary via <a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> ({country.id === 'kenya' ? 'public domain' : <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">ODbL</a>}).</p></details>
     </div>
     <article id={`${country.id}-place-card`} className="home-place-card" aria-live="polite" aria-atomic="true">
+      <label className="home-place-picker">
+        Explore {country.name}
+        <select value={selected} onChange={event => setSelected(event.target.value)} aria-label={`Choose a place in ${country.name}`}>
+          {places.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
+        </select>
+      </label>
       <div key={place.id} className="home-place-card-content">
         <div className="home-place-photo"><Image sizes="(max-width: 700px) 90vw, 35vw" src={place.image} alt={place.alt} width="1400" height="1050" loading="lazy" /></div>
         <div className="home-place-copy"><span className="eyebrow">{place.label}</span><h3>{place.name}</h3><p>{place.description}</p></div>
@@ -112,6 +118,7 @@ export default function HomePlaces() {
     const viewport = rail.parentElement;
     const panels = [...rail.children];
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const desktop = matchMedia('(min-width: 1000px) and (min-height: 650px) and (pointer: fine)');
     let frame = 0, setupFrame = 0, animations = [], dimensions = '';
     const clamp = value => Math.max(0, Math.min(1, value));
     const update = () => {
@@ -126,7 +133,7 @@ export default function HomePlaces() {
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const configure = () => {
       setupFrame = 0;
-      pinned.current = !motion.matches && CSS.supports('position', 'sticky');
+      pinned.current = desktop.matches && !motion.matches && CSS.supports('position', 'sticky');
       element.classList.toggle('is-pinned', pinned.current);
       const height = viewport.clientHeight;
       const first = Math.max(0, panels[0].scrollHeight - height);
@@ -151,12 +158,14 @@ export default function HomePlaces() {
     const resize = new ResizeObserver(() => { if (!setupFrame) setupFrame = requestAnimationFrame(configure); });
     [element, viewport, ...panels].forEach(node => resize.observe(node));
     motion.addEventListener('change', configure);
+    desktop.addEventListener('change', configure);
     addEventListener('scroll', schedule, { passive: true });
     configure();
     return () => {
       resize.disconnect(); cancelAnimationFrame(frame); cancelAnimationFrame(setupFrame);
       animations.forEach(animation => animation.revert());
       motion.removeEventListener('change', configure);
+      desktop.removeEventListener('change', configure);
       removeEventListener('scroll', schedule);
       element.classList.remove('is-pinned');
       element.style.removeProperty('--destination-travel');
@@ -179,7 +188,7 @@ export default function HomePlaces() {
     }
 
   };
-  return <div className="destination-journey" ref={root}>
+  return <div className="destination-journey" id="destinations" ref={root}>
     <div className="destination-viewport"><div className="destination-track" ref={track}>
       {countries.map((country, index) => <DestinationPanel key={country.id} country={country} onFocus={event => revealFocusedPanel(index, event)} />)}
     </div></div>

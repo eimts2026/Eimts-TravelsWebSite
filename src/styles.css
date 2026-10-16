@@ -2348,6 +2348,3 @@ html.lenis { scroll-behavior: auto; }
 }
 
 .deferred-gallery { min-height: 100svh; }
-.deferred-places { min-height: 900px; }
-@media (min-width:1000px) and (min-height:650px) { .deferred-places { min-height: calc(100svh + 140vw); } }
-@media (max-width:600px) { .deferred-places { min-height: 1300px; } }

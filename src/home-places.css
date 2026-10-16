@@ -1,8 +1,8 @@
-.home-places { display: grid; grid-template-columns: .8fr 1.3fr 1fr; align-items: center; gap: clamp(24px,3vw,56px); padding: 90px 7.2%; background: var(--paper); color: var(--forest); }
+.home-places { display: grid; grid-template-columns: .8fr 1.5fr 1fr; align-items: center; gap: clamp(24px,3vw,56px); padding: 90px 7.2%; background: var(--paper); color: var(--forest); }
 .home-places-intro h2 { font: 500 clamp(32px,3.2vw,60px)/1.1 var(--heading); letter-spacing: -.045em; margin: 24px 0; }
 .home-places-intro p { font-size: 15px; line-height: 1.8; color: var(--muted); }
 .home-places-map-wrap { position: relative; min-width: 0; }
-.home-places-island { position: relative; height: 700px; background: radial-gradient(ellipse at center, #d6e9ec80, #e6f0ed30 55%, transparent 72%); }
+.home-places-island { position: relative; height: 760px; background: radial-gradient(ellipse at center, #d6e9ec80, #e6f0ed30 55%, transparent 72%); }
 .home-places-map { height: 100%; background: #e1ead7; isolation: isolate; clip-path: inset(50%); }
 .home-island-pin { position: absolute; z-index: 3; display: block; border: 0; padding: 0; background: none; color: var(--forest); cursor: pointer; transform: translate(-11px,-30px); }
 .home-island-pin svg { display: block; width: 22px; height: 30px; filter: drop-shadow(0 3px 6px #163d3220); transition: color .25s, scale .25s; }
@@ -15,6 +15,11 @@
 .home-map-attribution summary { cursor: pointer; list-style: none; padding: 8px; font-size: 16px; }
 .home-map-attribution p { position: absolute; bottom: 30px; right: 0; width: 210px; padding: 14px; background: var(--paper); border-radius: 8px; box-shadow: 0 8px 30px #163d3218; line-height: 1.6; }
 .home-place-card { min-width: 0; background: #ffffff80; border-radius: 20px; overflow: hidden; }
+.home-place-picker { display: none; }
+@media (min-width:601px) and (max-width:999px), (min-width:601px) and (pointer:coarse) {
+  .home-place-picker { display: grid; gap: 8px; padding: 20px; font-size: 13px; font-weight: 600; }
+  .home-place-picker select { width: 100%; min-height: 44px; padding: 10px 12px; font: inherit; color: var(--forest); background: var(--paper); border: 1px solid var(--muted); border-radius: 8px; }
+}
 .home-place-photo { aspect-ratio: 1/1.08; overflow: hidden; }
 .home-place-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
 .home-place-photo:hover img { transform: scale(1.035); }
@@ -28,7 +33,7 @@
 @media (max-width:650px) { .home-places { grid-template-columns: minmax(0,1fr); padding: 60px 6%; gap: 28px; } .home-places-island { height: 640px; overflow: clip; } .home-place-photo { aspect-ratio: 4/3; } .home-place-copy { padding: 24px; } .home-island-pin span, .home-island-pin.label-west span { display: none; font-size: 9px; padding: 4px; left: 50%; right: auto; top: -22px; transform: translateX(-50%); background: var(--paper); border-radius: 4px; } .home-island-pin.is-selected span, .home-island-pin:hover span, .home-island-pin:focus-visible span { display: block; } }
 @media (prefers-reduced-motion:reduce) { .home-place-card-content { animation: none; } .home-place-photo img, .home-island-pin svg { transition: none; } }
 
-/* Two full-width chapters. Native horizontal scrolling is the small-screen fallback. */
+/* Two full-width chapters. Small screens use ordinary vertical scrolling. */
 .destination-journey { position: relative; width: 100%; background: var(--paper); }
 .destination-viewport { overflow: visible; }
 .destination-track { display: block; width: 100%; }
@@ -37,10 +42,10 @@
 .destination-journey.is-pinned { height: calc(100svh + var(--destination-travel, 140vw)); }
 .is-pinned > .destination-viewport { position: sticky; top: 0; height: 100svh; overflow: hidden; scroll-snap-type: none; }
 .is-pinned .destination-track { display: flex; align-items: flex-start; height: 100%; will-change: transform; }
-.is-pinned .home-places { min-height: 100%; height: auto; padding: 108px 6% 40px; gap: clamp(20px,2.8vw,54px); grid-template-columns: .85fr 1.2fr 1fr; }
+.is-pinned .home-places { min-height: 100%; height: auto; padding: 108px 6% 40px; gap: clamp(20px,2.8vw,54px); grid-template-columns: .8fr 1.45fr 1fr; }
 .is-pinned .home-places-intro { grid-column: auto; }
 .is-pinned .home-places-intro h2 { font-size: clamp(30px,3.2vw,60px); }
-.is-pinned .home-places-island { height: min(700px,calc(100svh - 170px)); }
+.is-pinned .home-places-island { height: min(760px,calc(100svh - 140px)); }
 .is-pinned .home-place-photo { height: clamp(180px,43svh,520px); aspect-ratio: auto; }
 .is-pinned .home-place-copy { padding: clamp(16px,1.6vw,28px); }
 .is-pinned .home-place-copy h3 { margin: 10px 0; }
@@ -58,7 +63,7 @@
   .home-places { grid-template-columns: minmax(0,1fr); padding: 44px 6% 20px; gap: 20px; }
   .home-places-intro h2 { font-size: clamp(30px,8vw,44px); }
   .home-places-intro p { font-size: 16px; }
-  .home-places-island { height: clamp(390px,125vw,540px); }
+  .home-places-island { height: clamp(430px,135vw,580px); }
   .home-place-card { align-self: start; }
   .home-place-copy p { font-size: 16px; }
   .home-island-pin { width: 36px; height: 40px; transform: translate(-18px,-34px); display: grid; place-items: start center; }

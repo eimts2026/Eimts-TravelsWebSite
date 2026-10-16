@@ -2,8 +2,9 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 
-const Gallery = dynamic(() => import('./MorphGallery'));
-const Places = dynamic(() => import('./HomePlaces'));
+// A local loading boundary prevents this on-scroll import from suspending
+// the entire route and collapsing its scroll height while the chunk loads.
+const Gallery = dynamic(() => import('./MorphGallery'), { loading: () => null });
 
 function Deferred({ children, className }) {
   const root = useRef(null);
@@ -19,7 +20,4 @@ function Deferred({ children, className }) {
 }
 export function HomeTravelGallery(props) {
   return <Deferred className="deferred-gallery"><Gallery {...props} /></Deferred>;
-}
-export function HomeDestinationJourney() {
-  return <Deferred className="deferred-places"><Places /></Deferred>;
 }

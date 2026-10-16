@@ -105,6 +105,6 @@ export default function Hero() {
     </div>
     <div className="theatre-caption" key={`caption-${index}`}><p>{scenes[index].line}</p><SiteLink className="button light" href={scenes[index].href}>{`Explore ${scenes[index].title}`}</SiteLink></div>
     <div className="theatre-destinations" role="group" aria-label="Choose a hero destination">{scenes.map((scene, position) => <button key={scene.title} type="button" aria-pressed={index === position} onClick={() => transitionTo(position)}><span className="theatre-thumb"><Image src={scene.image} alt="" width={52} height={52} sizes="52px" /></span><span><small>{scene.place}</small><strong>{scene.title}</strong></span></button>)}</div>
-    <SiteLink className="theatre-scroll" href="#about-emerald" aria-label="Scroll to our story"><span aria-hidden="true">↓</span></SiteLink>
+    <SiteLink className="theatre-scroll" href="#destinations" aria-label="Explore Sri Lanka and Kenya"><span aria-hidden="true">↓</span></SiteLink>
   </section>;
 }
